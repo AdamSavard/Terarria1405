@@ -1,0 +1,2 @@
+C:\projects\Terraria1405\Terraria1405\obj\Debug\Terraria1405.csprojAssemblyReference.cache
+C:\projects\Terraria1405\Terraria1405\obj\Debug\Terraria1405.csproj.CoreCompileInputs.cache
