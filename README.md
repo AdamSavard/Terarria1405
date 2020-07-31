@@ -3,6 +3,8 @@ Modifying Terraria 1.4.0.5 from decompiled source code made with JetBrains dotPe
 
 ### The idea behind this project was to go beyond what I can do by simply modding Terraria. I was also curious about the concept of decompiling code. There was a lot of mangled code and things that I assume are far uglier than the original source code. Luckily its not too far off from the code quality at my last job so I was ready for the task. Visual Studio really tried its best to manage the size of this project. I was usually using 20-22bg of ram while navigating this code base. Luckily my home computer is a champion.
 
+### I am excluding the dll files and Content folder from this Git repo. In order to obtain those files yourself, you will have to purchase Terraria on Steam. This will give you the Content folder and some of the dll files. In order to get the rest of the necessary dll files, you will need to extract them from Terraria.exe yourself using a tool like JetBrains dotPeek. You can NOT use this repository to recreate a functioning Terraria game for free.
+
 ### Steps Completed
 * Get the game running
 
