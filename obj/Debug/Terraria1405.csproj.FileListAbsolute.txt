@@ -1,6 +1,5 @@
 C:\projects\Terraria1405\Terraria1405\obj\Debug\Terraria1405.csprojAssemblyReference.cache
 C:\projects\Terraria1405\Terraria1405\obj\Debug\Terraria1405.csproj.CoreCompileInputs.cache
-C:\projects\Terraria1405\obj\Debug\Terraria1405.csprojAssemblyReference.cache
 C:\projects\Terraria1405\obj\Debug\Terraria1405.csproj.CoreCompileInputs.cache
 C:\projects\Terraria1405\bin\Debug\Terraria.exe
 C:\projects\Terraria1405\bin\Debug\Terraria.pdb
@@ -12,3 +11,8 @@ C:\projects\Terraria1405\bin\Debug\Terraria.Libraries.Steamworks.NET.Windows.Ste
 C:\projects\Terraria1405\obj\Debug\Terraria1405.csproj.CopyComplete
 C:\projects\Terraria1405\obj\Debug\Terraria.exe
 C:\projects\Terraria1405\obj\Debug\Terraria.pdb
+C:\projects\Terraria1405\bin\Debug\Microsoft.Xna.Framework.dll
+C:\projects\Terraria1405\bin\Debug\Microsoft.Xna.Framework.Game.dll
+C:\projects\Terraria1405\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\projects\Terraria1405\bin\Debug\Microsoft.Xna.Framework.Xact.dll
+C:\projects\Terraria1405\obj\Debug\Terraria1405.csprojAssemblyReference.cache
