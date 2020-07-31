@@ -21,7 +21,7 @@ namespace Terraria.Social.WeGame
     public override string GetUsername()
     {
       string str;
-      rail_api.RailFactory().RailPlayer().GetPlayerName(ref str);
+      rail_api.RailFactory().RailPlayer().GetPlayerName(out str);
       WeGameHelper.WriteDebugString("GetUsername by wegame" + str);
       return str;
     }

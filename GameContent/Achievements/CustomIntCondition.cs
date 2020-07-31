@@ -50,7 +50,7 @@ namespace Terraria.GameContent.Achievements
     public override void Load(JObject state)
     {
       base.Load(state);
-      this._value = JToken.op_Explicit(state.get_Item("Value"));
+      this._value = (int)state.GetValue("Value"); // maybe
       if (this._tracker == null)
         return;
       ((AchievementTracker<int>) this._tracker).SetValue(this._value, false);

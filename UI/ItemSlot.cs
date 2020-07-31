@@ -2325,7 +2325,7 @@ label_95:
       if ((double) ItemSlot.CircularRadialOpacity == 0.0)
         return;
       Player player = Main.player[Main.myPlayer];
-      TextureAssets.HotbarRadial[2].Value;
+      //TextureAssets.HotbarRadial[2].Value;
       float num1 = ItemSlot.CircularRadialOpacity * 0.9f;
       float num2 = ItemSlot.CircularRadialOpacity * 1f;
       float num3 = (float) Main.mouseTextColor / (float) byte.MaxValue;

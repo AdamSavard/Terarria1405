@@ -69,7 +69,7 @@ namespace Terraria.GameContent.LootSimulation
           str = str + outputText + "\n\n";
       }
       stopwatch.Stop();
-      ((IClipboard) Platform.Get<IClipboard>()).set_Value(str + string.Format("\nSimulation Took {0} seconds to complete.\n", (object) (float) ((double) stopwatch.ElapsedMilliseconds / 1000.0)));
+      ((IClipboard) Platform.Get<IClipboard>()).Value = str + string.Format("\nSimulation Took {0} seconds to complete.\n", (object) (float) ((double) stopwatch.ElapsedMilliseconds / 1000.0));
     }
 
     private void SetCleanSlateWorldConditions()

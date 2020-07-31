@@ -34,7 +34,8 @@ namespace Terraria.Achievements
 
     public virtual void Load(JObject state)
     {
-      this._isCompleted = JToken.op_Explicit(state.get_Item("Completed"));
+      // not clear how it was getting bool from JObject before
+      this._isCompleted = bool.Parse(state.GetValue("Completed").ToString());
     }
 
     public virtual void Clear()

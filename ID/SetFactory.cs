@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Terraria.ID
 {
@@ -53,13 +54,13 @@ namespace Terraria.ID
       {
         if (typeof (T).Equals(typeof (bool)))
         {
-          this._boolBufferCache.Enqueue((bool[]) buffer);
+          this._boolBufferCache.Enqueue(buffer.OfType<bool>().ToArray<bool>());
         }
         else
         {
           if (!typeof (T).Equals(typeof (int)))
             return;
-          this._intBufferCache.Enqueue((int[]) buffer);
+          this._intBufferCache.Enqueue(buffer.OfType<int>().ToArray<int>());
         }
       }
     }

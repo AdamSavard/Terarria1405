@@ -4150,7 +4150,8 @@ namespace Terraria
           drawData = new DrawData(texture2D1, Position.Floor(), new Rectangle?(rectangle1), drawColor, rotation3, origin, scale1, effect, 0);
           drawData.shader = Mount.currentShader;
           playerDrawData.Add(drawData);
-          new Color(new Vector3(0.9f, 0.85f, 0.0f)).A /= (byte) 2;
+          // TODO what was the intention here
+          //new Color(new Vector3(0.9f, 0.85f, 0.0f)).A /= (byte) 2;
           float num6 = ((float) ((double) drawPlayer.miscCounter / 75.0 * 6.28318548202515)).ToRotationVector2().X * 1f;
           Color color4 = new Color(80, 70, 40, 0) * (float) ((double) num6 / 8.0 + 0.5) * 0.8f;
           rectangle1.X += width;

@@ -32,7 +32,7 @@ namespace Terraria.Net
     public override bool IsLocalHost()
     {
       // ISSUE: explicit non-virtual call
-      return Program.LaunchParameters.ContainsKey("-localsteamid") && Program.LaunchParameters["-localsteamid"].Equals(__nonvirtual (this.SteamId.m_SteamID.ToString()));
+      return Program.LaunchParameters.ContainsKey("-localsteamid") && Program.LaunchParameters["-localsteamid"].Equals( (this.SteamId.m_SteamID.ToString()));
     }
 
     public override string GetFriendlyName()

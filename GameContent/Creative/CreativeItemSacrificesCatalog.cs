@@ -33,7 +33,7 @@ namespace Terraria.GameContent.Creative
         {
           string[] strArray = str.Split('\t');
           int index;
-          if (strArray.Length >= 3 && ItemID.Search.TryGetId(strArray[0], ref index))
+          if (strArray.Length >= 3 && ItemID.Search.TryGetId(strArray[0], out index))
           {
             int num = 0;
             bool flag = false;

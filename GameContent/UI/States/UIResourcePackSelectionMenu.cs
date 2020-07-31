@@ -124,7 +124,7 @@ namespace Terraria.GameContent.UI.States
       groupOptionButton2.SetColorsBasedOnSelectionState(lightCyan, lightCyan, 0.7f, 0.7f);
       groupOptionButton2.ShowHighlightWhenSelected = false;
       groupOptionButton2.SetPadding(0.0f);
-      Asset<M0> asset = Main.Assets.Request<Texture2D>("Images/UI/TexturePackButtons", (AssetRequestMode) 1);
+      Asset<Texture2D> asset = Main.Assets.Request<Texture2D>("Images/UI/TexturePackButtons", (AssetRequestMode) 1);
       UIImageFramed uiImageFramed1 = new UIImageFramed((Asset<Texture2D>) asset, ((Asset<Texture2D>) asset).Frame(2, 2, offset == 1 ? 1 : 0, 0, 0, 0));
       uiImageFramed1.HAlign = 0.5f;
       uiImageFramed1.VAlign = 0.5f;
@@ -161,7 +161,7 @@ namespace Terraria.GameContent.UI.States
       groupOptionButton.SetCurrentOption(resourcePack.IsEnabled);
       groupOptionButton.ShowHighlightWhenSelected = false;
       groupOptionButton.SetPadding(0.0f);
-      Asset<M0> asset = Main.Assets.Request<Texture2D>("Images/UI/TexturePackButtons", (AssetRequestMode) 1);
+      Asset<Texture2D> asset = Main.Assets.Request<Texture2D>("Images/UI/TexturePackButtons", (AssetRequestMode) 1);
       UIImageFramed uiImageFramed = new UIImageFramed((Asset<Texture2D>) asset, ((Asset<Texture2D>) asset).Frame(2, 2, resourcePack.IsEnabled ? 0 : 1, 1, 0, 0));
       uiImageFramed.HAlign = 0.5f;
       uiImageFramed.VAlign = 0.5f;

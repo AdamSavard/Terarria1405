@@ -22,7 +22,7 @@ namespace Terraria.Social.Steam
     public override void Initialize()
     {
       // ISSUE: method pointer
-      this._userStatsReceived = Callback<UserStatsReceived_t>.Create(new Callback<UserStatsReceived_t>.DispatchDelegate((object) this, __methodptr(OnUserStatsReceived)));
+      this._userStatsReceived = Callback<UserStatsReceived_t>.Create(new Callback<UserStatsReceived_t>.DispatchDelegate(OnUserStatsReceived));
       SteamUserStats.RequestCurrentStats();
       while (!this._areStatsReceived)
       {
@@ -39,7 +39,7 @@ namespace Terraria.Social.Steam
     public override bool IsAchievementCompleted(string name)
     {
       bool flag;
-      return SteamUserStats.GetAchievement(name, ref flag) & flag;
+      return SteamUserStats.GetAchievement(name, out flag) & flag;
     }
 
     public override byte[] GetEncryptionKey()
@@ -59,7 +59,7 @@ namespace Terraria.Social.Steam
     private int GetIntStat(string name)
     {
       int num;
-      if (this._intStatCache.TryGetValue(name, out num) || !SteamUserStats.GetStat(name, ref num))
+      if (this._intStatCache.TryGetValue(name, out num) || !SteamUserStats.GetStat(name, out num))
         return num;
       this._intStatCache.Add(name, num);
       return num;
@@ -68,7 +68,7 @@ namespace Terraria.Social.Steam
     private float GetFloatStat(string name)
     {
       float num;
-      if (this._floatStatCache.TryGetValue(name, out num) || !SteamUserStats.GetStat(name, ref num))
+      if (this._floatStatCache.TryGetValue(name, out num) || !SteamUserStats.GetStat(name, out num))
         return num;
       this._floatStatCache.Add(name, num);
       return num;
@@ -112,7 +112,7 @@ namespace Terraria.Social.Steam
 
     private void OnUserStatsReceived(UserStatsReceived_t results)
     {
-      if (results.m_nGameID != 105600L || !CSteamID.op_Equality((CSteamID) results.m_steamIDUser, SteamUser.GetSteamID()))
+      if (results.m_nGameID != 105600L || results.m_steamIDUser != SteamUser.GetSteamID())
         return;
       this._areStatsReceived = true;
     }

@@ -31,7 +31,7 @@ namespace Terraria.Audio
 
     public ActiveSound GetActiveSound(SlotId id)
     {
-      return !this._trackedSounds.Has(id) ? (ActiveSound) null : this._trackedSounds.get_Item(id);
+      return !this._trackedSounds.Has(id) ? (ActiveSound) null : this._trackedSounds[id];
     }
 
     public void PauseAll()

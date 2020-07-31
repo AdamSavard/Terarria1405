@@ -46,7 +46,7 @@ namespace Terraria.GameContent.UI.Elements
       if (uiinfo.UnlockState < BestiaryEntryUnlockState.CanShowDropsWithoutDropRates_3)
       {
         this._hideMouseOver = true;
-        Asset<M0> asset = Main.Assets.Request<Texture2D>("Images/UI/Bestiary/Icon_Locked", (AssetRequestMode) 1);
+        Asset<Texture2D> asset = Main.Assets.Request<Texture2D>("Images/UI/Bestiary/Icon_Locked", (AssetRequestMode) 1);
         UIElement element = new UIElement()
         {
           Height = new StyleDimension(0.0f, 1f),

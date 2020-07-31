@@ -45,7 +45,7 @@ namespace Terraria.GameContent.RGB
       EffectDetailLevel quality,
       float time)
     {
-      if (device.Type != null && device.Type != 6)
+      if (device.Type != null && (int)device.Type != 6)
       {
         this.ProcessLowDetail(device, fragment, quality, time);
       }

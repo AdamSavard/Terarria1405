@@ -23,7 +23,7 @@ namespace Terraria.Net
     public override string ToString()
     {
       // ISSUE: explicit non-virtual call
-      return "WEGAME_0:" + __nonvirtual (((RailComparableID) this.rail_id).id_.ToString());
+      return "WEGAME_0:" + (((RailComparableID) this.rail_id).id_.ToString());
     }
 
     public override string GetIdentifier()
@@ -34,7 +34,7 @@ namespace Terraria.Net
     public override bool IsLocalHost()
     {
       // ISSUE: explicit non-virtual call
-      return Program.LaunchParameters.ContainsKey("-localwegameid") && Program.LaunchParameters["-localwegameid"].Equals(__nonvirtual (((RailComparableID) this.rail_id).id_.ToString()));
+      return Program.LaunchParameters.ContainsKey("-localwegameid") && Program.LaunchParameters["-localwegameid"].Equals( (((RailComparableID) this.rail_id).id_.ToString()));
     }
 
     public override string GetFriendlyName()

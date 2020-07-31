@@ -52,7 +52,7 @@ namespace Terraria.Social.Steam
         if (!Platform.IsOSX)
           return;
         // ISSUE: method pointer
-        this._onOverlayActivated = Callback<GameOverlayActivated_t>.Create(new Callback<GameOverlayActivated_t>.DispatchDelegate((object) this, __methodptr(OnOverlayActivated)));
+        this._onOverlayActivated = Callback<GameOverlayActivated_t>.Create(new Callback<GameOverlayActivated_t>.DispatchDelegate(OnOverlayActivated));
       }
     }
 

@@ -141,7 +141,7 @@ namespace Terraria.GameContent.UI.Elements
           groupOptionButton2.ShowHighlightWhenSelected = false;
           groupOptionButton2.SetPadding(0.0f);
           groupOptionButton2.SetSnapPoint("Filters", index, new Vector2?(), new Vector2?());
-          Asset<M0> asset = Main.Assets.Request<Texture2D>("Images/UI/Bestiary/Icon_Tags_Shadow", (AssetRequestMode) 1);
+          Asset<Texture2D> asset = Main.Assets.Request<Texture2D>("Images/UI/Bestiary/Icon_Tags_Shadow", (AssetRequestMode) 1);
           UIImageFramed uiImageFramed1 = new UIImageFramed((Asset<Texture2D>) asset, ((Asset<Texture2D>) asset).Frame(16, 5, 0, 4, 0, 0));
           uiImageFramed1.HAlign = 0.5f;
           uiImageFramed1.VAlign = 0.5f;

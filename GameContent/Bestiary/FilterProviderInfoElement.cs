@@ -31,7 +31,7 @@ namespace Terraria.GameContent.Bestiary
 
     public UIElement GetFilterImage()
     {
-      Asset<M0> asset = Main.Assets.Request<Texture2D>("Images/UI/Bestiary/Icon_Tags_Shadow", (AssetRequestMode) 1);
+      Asset<Texture2D> asset = Main.Assets.Request<Texture2D>("Images/UI/Bestiary/Icon_Tags_Shadow", (AssetRequestMode) 1);
       UIImageFramed uiImageFramed = new UIImageFramed((Asset<Texture2D>) asset, ((Asset<Texture2D>) asset).Frame(16, 5, this._filterIconFrame.X, this._filterIconFrame.Y, 0, 0));
       uiImageFramed.HAlign = 0.5f;
       uiImageFramed.VAlign = 0.5f;

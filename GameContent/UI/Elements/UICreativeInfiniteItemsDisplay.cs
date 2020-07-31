@@ -205,7 +205,7 @@ namespace Terraria.GameContent.UI.Elements
       uiImage1.Left = new StyleDimension(pixels, 0.0f);
       UIImage uiImage2 = uiImage1;
       basicPanel.Append((UIElement) uiImage2);
-      Asset<M0> asset = Main.Assets.Request<Texture2D>("Images/UI/Creative/Research_FramedPistons", (AssetRequestMode) 1);
+      Asset<Texture2D> asset = Main.Assets.Request<Texture2D>("Images/UI/Creative/Research_FramedPistons", (AssetRequestMode) 1);
       UIImageFramed uiImageFramed1 = new UIImageFramed((Asset<Texture2D>) asset, ((Asset<Texture2D>) asset).Frame(1, 9, 0, 0, 0, 0));
       uiImageFramed1.HAlign = 0.5f;
       uiImageFramed1.VAlign = 0.5f;

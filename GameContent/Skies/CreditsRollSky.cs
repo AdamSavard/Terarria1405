@@ -22,7 +22,8 @@ namespace Terraria.GameContent.Skies
     public void EnsureSegmentsAreMade()
     {
       this._segments = new List<ICreditsRollSegment>();
-      new string[1][0] = "Now, this is a story all about how";
+      // TODO WTF Redigit
+      //new string[1][0] = "Now, this is a story all about how";
       Segments.ACreditsRollSegmentWithActions<NPC> segmentWithActions1 = new Segments.NPCSegment(0, 22, new Vector2(-300f, 0.0f), new Vector2(0.5f, 1f)).Then((ICreditsRollSegmentAction<NPC>) new Actions.NPCs.Fade((int) byte.MaxValue)).With((ICreditsRollSegmentAction<NPC>) new Actions.NPCs.Fade(-5, 51)).Then((ICreditsRollSegmentAction<NPC>) new Actions.NPCs.Move(new Vector2(1f, 0.0f), 60));
       Segments.ACreditsRollSegmentWithActions<Segments.LooseSprite> segmentWithActions2 = new Segments.SpriteSegment(0, new DrawData(TextureAssets.Extra[156].Value, Vector2.Zero, new Rectangle?(), Color.White, 0.0f, TextureAssets.Extra[156].Size() / 2f, 0.25f, SpriteEffects.None, 0), new Vector2(-100f, 0.0f)).Then((ICreditsRollSegmentAction<Segments.LooseSprite>) new Actions.Sprites.Fade(0.0f, 0)).Then((ICreditsRollSegmentAction<Segments.LooseSprite>) new Actions.Sprites.Fade(1f, 60)).Then((ICreditsRollSegmentAction<Segments.LooseSprite>) new Actions.Sprites.Wait(60)).Then((ICreditsRollSegmentAction<Segments.LooseSprite>) new Actions.Sprites.Fade(0.0f, 60));
       int num = 60;

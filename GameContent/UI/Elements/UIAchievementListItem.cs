@@ -204,7 +204,7 @@ namespace Terraria.GameContent.UI.Elements
       if (BackColor == Color.Transparent)
         FillingColor = new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
       Texture2D texture1 = TextureAssets.ColorBar.Value;
-      TextureAssets.ColorBlip.Value;
+      //TextureAssets.ColorBlip.Value; // TODO wtf
       Texture2D texture2 = TextureAssets.MagicPixel.Value;
       float num1 = MathHelper.Clamp(progress, 0.0f, 1f);
       float num2 = Width * 1f;

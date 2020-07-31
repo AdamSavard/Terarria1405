@@ -69,7 +69,7 @@ namespace Terraria.Map
     public bool UpdateType(int x, int y)
     {
       MapTile mapTile = MapHelper.CreateMapTile(x, y, this._tiles[x, y].Light);
-      if (mapTile.Equals(ref this._tiles.Address(x, y)))
+      if (mapTile.Equals(ref this._tiles[x, y]))
         return false;
       this._tiles[x, y] = mapTile;
       return true;

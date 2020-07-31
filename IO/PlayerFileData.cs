@@ -71,7 +71,7 @@ namespace Terraria.IO
       if (!FileUtilities.MoveToCloud(this.Path, playerPathFromName))
         return;
       string fileName = this.GetFileName(false);
-      string path = Main.PlayerPath + Path.DirectorySeparatorChar.ToString() + fileName + Path.DirectorySeparatorChar.ToString();
+      string path = Main.PlayerPath + System.IO.Path.DirectorySeparatorChar.ToString() + fileName + System.IO.Path.DirectorySeparatorChar.ToString();
       if (Directory.Exists(path))
       {
         string[] files = Directory.GetFiles(path);
@@ -95,10 +95,10 @@ namespace Terraria.IO
       if (!FileUtilities.MoveToLocal(this.Path, playerPathFromName))
         return;
       string fileName = this.GetFileName(false);
-      string mapPath = Path.Combine(Main.CloudPlayerPath, fileName);
+      string mapPath = System.IO.Path.Combine(Main.CloudPlayerPath, fileName);
       foreach (string str in SocialAPI.Cloud.GetFiles().Where<string>((Func<string, bool>) (path => path.StartsWith(mapPath, StringComparison.CurrentCultureIgnoreCase) && path.EndsWith(".map", StringComparison.CurrentCultureIgnoreCase))))
       {
-        string localPath = Path.Combine(Main.PlayerPath, fileName, FileUtilities.GetFileName(str, true));
+        string localPath = System.IO.Path.Combine(Main.PlayerPath, fileName, FileUtilities.GetFileName(str, true));
         FileUtilities.MoveToLocal(str, localPath);
       }
       Main.CloudFavoritesData.ClearEntry((FileData) this);

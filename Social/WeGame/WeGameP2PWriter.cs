@@ -69,9 +69,9 @@ namespace Terraria.Social.WeGame
 
     public void SetLocalPeer(RailID rail_id)
     {
-      if (RailComparableID.op_Equality((RailComparableID) this._local_id, (RailComparableID) null))
-        this._local_id = new RailID();
-      ((RailComparableID) this._local_id).id_ = ((RailComparableID) rail_id).id_;
+      if (this._local_id == null)
+          this._local_id = new RailID();
+      this._local_id.id_ = rail_id.id_;
     }
 
     private RailID GetLocalPeer()
@@ -81,7 +81,7 @@ namespace Terraria.Social.WeGame
 
     private bool IsValid()
     {
-      return RailComparableID.op_Inequality((RailComparableID) this._local_id, (RailComparableID) null) && ((RailComparableID) this._local_id).IsValid();
+      return (this._local_id != null) && this._local_id.IsValid();
     }
 
     public void SendAll()

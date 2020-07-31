@@ -818,7 +818,7 @@ namespace Terraria.GameContent.UI.States
     private void Click_CopyHex(UIMouseEvent evt, UIElement listeningElement)
     {
       SoundEngine.PlaySound(12, -1, -1, 1, 1f, 0.0f);
-      ((IClipboard) Platform.Get<IClipboard>()).set_Value(this._hslHexText.Text);
+      ((IClipboard) Platform.Get<IClipboard>()).Value = this._hslHexText.Text;
     }
 
     private void Click_PasteHex(UIMouseEvent evt, UIElement listeningElement)
@@ -848,12 +848,12 @@ namespace Terraria.GameContent.UI.States
       dictionary.Add("pantsColor", (object) UICharacterCreation.GetHexText(this._player.pantsColor));
       dictionary.Add("shoeColor", (object) UICharacterCreation.GetHexText(this._player.shoeColor));
       JsonSerializerSettings serializerSettings = new JsonSerializerSettings();
-      serializerSettings.set_TypeNameHandling((TypeNameHandling) 4);
-      serializerSettings.set_MetadataPropertyHandling((MetadataPropertyHandling) 1);
-      serializerSettings.set_Formatting((Formatting) 1);
+      serializerSettings.TypeNameHandling = (TypeNameHandling) 4;
+      serializerSettings.MetadataPropertyHandling = (MetadataPropertyHandling) 1;
+      serializerSettings.Formatting = (Formatting) 1;
       string text = JsonConvert.SerializeObject((object) dictionary, serializerSettings);
       PlayerInput.PrettyPrintProfiles(ref text);
-      ((IClipboard) Platform.Get<IClipboard>()).set_Value(text);
+      ((IClipboard) Platform.Get<IClipboard>()).Value = text;
     }
 
     private void Click_PastePlayerTemplate(UIMouseEvent evt, UIElement listeningElement)

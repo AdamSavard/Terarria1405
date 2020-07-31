@@ -469,14 +469,14 @@ namespace Terraria.GameContent.UI.States
       LocalizedText text = (LocalizedText) null;
       if (listeningElement is GroupOptionButton<UIWorldCreation.WorldSizeId> groupOptionButton)
         text = groupOptionButton.Description;
-      if (listeningElement is GroupOptionButton<UIWorldCreation.WorldDifficultyId> groupOptionButton)
-        text = groupOptionButton.Description;
-      if (listeningElement is GroupOptionButton<UIWorldCreation.WorldEvilId> groupOptionButton)
-        text = groupOptionButton.Description;
+      if (listeningElement is GroupOptionButton<UIWorldCreation.WorldDifficultyId> groupOptionButton2)
+        text = groupOptionButton2.Description;
+      if (listeningElement is GroupOptionButton<UIWorldCreation.WorldEvilId> groupOptionButton3)
+        text = groupOptionButton3.Description;
       if (listeningElement is UICharacterNameButton characterNameButton)
         text = characterNameButton.Description;
-      if (listeningElement is GroupOptionButton<bool> groupOptionButton)
-        text = groupOptionButton.Description;
+      if (listeningElement is GroupOptionButton<bool> groupOptionButton4)
+        text = groupOptionButton4.Description;
       if (text == null)
         return;
       this._descriptionText.SetText(text);

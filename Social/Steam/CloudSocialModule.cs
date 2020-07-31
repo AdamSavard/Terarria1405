@@ -34,7 +34,7 @@ namespace Terraria.Social.Steam
         for (int index = 0; index < fileCount; ++index)
         {
           int num;
-          stringList.Add(SteamRemoteStorage.GetFileNameAndSize(index, ref num));
+          stringList.Add(SteamRemoteStorage.GetFileNameAndSize(index, out num));
         }
         return (IEnumerable<string>) stringList;
       }

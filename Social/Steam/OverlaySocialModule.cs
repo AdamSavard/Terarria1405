@@ -16,7 +16,7 @@ namespace Terraria.Social.Steam
     public override void Initialize()
     {
       // ISSUE: method pointer
-      this._gamepadTextInputDismissed = Callback<GamepadTextInputDismissed_t>.Create(new Callback<GamepadTextInputDismissed_t>.DispatchDelegate((object) this, __methodptr(OnGamepadTextInputDismissed)));
+      this._gamepadTextInputDismissed = Callback<GamepadTextInputDismissed_t>.Create(new Callback<GamepadTextInputDismissed_t>.DispatchDelegate(OnGamepadTextInputDismissed));
     }
 
     public override void Shutdown()
@@ -48,7 +48,7 @@ namespace Terraria.Social.Steam
     {
       uint gamepadTextLength = SteamUtils.GetEnteredGamepadTextLength();
       string str;
-      SteamUtils.GetEnteredGamepadTextInput(ref str, gamepadTextLength);
+      SteamUtils.GetEnteredGamepadTextInput(out str, gamepadTextLength);
       return str;
     }
 

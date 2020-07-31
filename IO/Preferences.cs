@@ -37,15 +37,15 @@ namespace Terraria.IO
       if (parseAllTypes)
       {
         JsonSerializerSettings serializerSettings = new JsonSerializerSettings();
-        serializerSettings.set_TypeNameHandling((TypeNameHandling) 4);
-        serializerSettings.set_MetadataPropertyHandling((MetadataPropertyHandling) 1);
-        serializerSettings.set_Formatting((Formatting) 1);
+        serializerSettings.TypeNameHandling = (TypeNameHandling) 4;
+        serializerSettings.MetadataPropertyHandling = (MetadataPropertyHandling) 1;
+        serializerSettings.Formatting = (Formatting) 1;
         this._serializerSettings = serializerSettings;
       }
       else
       {
         JsonSerializerSettings serializerSettings = new JsonSerializerSettings();
-        serializerSettings.set_Formatting((Formatting) 1);
+        serializerSettings.Formatting = (Formatting) 1;
         this._serializerSettings = serializerSettings;
       }
     }

@@ -54,9 +54,9 @@ namespace Terraria.GameContent.Skies
         {
           SlotVector<AmbientSky.SkyEntity>.ItemPair current = enumerator.Current;
           // ISSUE: variable of the null type
-          __Null local = current.Value;
-          ((AmbientSky.SkyEntity) local).Update(this._frameCounter);
-          if (!((AmbientSky.SkyEntity) local).IsActive)
+          AmbientSky.SkyEntity local = current.Value;
+          local.Update(this._frameCounter);
+          if (!local.IsActive)
           {
             this._entities.Remove((SlotId) current.Id);
             if (Main.netMode != 2 && this._entities.Count == 0 && SkyManager.Instance["Ambience"].IsActive())

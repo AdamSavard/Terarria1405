@@ -105,13 +105,14 @@ namespace Terraria.Graphics
 
     public void Draw(Texture2D texture, Vector2 position, VertexColors colors)
     {
-      this.InternalDraw(texture, ref new Vector4()
-      {
-        X = position.X,
-        Y = position.Y,
-        Z = 1f,
-        W = 1f
-      }, true, ref TileBatch._nullRectangle, ref colors, ref TileBatch._vector2Zero, SpriteEffects.None, 0.0f);
+       Vector4 newVector = new Vector4()
+        {
+            X = position.X,
+            Y = position.Y,
+            Z = 1f,
+            W = 1f
+        };
+      this.InternalDraw(texture, ref newVector, true, ref TileBatch._nullRectangle, ref colors, ref TileBatch._vector2Zero, SpriteEffects.None, 0.0f);
     }
 
     public void Draw(
@@ -123,13 +124,14 @@ namespace Terraria.Graphics
       float scale,
       SpriteEffects effects)
     {
-      this.InternalDraw(texture, ref new Vector4()
+      Vector4 newVector = new Vector4()
       {
         X = position.X,
         Y = position.Y,
         Z = scale,
         W = scale
-      }, true, ref sourceRectangle, ref colors, ref origin, effects, 0.0f);
+      };
+      this.InternalDraw(texture, ref newVector, true, ref sourceRectangle, ref colors, ref origin, effects, 0.0f);
     }
 
     public void Draw(Texture2D texture, Vector4 destination, VertexColors colors)
@@ -139,13 +141,14 @@ namespace Terraria.Graphics
 
     public void Draw(Texture2D texture, Vector2 position, VertexColors colors, Vector2 scale)
     {
-      this.InternalDraw(texture, ref new Vector4()
+      Vector4 newVector = new Vector4()
       {
         X = position.X,
         Y = position.Y,
         Z = scale.X,
         W = scale.Y
-      }, true, ref TileBatch._nullRectangle, ref colors, ref TileBatch._vector2Zero, SpriteEffects.None, 0.0f);
+      };
+      this.InternalDraw(texture, ref newVector, true, ref TileBatch._nullRectangle, ref colors, ref TileBatch._vector2Zero, SpriteEffects.None, 0.0f);
     }
 
     public void Draw(
@@ -175,13 +178,14 @@ namespace Terraria.Graphics
       Rectangle? sourceRectangle,
       VertexColors colors)
     {
-      this.InternalDraw(texture, ref new Vector4()
+      Vector4 newVector = new Vector4()
       {
-        X = (float) destinationRectangle.X,
-        Y = (float) destinationRectangle.Y,
-        Z = (float) destinationRectangle.Width,
-        W = (float) destinationRectangle.Height
-      }, false, ref sourceRectangle, ref colors, ref TileBatch._vector2Zero, SpriteEffects.None, 0.0f);
+        X = (float)destinationRectangle.X,
+        Y = (float)destinationRectangle.Y,
+        Z = (float)destinationRectangle.Width,
+        W = (float)destinationRectangle.Height
+      };
+      this.InternalDraw(texture, ref newVector, false, ref sourceRectangle, ref colors, ref TileBatch._vector2Zero, SpriteEffects.None, 0.0f);
     }
 
     private static short[] CreateIndexData()

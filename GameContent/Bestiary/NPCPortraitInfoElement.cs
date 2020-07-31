@@ -79,7 +79,7 @@ namespace Terraria.GameContent.Bestiary
             else
               continue;
           }
-          if (!flag2 && bestiaryInfoElement is IBestiaryBackgroundOverlayAndColorProvider andColorProvider && andColorProvider.GetBackgroundOverlayImage() != null)
+          if (!flag2 && bestiaryInfoElement is IBestiaryBackgroundOverlayAndColorProvider andColorProvider2 && andColorProvider2.GetBackgroundOverlayImage() != null)
             source1.Add(bestiaryInfoElement);
         }
         overlays.AddRange(source1.OrderBy<IBestiaryInfoElement, float>(new Func<IBestiaryInfoElement, float>(this.GetSortingValueForElement)).Select<IBestiaryInfoElement, IBestiaryBackgroundOverlayAndColorProvider>((Func<IBestiaryInfoElement, IBestiaryBackgroundOverlayAndColorProvider>) (x => x as IBestiaryBackgroundOverlayAndColorProvider)));

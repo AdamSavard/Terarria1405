@@ -32,7 +32,7 @@ namespace Terraria.Social.WeGame
         for (uint index = 0; index < fileCount; ++index)
         {
           string str;
-          rail_api.RailFactory().RailStorageHelper().GetFileNameAndSize(index, ref str, ref num);
+          rail_api.RailFactory().RailStorageHelper().GetFileNameAndSize(index, out str, out num);
           stringList.Add(str);
         }
         return (IEnumerable<string>) stringList;

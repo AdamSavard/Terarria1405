@@ -36,7 +36,7 @@ namespace Terraria.Initializers
       float rgbUpdateRate = Main.Configuration.Get<float>("RGBUpdatesPerSecond", 45f);
       if ((double) rgbUpdateRate <= 1.0000000116861E-07)
         rgbUpdateRate = 45f;
-      ChromaInitializer._engine.set_FrameTimeInSeconds(1f / rgbUpdateRate);
+      ChromaInitializer._engine.FrameTimeInSeconds = 1f / rgbUpdateRate;
       Main.Configuration.OnSave += (Action<Preferences>) (config =>
       {
         config.Put("UseRazerRGB", (object) useRazer);

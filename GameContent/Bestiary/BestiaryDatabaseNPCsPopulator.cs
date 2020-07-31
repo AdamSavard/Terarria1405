@@ -284,9 +284,9 @@ namespace Terraria.GameContent.Bestiary
           bestiaryInfoElement1 = preferredProvider;
           break;
         }
-        if (bestiaryInfoElement2 is SpawnConditionBestiaryInfoElement bestiaryInfoElement2)
+        if (bestiaryInfoElement2 is SpawnConditionBestiaryInfoElement bestiaryInfoElement3)
         {
-          int displayTextPriority = bestiaryInfoElement2.DisplayTextPriority;
+          int displayTextPriority = bestiaryInfoElement3.DisplayTextPriority;
           if (nullable1.HasValue)
           {
             int num = displayTextPriority;
@@ -295,7 +295,7 @@ namespace Terraria.GameContent.Bestiary
             if (!(num >= valueOrDefault & nullable2.HasValue))
               continue;
           }
-          bestiaryInfoElement1 = bestiaryInfoElement2;
+          bestiaryInfoElement1 = bestiaryInfoElement3;
           nullable1 = new int?(displayTextPriority);
         }
       }

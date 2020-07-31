@@ -40,13 +40,13 @@ namespace Terraria.Social.WeGame
       if (this._callbackHelper == null)
         return;
       // ISSUE: method pointer
-      this._callbackHelper.RegisterCallback((RAILEventID) 3002, new RailEventCallBackHandler((object) this, __methodptr(OnRailEvent)));
+      this._callbackHelper.RegisterCallback((RAILEventID) 3002, new RailEventCallBackHandler(OnRailEvent));
     }
 
     public void OnRailEvent(RAILEventID id, EventBase data)
     {
       WeGameHelper.WriteDebugString("OnRailEvent,id=" + id.ToString() + " ,result=" + data.result.ToString());
-      if (id != 3002)
+      if ((int)id != 3002)
         return;
       this.OnGameServerCreated((CreateGameServerResult) data);
     }
@@ -66,8 +66,8 @@ namespace Terraria.Social.WeGame
         this.RegisterGameServerEvent();
       this.RailServerHelper = rail_api.RailFactory().RailGameServerHelper().AsyncCreateGameServer(new CreateGameServerOptions()
       {
-        has_password = (__Null) 0,
-        enable_team_voice = (__Null) 0
+        has_password = false,
+        enable_team_voice = false
       }, "terraria", "terraria");
       this.State = LobbyState.Creating;
     }

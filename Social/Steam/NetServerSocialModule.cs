@@ -58,7 +58,7 @@ namespace Terraria.Social.Steam
       base.Initialize();
       this._reader.SetReadEvent(new SteamP2PReader.OnReadEvent(this.OnPacketRead));
       // ISSUE: method pointer
-      this._p2pSessionRequest = Callback<P2PSessionRequest_t>.Create(new Callback<P2PSessionRequest_t>.DispatchDelegate((object) this, __methodptr(OnP2PSessionRequest)));
+      this._p2pSessionRequest = Callback<P2PSessionRequest_t>.Create(new Callback<P2PSessionRequest_t>.DispatchDelegate(OnP2PSessionRequest));
       if (Program.LaunchParameters.ContainsKey("-lobby"))
       {
         this._mode |= ServerMode.Lobby;
@@ -69,7 +69,7 @@ namespace Terraria.Social.Steam
           {
             this._mode |= ServerMode.FriendsCanJoin;
             // ISSUE: method pointer
-            this._lobby.Create(false, new CallResult<LobbyCreated_t>.APIDispatchDelegate((object) this, __methodptr(OnLobbyCreated)));
+            this._lobby.Create(false, new CallResult<LobbyCreated_t>.APIDispatchDelegate(OnLobbyCreated));
           }
           else
             Console.WriteLine(Language.GetTextValue("Error.InvalidLobbyFlag", (object) "private", (object) "friends"));
@@ -77,7 +77,7 @@ namespace Terraria.Social.Steam
         else
         {
           // ISSUE: method pointer
-          this._lobby.Create(true, new CallResult<LobbyCreated_t>.APIDispatchDelegate((object) this, __methodptr(OnLobbyCreated)));
+          this._lobby.Create(true, new CallResult<LobbyCreated_t>.APIDispatchDelegate(OnLobbyCreated));
         }
       }
       if (!Program.LaunchParameters.ContainsKey("-friendsoffriends"))
@@ -151,7 +151,7 @@ namespace Terraria.Social.Steam
       if (!this._connectionStateMap.ContainsKey(userId) || this._connectionStateMap[userId] == NetSocialModule.ConnectionState.Inactive)
       {
         P2PSessionRequest_t result;
-        result.m_steamIDRemote = (__Null) userId;
+        result.m_steamIDRemote = userId;
         this.OnP2PSessionRequest(result);
         if (!this._connectionStateMap.ContainsKey(userId) || this._connectionStateMap[userId] == NetSocialModule.ConnectionState.Inactive)
           return false;
@@ -197,13 +197,13 @@ namespace Terraria.Social.Steam
       }
       else
       {
-        if (!this._acceptingClients || !this._mode.HasFlag((Enum) ServerMode.FriendsOfFriends) && SteamFriends.GetFriendRelationship(steamIdRemote) != 3)
+        if (!this._acceptingClients || !this._mode.HasFlag((Enum) ServerMode.FriendsOfFriends) && (int)SteamFriends.GetFriendRelationship(steamIdRemote) != 3)
           return;
         SteamNetworking.AcceptP2PSessionWithUser(steamIdRemote);
         P2PSessionState_t p2PsessionStateT;
         do
           ;
-        while (SteamNetworking.GetP2PSessionState(steamIdRemote, ref p2PsessionStateT) && p2PsessionStateT.m_bConnecting == 1);
+        while (SteamNetworking.GetP2PSessionState(steamIdRemote, out p2PsessionStateT) && p2PsessionStateT.m_bConnecting == 1);
         if (p2PsessionStateT.m_bConnectionActive == null)
           this.Close(steamIdRemote);
         this._connectionStateMap[steamIdRemote] = NetSocialModule.ConnectionState.Authenticating;

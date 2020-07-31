@@ -738,7 +738,8 @@ namespace Terraria.DataStructures
           }
           if (Main.rand.Next(30) == 0)
           {
-            Main.hslToRgb((float) (0.699999988079071 + 0.200000002980232 * (double) Main.rand.NextFloat()), 1f, 0.5f).A /= (byte) 2;
+            // TODO wtf is this
+            //Main.hslToRgb((float) (0.699999988079071 + 0.200000002980232 * (double) Main.rand.NextFloat()), 1f, 0.5f).A /= (byte) 2;
             Dust dust1 = Dust.NewDustDirect(position, this.drawPlayer.width + 4, this.drawPlayer.height + 2, 43, 0.0f, 0.0f, 254, new Color((int) sbyte.MaxValue, (int) sbyte.MaxValue, (int) sbyte.MaxValue, 0), 0.45f);
             dust1.noLight = true;
             dust1.velocity.X *= 0.0f;

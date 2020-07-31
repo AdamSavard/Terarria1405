@@ -319,7 +319,7 @@ namespace Terraria
         long int64 = Convert.ToInt64((object) (IdType) field.GetValue((object) null));
         if (int64 >= 0L && int64 < (long) nameCache.Length)
         {
-          nameCache[(IntPtr) int64] = !leaveMissingEntriesBlank || Language.Exists(category + "." + field.Name) ? Language.GetText(category + "." + field.Name) : LocalizedText.Empty;
+          nameCache[(int) int64] = !leaveMissingEntriesBlank || Language.Exists(category + "." + field.Name) ? Language.GetText(category + "." + field.Name) : LocalizedText.Empty;
         }
         else
         {

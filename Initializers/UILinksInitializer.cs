@@ -1457,12 +1457,17 @@ namespace Terraria.Initializers
 
     private static void OnFancyUIPageMoveAttempt(int direction)
     {
-      if (Main.MenuUI.CurrentState is UICharacterCreation currentState)
-        currentState.TryMovingCategory(direction);
-      if (!(UserInterface.ActiveInstance.CurrentState is UIBestiaryTest currentState))
-        return;
-      currentState.TryMovingPages(direction);
-    }
+        if (Main.MenuUI.CurrentState is UICharacterCreation currentState)
+        {
+            currentState.TryMovingCategory(direction);
+            return;
+        }
+        if (UserInterface.ActiveInstance.CurrentState is UIBestiaryTest currentState2)
+        {
+            currentState2.TryMovingPages(direction);
+            return;
+        }
+     }
 
     public static void FancyExit()
     {

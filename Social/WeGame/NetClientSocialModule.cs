@@ -80,8 +80,8 @@ namespace Terraria.Social.WeGame
       List<RailKeyValue> railKeyValueList = new List<RailKeyValue>();
       railKeyValueList.Add(new RailKeyValue()
       {
-        key = (__Null) key,
-        value = (__Null) value
+        key = key,
+        value = value
       });
       rail_api.RailFactory().RailFriends().AsyncSetMyMetadata(railKeyValueList, "");
     }
@@ -134,7 +134,7 @@ namespace Terraria.Social.WeGame
       this.AsyncSetPlayWith(this._inviter_id);
       this.AsyncSetMyMetaData("status", Language.GetTextValue("Social.StatusInGame"));
       // ISSUE: explicit non-virtual call
-      this.AsyncSetMyMetaData(this._serverIDMedataKey, __nonvirtual (((RailComparableID) remote_peer).id_.ToString()));
+      this.AsyncSetMyMetaData(this._serverIDMedataKey, (((RailComparableID) remote_peer).id_.ToString()));
       Main.clrInput();
       Netplay.ServerPassword = "";
       Main.GetInputText("", false);
@@ -142,7 +142,7 @@ namespace Terraria.Social.WeGame
       Main.netMode = 1;
       Netplay.OnConnectedToSocialServer((ISocket) new SocialSocket((RemoteAddress) new WeGameAddress(remote_peer, this.GetFriendNickname(this._inviter_id))));
       // ISSUE: explicit non-virtual call
-      WeGameHelper.WriteDebugString("OnConnectToSocialServer server:" + __nonvirtual (((RailComparableID) remote_peer).id_.ToString()));
+      WeGameHelper.WriteDebugString("OnConnectToSocialServer server:" + (((RailComparableID) remote_peer).id_.ToString()));
     }
 
     private bool GetRailConnectIDFromCmdLine(RailID server_id)
@@ -156,7 +156,7 @@ namespace Terraria.Social.WeGame
           ulong result = 0;
           if (ulong.TryParse(commandLineArg.Substring(num + str.Length), out result))
           {
-            ((RailComparableID) server_id).id_ = (__Null) (long) result;
+            ((RailComparableID) server_id).id_ = result;
             return true;
           }
         }
@@ -201,7 +201,7 @@ namespace Terraria.Social.WeGame
           process.StartInfo.Arguments += " -friendsoffriends";
       }
       string str;
-      rail_api.RailFactory().RailUtils().GetLaunchAppParameters((EnumRailLaunchAppType) 2, ref str);
+      rail_api.RailFactory().RailUtils().GetLaunchAppParameters((EnumRailLaunchAppType) 2, out str);
       ProcessStartInfo startInfo2 = process.StartInfo;
       startInfo2.Arguments = startInfo2.Arguments + " " + str;
       WeGameHelper.WriteDebugString("LaunchLocalServer,cmd_line:" + process.StartInfo.Arguments);
@@ -286,7 +286,7 @@ namespace Terraria.Social.WeGame
       foreach (int num in railEventIdArray)
       {
         // ISSUE: method pointer
-        this._callbackHelper.RegisterCallback((RAILEventID) num, new RailEventCallBackHandler((object) this, __methodptr(OnRailEvent)));
+        this._callbackHelper.RegisterCallback((RAILEventID) num, new RailEventCallBackHandler(OnRailEvent));
       }
     }
 
@@ -298,13 +298,13 @@ namespace Terraria.Social.WeGame
     public void OnRailEvent(RAILEventID id, EventBase data)
     {
       WeGameHelper.WriteDebugString("OnRailEvent,id=" + id.ToString() + " ,result=" + data.result.ToString());
-      if (id <= 12010)
+      if ((int)id <= 12010)
       {
-        if (id != 12002)
+        if ((int)id != 12002)
         {
-          if (id != 12003)
+          if ((int)id != 12003)
           {
-            if (id != 12010)
+            if ((int)id != 12010)
               return;
             this.OnFriendlistChange((RailFriendsListChanged) data);
           }
@@ -314,20 +314,20 @@ namespace Terraria.Social.WeGame
         else
           this.OnRailSetMetaData((RailFriendsSetMetadataResult) data);
       }
-      else if (id <= 13503)
+      else if ((int)id <= 13503)
       {
-        if (id != 13501)
+        if ((int)id != 13501)
         {
-          if (id != 13503)
+          if ((int)id != 13503)
             return;
           this.OnRailRespondInvation((RailUsersRespondInvitation) data);
         }
         else
           this.OnRailGetUsersInfo((RailUsersInfoData) data);
       }
-      else if (id != 16001)
+      else if ((int)id != 16001)
       {
-        if (id != 16002)
+        if ((int)id != 16002)
           return;
         this.OnRailCreateSessionFailed((CreateSessionFailed) data);
       }
@@ -408,7 +408,7 @@ namespace Terraria.Social.WeGame
       if (valueByKey.Length > 0)
       {
         RailID server_id = new RailID();
-        ((RailComparableID) server_id).id_ = (__Null) (long) ulong.Parse(valueByKey);
+        ((RailComparableID) server_id).id_ = ulong.Parse(valueByKey);
         if (((RailComparableID) server_id).IsValid())
           this.JoinServer(server_id);
         else
@@ -439,7 +439,7 @@ namespace Terraria.Social.WeGame
           while (enumerator.MoveNext())
           {
             PlayerPersonalInfo current = enumerator.Current;
-            if (RailComparableID.op_Equality((RailComparableID) current.rail_id, (RailComparableID) rail_id))
+            if ( current.rail_id == rail_id )
               return (string) current.rail_name;
           }
         }
@@ -483,7 +483,7 @@ namespace Terraria.Social.WeGame
       List<RailUserPlayedWith> railUserPlayedWithList = new List<RailUserPlayedWith>();
       railUserPlayedWithList.Add(new RailUserPlayedWith()
       {
-        rail_id = (__Null) rail_id
+        rail_id = rail_id
       });
       rail_api.RailFactory().RailFriends()?.AsyncReportPlayedWithUserList(railUserPlayedWithList, "");
     }

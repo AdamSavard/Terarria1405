@@ -25,9 +25,9 @@ namespace Terraria.Social.Steam
     public Lobby()
     {
       // ISSUE: method pointer
-      this._lobbyEnter = CallResult<LobbyEnter_t>.Create(new CallResult<LobbyEnter_t>.APIDispatchDelegate((object) this, __methodptr(OnLobbyEntered)));
+      this._lobbyEnter = CallResult<LobbyEnter_t>.Create(new CallResult<LobbyEnter_t>.APIDispatchDelegate(OnLobbyEntered));
       // ISSUE: method pointer
-      this._lobbyCreated = CallResult<LobbyCreated_t>.Create(new CallResult<LobbyCreated_t>.APIDispatchDelegate((object) this, __methodptr(OnLobbyCreated)));
+      this._lobbyCreated = CallResult<LobbyCreated_t>.Create(new CallResult<LobbyCreated_t>.APIDispatchDelegate(OnLobbyCreated));
     }
 
     public void Create(
@@ -63,7 +63,7 @@ namespace Terraria.Social.Steam
     {
       CSteamID csteamId;
       EChatEntryType echatEntryType;
-      int lobbyChatEntry = SteamMatchmaking.GetLobbyChatEntry(this.Id, index, ref csteamId, this._messageBuffer, this._messageBuffer.Length, ref echatEntryType);
+      int lobbyChatEntry = SteamMatchmaking.GetLobbyChatEntry(this.Id, index, out csteamId, this._messageBuffer, this._messageBuffer.Length, out echatEntryType);
       byte[] numArray = new byte[lobbyChatEntry];
       Array.Copy((Array) this._messageBuffer, (Array) numArray, lobbyChatEntry);
       return numArray;

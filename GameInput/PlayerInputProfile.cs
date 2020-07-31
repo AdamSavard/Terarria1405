@@ -113,7 +113,7 @@ namespace Terraria.GameInput
       }
       if (dict.TryGetValue("Settings", out obj))
       {
-        M0 m0 = JsonConvert.DeserializeObject<Dictionary<string, object>>(((object) (JObject) obj).ToString());
+        Dictionary<string, object> m0 = JsonConvert.DeserializeObject<Dictionary<string, object>>(((object) (JObject) obj).ToString());
         if (((Dictionary<string, object>) m0).TryGetValue("Edittable", out obj))
           this.AllowEditting = (bool) obj;
         if (((Dictionary<string, object>) m0).TryGetValue("Gamepad - HotbarRadialHoldTime", out obj))

@@ -50,7 +50,7 @@ namespace Terraria.Social.Steam
     private bool IsPacketAvailable(out uint size)
     {
       lock (this.SteamLock)
-        return SteamNetworking.IsP2PPacketAvailable(ref size, this._channel);
+        return SteamNetworking.IsP2PPacketAvailable(out size, this._channel);
     }
 
     public void ReadTick()
@@ -67,7 +67,7 @@ namespace Terraria.Social.Steam
           CSteamID index;
           bool flag;
           lock (this.SteamLock)
-            flag = SteamNetworking.ReadP2PPacket(data, (uint) data.Length, ref size2, ref index, this._channel);
+            flag = SteamNetworking.ReadP2PPacket(data, (uint) data.Length, out size2, out index, this._channel);
           if (flag)
           {
             if (this._readEvent == null || this._readEvent(data, (int) size2, index))

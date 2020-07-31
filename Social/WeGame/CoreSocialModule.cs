@@ -26,14 +26,14 @@ namespace Terraria.Social.WeGame
     public void Initialize()
     {
       RailGameID railGameId = new RailGameID();
-      ((RailComparableID) railGameId).id_ = (__Null) 2000328L;
+      ((RailComparableID) railGameId).id_ = 2000328L;
       string[] strArray = new string[1]{ " " };
       if (rail_api.RailNeedRestartAppForCheckingEnvironment(railGameId, strArray.Length, strArray))
         Environment.Exit(1);
       if (!rail_api.RailInitialize())
         Environment.Exit(1);
       // ISSUE: method pointer
-      this._callbackHelper.RegisterCallback((RAILEventID) 2, new RailEventCallBackHandler((object) null, __methodptr(RailEventCallBack)));
+      this._callbackHelper.RegisterCallback((RAILEventID) 2, new RailEventCallBackHandler(RailEventCallBack));
       this.isRailValid = true;
       ThreadPool.QueueUserWorkItem(new WaitCallback(this.TickThread), (object) null);
       Main.OnTickForThirdPartySoftwareOnly += new Action(CoreSocialModule.RailEventTick);
@@ -69,7 +69,7 @@ namespace Terraria.Social.WeGame
 
     public static void RailEventCallBack(RAILEventID eventId, EventBase data)
     {
-      if (eventId != 2)
+      if ((int)eventId != 2)
         return;
       CoreSocialModule.ProcessRailSystemStateChange((RailSystemState) ((RailSystemStateChanged) data).state);
     }
@@ -81,7 +81,7 @@ namespace Terraria.Social.WeGame
 
     private static void ProcessRailSystemStateChange(RailSystemState state)
     {
-      if (state != 2 && state != 3)
+      if ((int)state != 2 && (int)state != 3)
         return;
       int num = (int) MessageBox.Show("检测到WeGame异常，游戏将自动保存进度并退出游戏", "Terraria--WeGame Error");
       WorldGen.SaveAndQuit(new Action(CoreSocialModule.SaveAndQuitCallBack));

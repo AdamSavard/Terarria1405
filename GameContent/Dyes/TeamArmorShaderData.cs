@@ -29,14 +29,14 @@ namespace Terraria.GameContent.Dyes
 
     public override void Apply(Entity entity, DrawData? drawData)
     {
-      if (!(entity is Player player) || player.team == 0)
+      if (!(entity is Player) || ((Player)entity).team == 0) // TODO this is fishy
       {
-        TeamArmorShaderData.dustShaderData[0].Apply((Entity) player, drawData);
+        TeamArmorShaderData.dustShaderData[0].Apply(entity, drawData);
       }
       else
       {
-        this.UseColor(Main.teamColor[player.team]);
-        base.Apply((Entity) player, drawData);
+        this.UseColor(Main.teamColor[((Player)entity).team]);
+        base.Apply(entity, drawData);
       }
     }
 

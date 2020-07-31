@@ -303,7 +303,7 @@ namespace Terraria.GameContent.UI.Elements
 
     private void SeedButtonClick(UIMouseEvent evt, UIElement listeningElement)
     {
-      ((IClipboard) Platform.Get<IClipboard>()).set_Value(this._data.GetFullSeedText());
+      ((IClipboard) Platform.Get<IClipboard>()).Value = this._data.GetFullSeedText();
       this._buttonLabel.SetText(Language.GetTextValue("UI.SeedCopied"));
     }
 

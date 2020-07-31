@@ -41,7 +41,7 @@ namespace Terraria.Social.WeGame
       bool flag = false;
       // ISSUE: explicit non-virtual call
       // ISSUE: explicit non-virtual call
-      WeGameHelper.WriteDebugString("AcceptAnUserSession server:" + __nonvirtual (((RailComparableID) local_peer).id_.ToString()) + " remote:" + __nonvirtual (((RailComparableID) remote_peer).id_.ToString()));
+      WeGameHelper.WriteDebugString("AcceptAnUserSession server:" + (((RailComparableID) local_peer).id_.ToString()) + " remote:" + (((RailComparableID) remote_peer).id_.ToString()));
       IRailNetwork irailNetwork = rail_api.RailFactory().RailNetworkHelper();
       if (irailNetwork != null)
         flag = irailNetwork.AcceptSessionRequest(local_peer, remote_peer) == 0;
@@ -150,7 +150,7 @@ namespace Terraria.Social.WeGame
         {
           while (enumerator.MoveNext())
           {
-            if (RailComparableID.op_Equality((RailComparableID) enumerator.Current.friend_rail_id, (RailComparableID) id))
+            if ( enumerator.Current.friend_rail_id == id )
             {
               flag = true;
               break;
@@ -251,11 +251,11 @@ namespace Terraria.Social.WeGame
     public void OnRailEvent(RAILEventID event_id, EventBase data)
     {
       WeGameHelper.WriteDebugString("OnRailEvent,id=" + event_id.ToString() + " ,result=" + data.result.ToString());
-      if (event_id != 3006)
+      if ((int)event_id != 3006)
       {
-        if (event_id != 16001)
+        if ((int)event_id != 16001)
         {
-          if (event_id != 16002)
+          if ((int)event_id != 16002)
             return;
           this.OnCreateSessionFailed((CreateSessionFailed) data);
         }
@@ -277,7 +277,7 @@ namespace Terraria.Social.WeGame
         // ISSUE: explicit non-virtual call
         ReportServerID t = new ReportServerID()
         {
-          _serverID = __nonvirtual (((RailComparableID) lobbyID).id_.ToString())
+          _serverID = (((RailComparableID) lobbyID).id_.ToString())
         };
         IPCMessage msg = new IPCMessage();
         msg.Build<ReportServerID>(IPCMessageType.IPCMessageTypeReportServerID, t);
@@ -306,7 +306,7 @@ namespace Terraria.Social.WeGame
       foreach (int num in railEventIdArray)
       {
         // ISSUE: method pointer
-        this._callbackHelper.RegisterCallback((RAILEventID) num, new RailEventCallBackHandler((object) this, __methodptr(OnRailEvent)));
+        this._callbackHelper.RegisterCallback((RAILEventID) num, new RailEventCallBackHandler(OnRailEvent));
       }
     }
 

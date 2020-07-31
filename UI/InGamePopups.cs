@@ -206,7 +206,8 @@ namespace Terraria.UI
         Vector2 mouseScreen = Main.MouseScreen;
         Color c = R.Contains(mouseScreen.ToPoint()) ? new Color(64, 109, 164) * 0.75f : new Color(64, 109, 164) * 0.5f;
         Utils.DrawInvBG(spriteBatch, R, c);
-        new Vector2((float) R.Left, (float) R.Center.Y).X += 32f;
+        // TODO wtf is this line
+        //new Vector2((float) R.Left, (float) R.Center.Y).X += 32f;
         Texture2D texture2D1 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonPlay", (AssetRequestMode) 1)).Value;
         Vector2 position = new Vector2((float) (R.Left + 7), (float) ((double) MathHelper.Lerp((float) R.Top, (float) R.Bottom, 0.5f) - (double) (texture2D1.Height / 2) - 1.0));
         bool flag1 = Utils.CenteredRectangle(position + new Vector2((float) (texture2D1.Width / 2), 0.0f), texture2D1.Size()).Contains(mouseScreen.ToPoint());

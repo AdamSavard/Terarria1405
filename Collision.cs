@@ -1767,7 +1767,6 @@ namespace Terraria
           vector2_2 = -Vector2.UnitY * testMagnitude;
           goto label_19;
         default:
-label_33:
           return pointList;
       }
       Vector2 Velocity1 = vector2_1;
@@ -1790,15 +1789,15 @@ label_33:
       if (checkCardinals && Collision.TileCollision(position - Velocity1 + Vector2.UnitY * num2, Velocity1, Width, Height1, fallThrough, fall2, gravDir) != Velocity1)
       {
         pointList.Add(new Point(x, (int) ((double) position.Y + (double) num2) / 16));
-        goto label_33;
+        return pointList;
       }
       else if (checkSlopes && Collision.SlopeCollision(position + Vector2.UnitY * num2, Velocity1, Width, Height1, (float) gravDir, fallThrough).XZW() != vec1.XZW())
       {
         pointList.Add(new Point(x, (int) ((double) position.Y + (double) num2) / 16));
-        goto label_33;
+        return pointList;
       }
       else
-        goto label_33;
+          return pointList;
 label_19:
       Vector2 Velocity2 = vector2_2;
       Vector4 vec2 = new Vector4(position, Velocity2.X, Velocity2.Y);
@@ -1820,15 +1819,15 @@ label_19:
       if (checkCardinals && Collision.TileCollision(position - Velocity2 + Vector2.UnitX * num4, Velocity2, Width1, Height, fallThrough, fall2, gravDir) != Velocity2)
       {
         pointList.Add(new Point((int) ((double) position.X + (double) num4) / 16, y));
-        goto label_33;
+        return pointList;
       }
       else if (checkSlopes && Collision.SlopeCollision(position + Vector2.UnitX * num4, Velocity2, Width1, Height, (float) gravDir, fallThrough).YZW() != vec2.YZW())
       {
         pointList.Add(new Point((int) ((double) position.X + (double) num4) / 16, y));
-        goto label_33;
+        return pointList;
       }
       else
-        goto label_33;
+        return pointList;
     }
 
     public static bool FindCollisionDirection(

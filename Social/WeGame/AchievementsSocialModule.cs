@@ -22,9 +22,9 @@ namespace Terraria.Social.WeGame
     public override void Initialize()
     {
       // ISSUE: method pointer
-      this._callbackHelper.RegisterCallback((RAILEventID) 2001, new RailEventCallBackHandler((object) this, __methodptr(RailEventCallBack)));
+      this._callbackHelper.RegisterCallback((RAILEventID) 2001, new RailEventCallBackHandler(RailEventCallBack));
       // ISSUE: method pointer
-      this._callbackHelper.RegisterCallback((RAILEventID) 2101, new RailEventCallBackHandler((object) this, __methodptr(RailEventCallBack)));
+      this._callbackHelper.RegisterCallback((RAILEventID) 2101, new RailEventCallBackHandler(RailEventCallBack));
       IRailPlayerStats myPlayerStats = this.GetMyPlayerStats();
       IRailPlayerAchievement playerAchievement = this.GetMyPlayerAchievement();
       if (myPlayerStats == null || playerAchievement == null)
@@ -51,7 +51,7 @@ namespace Terraria.Social.WeGame
         if (irailStatisticHelper != null)
         {
           RailID railId = new RailID();
-          ((RailComparableID) railId).id_ = (__Null) 0L;
+          ((RailComparableID) railId).id_ = 0L;
           this._playerStats = irailStatisticHelper.CreatePlayerStats(railId);
         }
       }
@@ -66,7 +66,7 @@ namespace Terraria.Social.WeGame
         if (achievementHelper != null)
         {
           RailID railId = new RailID();
-          ((RailComparableID) railId).id_ = (__Null) 0L;
+          ((RailComparableID) railId).id_ = 0L;
           this._playerAchievement = achievementHelper.CreatePlayerAchievement(railId);
         }
       }
@@ -75,9 +75,9 @@ namespace Terraria.Social.WeGame
 
     public void RailEventCallBack(RAILEventID eventId, EventBase data)
     {
-      if (eventId != 2001)
+      if ((int)eventId != 2001)
       {
-        if (eventId != 2101)
+        if ((int)eventId != 2101)
           return;
         this._areAchievementReceived = true;
       }
@@ -91,7 +91,7 @@ namespace Terraria.Social.WeGame
       RailResult railResult = (RailResult) 1;
       IRailPlayerAchievement playerAchievement = this.GetMyPlayerAchievement();
       if (playerAchievement != null)
-        railResult = playerAchievement.HasAchieved(name, ref flag);
+        railResult = playerAchievement.HasAchieved(name, out flag);
       return flag && railResult == 0;
     }
 
@@ -113,14 +113,14 @@ namespace Terraria.Social.WeGame
     private int GetIntStat(string name)
     {
       int num = 0;
-      this.GetMyPlayerStats()?.GetStatValue(name, ref num);
+      this.GetMyPlayerStats()?.GetStatValue(name, out num);
       return num;
     }
 
     private float GetFloatStat(string name)
     {
       double num = 0.0;
-      this.GetMyPlayerStats()?.GetStatValue(name, ref num);
+      this.GetMyPlayerStats()?.GetStatValue(name, out num);
       return (float) num;
     }
 
@@ -139,7 +139,7 @@ namespace Terraria.Social.WeGame
       if (myPlayerStats == null)
         return;
       int num = 0;
-      if (myPlayerStats.GetStatValue(name, ref num) != null || num >= value)
+      if (myPlayerStats.GetStatValue(name, out num) != null || num >= value)
         return;
       myPlayerStats.SetStatValue(name, value);
     }
@@ -159,7 +159,7 @@ namespace Terraria.Social.WeGame
       if (myPlayerStats == null)
         return;
       double num = 0.0;
-      if (myPlayerStats.GetStatValue(name, ref num) != null || num >= (double) value)
+      if (myPlayerStats.GetStatValue(name, out num) != null || num >= (double) value)
         return;
       myPlayerStats.SetStatValue(name, (double) value);
     }

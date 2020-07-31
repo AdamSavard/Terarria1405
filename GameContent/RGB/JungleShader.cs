@@ -37,7 +37,7 @@ namespace Terraria.GameContent.RGB
       EffectDetailLevel quality,
       float time)
     {
-      bool flag = device.Type == null || device.Type == 6;
+      bool flag = device.Type == null || (int)device.Type == 6;
       for (int index = 0; index < fragment.Count; ++index)
       {
         Vector2 canvasPositionOfIndex = fragment.GetCanvasPositionOfIndex(index);
