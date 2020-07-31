@@ -72,7 +72,7 @@ namespace Terraria.GameContent.UI.Chat
         if (message.Prepared && drawingPlayerChat | message.CanBeShownWhenChatIsClosed)
         {
           TextSnippet[] withInversedIndex = message.GetSnippetWithInversedIndex(snippetIndex1);
-          ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.MouseText.get_Value(), withInversedIndex, new Vector2(88f, (float) (Main.screenHeight - 30 - 28 - num1 * 21)), 0.0f, Vector2.Zero, Vector2.One, out hoveredSnippet, -1f, 2f);
+          ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.MouseText.Value, withInversedIndex, new Vector2(88f, (float) (Main.screenHeight - 30 - 28 - num1 * 21)), 0.0f, Vector2.Zero, Vector2.One, out hoveredSnippet, -1f, 2f);
           if (hoveredSnippet >= 0)
           {
             nullable2 = new int?(hoveredSnippet);

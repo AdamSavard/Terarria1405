@@ -65,7 +65,7 @@ namespace Terraria.GameContent.UI
       {
         if ((double) currentTip.ScreenAnchorX >= -0.5 && (double) currentTip.ScreenAnchorX <= 1.5)
         {
-          DynamicSpriteFont font = FontAssets.MouseText.get_Value();
+          DynamicSpriteFont font = FontAssets.MouseText.Value;
           string text = font.CreateWrappedText(currentTip.Text, num1, Language.ActiveCulture.CultureInfo);
           if (text.Split('\n').Length > 2)
             text = font.CreateWrappedText(currentTip.Text, (float) ((double) num1 * 1.5 - 50.0), Language.ActiveCulture.CultureInfo);

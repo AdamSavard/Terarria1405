@@ -129,17 +129,17 @@ namespace Terraria.GameContent.UI.Elements
         color1 = isSelected ? this._overridePickedColor : this._overrideUnpickedColor;
         num = isSelected ? this._overrideOpacityPicked : this._overrideOpacityUnpicked;
       }
-      Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.Lerp(Color.Black, color1, this.FadeFromBlack) * num);
+      Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.Lerp(Color.Black, color1, this.FadeFromBlack) * num);
       if (isSelected && this.ShowHighlightWhenSelected)
-        Utils.DrawSplicedPanel(spriteBatch, this._selectedBorderTexture.get_Value(), (int) dimensions.X + 7, (int) dimensions.Y + 7, (int) dimensions.Width - 14, (int) dimensions.Height - 14, 10, 10, 10, 10, Color.Lerp(color1, Color.White, this._whiteLerp) * num);
+        Utils.DrawSplicedPanel(spriteBatch, this._selectedBorderTexture.Value, (int) dimensions.X + 7, (int) dimensions.Y + 7, (int) dimensions.Width - 14, (int) dimensions.Height - 14, 10, 10, 10, 10, Color.Lerp(color1, Color.White, this._whiteLerp) * num);
       if (this._hovered)
-        Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, this._borderColor);
+        Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, this._borderColor);
       if (this._iconTexture == null)
         return;
       Color color2 = Color.White;
       if (!this._hovered && !isSelected)
         color2 = Color.Lerp(color1, Color.White, this._whiteLerp) * num;
-      spriteBatch.Draw(this._iconTexture.get_Value(), new Vector2(dimensions.X + 1f, dimensions.Y + 1f), color2);
+      spriteBatch.Draw(this._iconTexture.Value, new Vector2(dimensions.X + 1f, dimensions.Y + 1f), color2);
     }
 
     public override void MouseDown(UIMouseEvent evt)

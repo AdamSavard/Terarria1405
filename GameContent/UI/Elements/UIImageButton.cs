@@ -41,10 +41,10 @@ namespace Terraria.GameContent.UI.Elements
     protected override void DrawSelf(SpriteBatch spriteBatch)
     {
       CalculatedStyle dimensions = this.GetDimensions();
-      spriteBatch.Draw(this._texture.get_Value(), dimensions.Position(), Color.White * (this.IsMouseHovering ? this._visibilityActive : this._visibilityInactive));
+      spriteBatch.Draw(this._texture.Value, dimensions.Position(), Color.White * (this.IsMouseHovering ? this._visibilityActive : this._visibilityInactive));
       if (this._borderTexture == null || !this.IsMouseHovering)
         return;
-      spriteBatch.Draw(this._borderTexture.get_Value(), dimensions.Position(), Color.White);
+      spriteBatch.Draw(this._borderTexture.Value, dimensions.Position(), Color.White);
     }
 
     public override void MouseOver(UIMouseEvent evt)

@@ -59,9 +59,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public VineShader()
-    {
-      base.\u002Ector();
+    public VineShader() : base()
+{
     }
   }
 }

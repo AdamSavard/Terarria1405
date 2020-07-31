@@ -14,9 +14,9 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _darkGlowColor;
     private readonly Vector4 _lightGlowColor;
 
-    public DD2Shader(Color darkGlowColor, Color lightGlowColor)
+    // I think the mangled line was an attempt to call the base constructor, not sure what else it would have been
+    public DD2Shader(Color darkGlowColor, Color lightGlowColor) : base()
     {
-      this.\u002Ector();
       this._darkGlowColor = darkGlowColor.ToVector4();
       this._lightGlowColor = lightGlowColor.ToVector4();
     }
@@ -28,7 +28,8 @@ namespace Terraria.GameContent.RGB
       EffectDetailLevel quality,
       float time)
     {
-      Vector2 vector2_1 = fragment.get_CanvasCenter();
+      // get_CanvasCenter() to CanvasCenter, maybe (\.get_)(.*?)(\(\)) to .$2
+      Vector2 vector2_1 = fragment.CanvasCenter;
       if (quality == null)
         vector2_1 = new Vector2(1.7f, 0.5f);
       time *= 0.5f;

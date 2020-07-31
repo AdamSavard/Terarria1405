@@ -44,9 +44,9 @@ namespace Terraria.GameContent.UI.Elements
         CalculatedStyle dimensions = this.GetDimensions();
         int num1 = 10;
         int num2 = 10;
-        Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, num1, num1, num2, num2, Color.Lerp(Color.Black, this._color, 0.8f) * 0.5f);
+        Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, num1, num1, num2, num2, Color.Lerp(Color.Black, this._color, 0.8f) * 0.5f);
         if (this.IsMouseHovering)
-          Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, num1, num1, num2, num2, Color.White);
+          Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, num1, num1, num2, num2, Color.White);
       }
       this.DrawText(spriteBatch);
     }

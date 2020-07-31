@@ -124,7 +124,7 @@ namespace Terraria.IO
     {
       try
       {
-        if (((JContainer) serializedState).get_Count() != 0)
+        if (((JContainer) serializedState).Count != 0)
           return (IEnumerable<ResourcePackList.ResourcePackEntry>) ((JToken) serializedState).ToObject<List<ResourcePackList.ResourcePackEntry>>();
       }
       catch (JsonReaderException ex)

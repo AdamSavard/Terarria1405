@@ -64,7 +64,7 @@ namespace Terraria.Graphics.Renderers
       for (int index = 0; index < 4; ++index)
       {
         Vector2 vector2_2 = new Vector2((float) Utils.RandomInt(ref seed, -2, 3), (float) Utils.RandomInt(ref seed, -2, 3));
-        DrawData cdd = new DrawData(this._texture.get_Value(), vector2_1 + vector2_2 * this.Scale, new Rectangle?(this._frame), color, this.Rotation, this._origin, this.Scale, SpriteEffects.None, 0)
+        DrawData cdd = new DrawData(this._texture.Value, vector2_1 + vector2_2 * this.Scale, new Rectangle?(this._frame), color, this.Rotation, this._origin, this.Scale, SpriteEffects.None, 0)
         {
           shader = this._packedShaderIndex
         };

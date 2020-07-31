@@ -48,9 +48,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public CultistShader()
-    {
-      base.\u002Ector();
+    public CultistShader() : base()
+{
     }
   }
 }

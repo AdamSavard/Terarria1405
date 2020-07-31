@@ -25,9 +25,8 @@ namespace Terraria.GameContent.RGB
         }
       }
 
-      protected ConditionBase()
-      {
-        base.\u002Ector();
+      protected ConditionBase() : base()
+{
       }
     }
 
@@ -40,7 +39,7 @@ namespace Terraria.GameContent.RGB
         this._condition = condition;
       }
 
-      public virtual bool IsActive()
+      public override bool IsActive()
       {
         return this._condition(this.CurrentPlayer);
       }

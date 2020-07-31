@@ -150,7 +150,7 @@ namespace Terraria.UI.Chat
                 if ((double) minimum.X - (double) zero.X + (double) num2 > (double) maxWidth)
                 {
                   minimum.X = zero.X;
-                  minimum.Y += (float) font.get_LineSpacing() * num1 * baseScale.Y;
+                  minimum.Y += (float) font.LineSpacing * num1 * baseScale.Y;
                   vector2_1.Y = Math.Max(vector2_1.Y, minimum.Y);
                   num1 = 0.0f;
                 }
@@ -166,7 +166,7 @@ namespace Terraria.UI.Chat
             if (strArray1.Length > 1)
             {
               minimum.X = zero.X;
-              minimum.Y += (float) font.get_LineSpacing() * num1 * baseScale.Y;
+              minimum.Y += (float) font.LineSpacing * num1 * baseScale.Y;
               vector2_1.Y = Math.Max(vector2_1.Y, minimum.Y);
               num1 = 0.0f;
             }
@@ -239,7 +239,7 @@ namespace Terraria.UI.Chat
             string[] strArray2 = input.Split(' ');
             if (input == "\n")
             {
-              vector2_1.Y += (float) font.get_LineSpacing() * num2 * baseScale.Y;
+              vector2_1.Y += (float) font.LineSpacing * num2 * baseScale.Y;
               vector2_1.X = position.X;
               vector2_2.Y = Math.Max(vector2_2.Y, vector2_1.Y);
               num2 = 0.0f;
@@ -257,7 +257,7 @@ namespace Terraria.UI.Chat
                   if ((double) vector2_1.X - (double) position.X + (double) num3 > (double) maxWidth)
                   {
                     vector2_1.X = position.X;
-                    vector2_1.Y += (float) font.get_LineSpacing() * num2 * baseScale.Y;
+                    vector2_1.Y += (float) font.LineSpacing * num2 * baseScale.Y;
                     vector2_2.Y = Math.Max(vector2_2.Y, vector2_1.Y);
                     num2 = 0.0f;
                   }
@@ -273,7 +273,7 @@ namespace Terraria.UI.Chat
               }
               if (strArray1.Length > 1 & flag)
               {
-                vector2_1.Y += (float) font.get_LineSpacing() * num2 * baseScale.Y;
+                vector2_1.Y += (float) font.LineSpacing * num2 * baseScale.Y;
                 vector2_1.X = position.X;
                 vector2_2.Y = Math.Max(vector2_2.Y, vector2_1.Y);
                 num2 = 0.0f;
@@ -388,7 +388,7 @@ namespace Terraria.UI.Chat
                 if ((double) vector2_1.X - (double) position.X + (double) num3 > (double) maxWidth)
                 {
                   vector2_1.X = position.X;
-                  vector2_1.Y += (float) font.get_LineSpacing() * num2 * baseScale.Y;
+                  vector2_1.Y += (float) font.LineSpacing * num2 * baseScale.Y;
                   vector2_2.Y = Math.Max(vector2_2.Y, vector2_1.Y);
                   num2 = 0.0f;
                 }
@@ -402,7 +402,7 @@ namespace Terraria.UI.Chat
           }
         }
         vector2_1.X = position.X;
-        vector2_1.Y += (float) font.get_LineSpacing() * num2 * baseScale.Y;
+        vector2_1.Y += (float) font.LineSpacing * num2 * baseScale.Y;
         vector2_2.Y = Math.Max(vector2_2.Y, vector2_1.Y);
         num2 = 0.0f;
       }

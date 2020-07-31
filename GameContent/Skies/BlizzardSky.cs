@@ -50,7 +50,7 @@ namespace Terraria.GameContent.Skies
         return;
       float num = Math.Min(1f, Main.cloudAlpha * 2f);
       Color color = new Color(new Vector4(1f) * Main.ColorOfTheSkies.ToVector4()) * this._opacity * 0.7f * num;
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), color);
     }
 
     public override void Activate(Vector2 position, params object[] args)

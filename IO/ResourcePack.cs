@@ -76,7 +76,7 @@ namespace Terraria.IO
       if (this._needsReload)
       {
         this._contentSource = !this._isCompressed ? (IContentSource) new FileSystemContentSource(Path.Combine(this.FullPath, "Content")) : (IContentSource) new ZipContentSource(this.FullPath, "Content");
-        this._contentSource.set_ContentValidator((IContentValidator) VanillaContentValidator.Instance);
+        this._contentSource.ContentValidator = (IContentValidator) VanillaContentValidator.Instance;
         this._needsReload = false;
       }
       return this._contentSource;
@@ -85,7 +85,7 @@ namespace Terraria.IO
     private Texture2D CreateIcon()
     {
       if (!this.HasFile("icon.png"))
-        return ((Asset<Texture2D>) ((IAssetRepository) XnaExtensions.Get<IAssetRepository>(this._services)).Request<Texture2D>("Images/UI/DefaultResourcePackIcon", (AssetRequestMode) 1)).get_Value();
+        return ((Asset<Texture2D>) ((IAssetRepository) XnaExtensions.Get<IAssetRepository>(this._services)).Request<Texture2D>("Images/UI/DefaultResourcePackIcon", (AssetRequestMode) 1)).Value;
       using (Stream stream = this.OpenStream("icon.png"))
         return (Texture2D) ((AssetReaderCollection) XnaExtensions.Get<AssetReaderCollection>(this._services)).Read<Texture2D>(stream, ".png");
     }
@@ -100,18 +100,19 @@ namespace Terraria.IO
         using (StreamReader streamReader = new StreamReader(stream))
           jobject = JObject.Parse(streamReader.ReadToEnd());
       }
-      this.Name = (string) Extensions.Value<string>((IEnumerable<JToken>) jobject.get_Item("Name"));
-      this.Description = (string) Extensions.Value<string>((IEnumerable<JToken>) jobject.get_Item("Description"));
-      this.Author = (string) Extensions.Value<string>((IEnumerable<JToken>) jobject.get_Item("Author"));
-      this.Version = (ResourcePackVersion) jobject.get_Item("Version").ToObject<ResourcePackVersion>();
+      // TODO not sure what exactly was going on here
+      this.Name = jobject.Value<string>("Name");// (string) Extensions.Value<string>(jobject.Value<IEnumerable<JToken>>("Name"));
+      this.Description = jobject.Value<string>("Description");// (string) Extensions.Value<string>((IEnumerable<JToken>) jobject.get_Item("Description"));
+      this.Author = jobject.Value<string>("Author");// (string) Extensions.Value<string>((IEnumerable<JToken>) jobject.get_Item("Author"));
+      this.Version = jobject.Value<ResourcePackVersion>("Version");
     }
 
     private Stream OpenStream(string fileName)
     {
       if (!this._isCompressed)
         return (Stream) File.OpenRead(Path.Combine(this.FullPath, fileName));
-      ZipEntry zipEntry = this._zipFile.get_Item(fileName);
-      MemoryStream memoryStream = new MemoryStream((int) zipEntry.get_UncompressedSize());
+      ZipEntry zipEntry = this._zipFile[fileName];
+      MemoryStream memoryStream = new MemoryStream((int) zipEntry.UncompressedSize);
       zipEntry.Extract((Stream) memoryStream);
       memoryStream.Position = 0L;
       return (Stream) memoryStream;

@@ -21,9 +21,8 @@ namespace Terraria.GameContent.RGB
       Color cannonBallColor,
       Color splashColor,
       Color waterColor,
-      Color backgroundColor)
-    {
-      this.\u002Ector();
+      Color backgroundColor) : base()
+{
       this._cannonBallColor = cannonBallColor.ToVector4();
       this._splashColor = splashColor.ToVector4();
       this._waterColor = waterColor.ToVector4();

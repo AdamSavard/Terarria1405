@@ -77,7 +77,7 @@ namespace Terraria.GameContent.UI.Elements
         return;
       CalculatedStyle innerDimensions = this.GetInnerDimensions();
       Vector2 pos = innerDimensions.Position();
-      Vector2 vector2 = new Vector2((this.IsLarge ? FontAssets.DeathText.get_Value() : FontAssets.MouseText.get_Value()).MeasureString(this.Text.Substring(0, this._cursor)).X, this.IsLarge ? 32f : 16f) * this.TextScale;
+      Vector2 vector2 = new Vector2((this.IsLarge ? FontAssets.DeathText.Value : FontAssets.MouseText.Value).MeasureString(this.Text.Substring(0, this._cursor)).X, this.IsLarge ? 32f : 16f) * this.TextScale;
       if (this.IsLarge)
         pos.Y -= 8f * this.TextScale;
       else

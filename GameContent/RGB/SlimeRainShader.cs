@@ -45,9 +45,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public SlimeRainShader()
-    {
-      base.\u002Ector();
+    public SlimeRainShader() : base()
+{
     }
   }
 }

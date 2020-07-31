@@ -51,7 +51,7 @@ namespace Terraria.GameContent.Skies
         return;
       float num = Math.Min(1f, Sandstorm.Severity * 1.5f);
       Color color = new Color(new Vector4(0.85f, 0.66f, 0.33f, 1f) * 0.8f * Main.ColorOfTheSkies.ToVector4()) * this._opacity * num;
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), color);
     }
 
     public override void Activate(Vector2 position, params object[] args)

@@ -63,7 +63,7 @@ namespace Terraria.GameContent.UI.Elements
       }
       else
       {
-        Texture2D texture2D = this._notUnlockedTexture.get_Value();
+        Texture2D texture2D = this._notUnlockedTexture.Value;
         spriteBatch.Draw(texture2D, dimensions.Center(), new Rectangle?(), Color.White * 0.15f, 0.0f, texture2D.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
       }
     }

@@ -82,8 +82,8 @@ namespace Terraria.Graphics.Shaders
       for (int index = 0; index < this._uAssetImages.Length; ++index)
       {
         Texture2D uCustomImage = this._uCustomImages[index];
-        if (this._uAssetImages[index] != null && this._uAssetImages[index].get_IsLoaded())
-          uCustomImage = this._uAssetImages[index].get_Value();
+        if (this._uAssetImages[index] != null && this._uAssetImages[index].IsLoaded)
+          uCustomImage = this._uAssetImages[index].Value;
         if (uCustomImage != null)
         {
           Main.graphics.GraphicsDevice.Textures[index + 1] = (Texture) uCustomImage;

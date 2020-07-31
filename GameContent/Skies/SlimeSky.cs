@@ -39,16 +39,16 @@ namespace Terraria.GameContent.Skies
         this._slimes[index].Position = new Vector2((float) (this._random.Next(0, Main.maxTilesX) * 16), (float) this._random.Next(minValue, maxValue));
         this._slimes[index].Speed = (float) (5.0 + 3.0 * this._random.NextDouble());
         this._slimes[index].Depth = (float) ((double) index / (double) this._slimes.Length * 1.75 + 1.60000002384186);
-        this._slimes[index].Texture = this._textures[this._random.Next(2)].get_Value();
+        this._slimes[index].Texture = this._textures[this._random.Next(2)].Value;
         if (this._random.Next(60) == 0)
         {
-          this._slimes[index].Texture = this._textures[3].get_Value();
+          this._slimes[index].Texture = this._textures[3].Value;
           this._slimes[index].Speed = (float) (6.0 + 3.0 * this._random.NextDouble());
           this._slimes[index].Depth += 0.5f;
         }
         else if (this._random.Next(30) == 0)
         {
-          this._slimes[index].Texture = this._textures[2].get_Value();
+          this._slimes[index].Texture = this._textures[2].Value;
           this._slimes[index].Speed = (float) (6.0 + 2.0 * this._random.NextDouble());
         }
         this._slimes[index].Active = true;
@@ -72,17 +72,17 @@ namespace Terraria.GameContent.Skies
             {
               this._slimes[index].Depth = (float) ((double) index / (double) this._slimes.Length * 1.75 + 1.60000002384186);
               this._slimes[index].Position = new Vector2((float) (this._random.Next(0, Main.maxTilesX) * 16), -100f);
-              this._slimes[index].Texture = this._textures[this._random.Next(2)].get_Value();
+              this._slimes[index].Texture = this._textures[this._random.Next(2)].Value;
               this._slimes[index].Speed = (float) (5.0 + 3.0 * this._random.NextDouble());
               if (this._random.Next(60) == 0)
               {
-                this._slimes[index].Texture = this._textures[3].get_Value();
+                this._slimes[index].Texture = this._textures[3].Value;
                 this._slimes[index].Speed = (float) (6.0 + 3.0 * this._random.NextDouble());
                 this._slimes[index].Depth += 0.5f;
               }
               else if (this._random.Next(30) == 0)
               {
-                this._slimes[index].Texture = this._textures[2].get_Value();
+                this._slimes[index].Texture = this._textures[2].Value;
                 this._slimes[index].Speed = (float) (6.0 + 2.0 * this._random.NextDouble());
               }
             }

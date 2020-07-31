@@ -122,9 +122,9 @@ namespace Terraria.GameContent.UI
       Player localPlayer = Main.LocalPlayer;
       Color color = new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor);
       string str = Lang.inter[0].Value + " " + (object) localPlayer.statLifeMax2 + "/" + (object) localPlayer.statLifeMax2;
-      Vector2 vector2_2 = FontAssets.MouseText.get_Value().MeasureString(str);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), Lang.inter[0].Value, vector2_1 + new Vector2((float) (-(double) vector2_2.X * 0.5), 0.0f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2, vector2_1 + new Vector2(vector2_2.X * 0.5f, 0.0f), color, 0.0f, new Vector2(FontAssets.MouseText.get_Value().MeasureString(localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2).X, 0.0f), 1f, SpriteEffects.None, 0.0f);
+      Vector2 vector2_2 = FontAssets.MouseText.Value.MeasureString(str);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, Lang.inter[0].Value, vector2_1 + new Vector2((float) (-(double) vector2_2.X * 0.5), 0.0f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2, vector2_1 + new Vector2(vector2_2.X * 0.5f, 0.0f), color, 0.0f, new Vector2(FontAssets.MouseText.Value.MeasureString(localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2).X, 0.0f), 1f, SpriteEffects.None, 0.0f);
     }
 
     private void DrawManaBar(SpriteBatch spriteBatch)
@@ -159,12 +159,12 @@ namespace Terraria.GameContent.UI
 
     private static void DrawManaText(SpriteBatch spriteBatch)
     {
-      Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(Lang.inter[2].Value);
+      Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(Lang.inter[2].Value);
       Color color = new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor);
       int num = 50;
       if ((double) vector2.X >= 45.0)
         num = (int) vector2.X + 5;
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), Lang.inter[2].Value, new Vector2((float) (Main.screenWidth - num), 6f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, Lang.inter[2].Value, new Vector2((float) (Main.screenWidth - num), 6f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
     }
 
     private void HeartPanelDrawer(

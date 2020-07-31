@@ -63,7 +63,7 @@ namespace Terraria.GameContent.UI.Elements
     {
       CalculatedStyle dimensions = this.GetDimensions();
       if (this._drawsBackPanel)
-        spriteBatch.Draw(this._texture.get_Value(), dimensions.Position(), Color.White);
+        spriteBatch.Draw(this._texture.Value, dimensions.Position(), Color.White);
       this.UpdateAnim();
       Vector2 vector2 = dimensions.Position() + new Vector2(dimensions.Width * 0.5f - (float) (this._player.width >> 1), dimensions.Height * 0.5f - (float) (this._player.height >> 1));
       Item obj = this._player.inventory[this._player.selectedItem];

@@ -68,10 +68,10 @@ namespace Terraria.GameContent.UI.Elements
       else
         this._soundedHover = false;
       CalculatedStyle dimensions = this.GetDimensions();
-      Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White * 0.5f);
+      Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White * 0.5f);
       if (!this._hovered)
         return;
-      Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White);
+      Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White);
     }
 
     public void SetContents(string name)

@@ -18,9 +18,9 @@ namespace Terraria.Map
       Player localPlayer = Main.LocalPlayer;
       Vector2 position1 = new Vector2((float) localPlayer.SpawnX, (float) localPlayer.SpawnY);
       Vector2 position2 = new Vector2((float) Main.spawnTileX, (float) Main.spawnTileY);
-      if (context.Draw(TextureAssets.SpawnPoint.get_Value(), position2, Alignment.Bottom).IsMouseOver)
+      if (context.Draw(TextureAssets.SpawnPoint.Value, position2, Alignment.Bottom).IsMouseOver)
         text = Language.GetTextValue("UI.SpawnPoint");
-      if (localPlayer.SpawnX == -1 || !context.Draw(TextureAssets.SpawnBed.get_Value(), position1, Alignment.Bottom).IsMouseOver)
+      if (localPlayer.SpawnX == -1 || !context.Draw(TextureAssets.SpawnBed.Value, position1, Alignment.Bottom).IsMouseOver)
         return;
       text = Language.GetTextValue("UI.SpawnBed");
     }

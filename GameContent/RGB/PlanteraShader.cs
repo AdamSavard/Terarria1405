@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _vineColor;
     private readonly Vector4 _backgroundColor;
 
-    public PlanteraShader(Color bulbColor, Color vineColor, Color backgroundColor)
-    {
-      this.\u002Ector();
+    public PlanteraShader(Color bulbColor, Color vineColor, Color backgroundColor) : base()
+{
       this._bulbColor = bulbColor.ToVector4();
       this._vineColor = vineColor.ToVector4();
       this._backgroundColor = backgroundColor.ToVector4();

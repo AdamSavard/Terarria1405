@@ -53,7 +53,7 @@ namespace Terraria.Graphics.Renderers
     public void Draw(ref ParticleRendererSettings settings, SpriteBatch spritebatch)
     {
       Color color = Color.Lerp(Color.White, new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, 0), Utils.GetLerpValue(0.1f, 0.5f, this._scale, false));
-      spritebatch.Draw(this._texture.get_Value(), settings.AnchorPosition + this.LocalPosition, new Rectangle?(this._frame), color, 0.0f, this._origin, this._scale, SpriteEffects.None, 0.0f);
+      spritebatch.Draw(this._texture.Value, settings.AnchorPosition + this.LocalPosition, new Rectangle?(this._frame), color, 0.0f, this._origin, this._scale, SpriteEffects.None, 0.0f);
     }
   }
 }

@@ -37298,7 +37298,7 @@ label_106:
       {
         this.chatText = message;
         this.snippets = ChatManager.ParseMessage(this.chatText, Color.White).ToArray();
-        this.messageSize = ChatManager.GetStringSize(FontAssets.MouseText.get_Value(), this.snippets, Vector2.One, -1f);
+        this.messageSize = ChatManager.GetStringSize(FontAssets.MouseText.Value, this.snippets, Vector2.One, -1f);
         this.timeLeft = displayTime;
       }
     }

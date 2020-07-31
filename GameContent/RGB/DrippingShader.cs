@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _liquidColor;
     private readonly float _viscosity;
 
-    public DrippingShader(Color baseColor, Color liquidColor, float viscosity = 1f)
-    {
-      this.\u002Ector();
+    public DrippingShader(Color baseColor, Color liquidColor, float viscosity = 1f) : base()
+{
       this._baseColor = baseColor.ToVector4();
       this._liquidColor = liquidColor.ToVector4();
       this._viscosity = viscosity;

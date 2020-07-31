@@ -359,7 +359,7 @@ namespace Terraria.GameInput
     {
       if (Main.gameMenu)
         return;
-      Texture2D texture = TextureAssets.LockOnCursor.get_Value();
+      Texture2D texture = TextureAssets.LockOnCursor.Value;
       Rectangle r1 = new Rectangle(0, 0, texture.Width, 12);
       Rectangle r2 = new Rectangle(0, 16, texture.Width, 12);
       Color color1 = Main.OurFavoriteColor.MultiplyRGBA(new Color(0.75f, 0.75f, 0.75f, 1f));

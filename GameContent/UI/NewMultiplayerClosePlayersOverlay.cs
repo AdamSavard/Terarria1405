@@ -44,7 +44,7 @@ namespace Terraria.GameContent.UI
       float num2 = (float) mouseTextColor / (float) byte.MaxValue;
       if (localPlayer.team == 0)
         return;
-      DynamicSpriteFont font = FontAssets.MouseText.get_Value();
+      DynamicSpriteFont font = FontAssets.MouseText.Value;
       for (int index = 0; index < (int) byte.MaxValue; ++index)
       {
         if (index != player2)
@@ -178,11 +178,11 @@ namespace Terraria.GameContent.UI
       public void DrawPlayerName_WhenPlayerIsOnScreen(SpriteBatch spriteBatch)
       {
         this._pos = this._pos.Floor();
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this._name, new Vector2(this._pos.X - 2f, this._pos.Y), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this._name, new Vector2(this._pos.X + 2f, this._pos.Y), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this._name, new Vector2(this._pos.X, this._pos.Y - 2f), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this._name, new Vector2(this._pos.X, this._pos.Y + 2f), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this._name, this._pos, this._color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this._name, new Vector2(this._pos.X - 2f, this._pos.Y), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this._name, new Vector2(this._pos.X + 2f, this._pos.Y), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this._name, new Vector2(this._pos.X, this._pos.Y - 2f), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this._name, new Vector2(this._pos.X, this._pos.Y + 2f), Color.Black, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this._name, this._pos, this._color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
       }
     }
 
@@ -216,7 +216,7 @@ namespace Terraria.GameContent.UI
 
       public void DrawPlayerName(SpriteBatch spriteBatch)
       {
-        ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.MouseText.get_Value(), this.nameToShow, this.namePlatePos + new Vector2(0.0f, -40f), this.namePlateColor, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
+        ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.MouseText.Value, this.nameToShow, this.namePlatePos + new Vector2(0.0f, -40f), this.namePlateColor, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
       }
 
       public void DrawPlayerHead()
@@ -242,11 +242,11 @@ namespace Terraria.GameContent.UI
       public void DrawPlayerDistance(SpriteBatch spriteBatch)
       {
         float num = 0.85f;
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this.distanceString, new Vector2(this.distanceDrawPosition.X - 2f, this.distanceDrawPosition.Y), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this.distanceString, new Vector2(this.distanceDrawPosition.X + 2f, this.distanceDrawPosition.Y), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this.distanceString, new Vector2(this.distanceDrawPosition.X, this.distanceDrawPosition.Y - 2f), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this.distanceString, new Vector2(this.distanceDrawPosition.X, this.distanceDrawPosition.Y + 2f), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), this.distanceString, this.distanceDrawPosition, this.namePlateColor, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this.distanceString, new Vector2(this.distanceDrawPosition.X - 2f, this.distanceDrawPosition.Y), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this.distanceString, new Vector2(this.distanceDrawPosition.X + 2f, this.distanceDrawPosition.Y), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this.distanceString, new Vector2(this.distanceDrawPosition.X, this.distanceDrawPosition.Y - 2f), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this.distanceString, new Vector2(this.distanceDrawPosition.X, this.distanceDrawPosition.Y + 2f), Color.Black, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, this.distanceString, this.distanceDrawPosition, this.namePlateColor, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
       }
     }
   }

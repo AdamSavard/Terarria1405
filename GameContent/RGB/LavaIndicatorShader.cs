@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _primaryColor;
     private readonly Vector4 _secondaryColor;
 
-    public LavaIndicatorShader(Color backgroundColor, Color primaryColor, Color secondaryColor)
-    {
-      this.\u002Ector();
+    public LavaIndicatorShader(Color backgroundColor, Color primaryColor, Color secondaryColor) : base()
+{
       this._backgroundColor = backgroundColor.ToVector4();
       this._primaryColor = primaryColor.ToVector4();
       this._secondaryColor = secondaryColor.ToVector4();

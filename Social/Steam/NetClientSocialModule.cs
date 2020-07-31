@@ -33,11 +33,11 @@ namespace Terraria.Social.Steam
     {
       base.Initialize();
       // ISSUE: method pointer
-      this._gameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create(new Callback<GameLobbyJoinRequested_t>.DispatchDelegate((object) this, __methodptr(OnLobbyJoinRequest)));
+      this._gameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create(new Callback<GameLobbyJoinRequested_t>.DispatchDelegate(OnLobbyJoinRequest));
       // ISSUE: method pointer
-      this._p2pSessionRequest = Callback<P2PSessionRequest_t>.Create(new Callback<P2PSessionRequest_t>.DispatchDelegate((object) this, __methodptr(OnP2PSessionRequest)));
+      this._p2pSessionRequest = Callback<P2PSessionRequest_t>.Create(new Callback<P2PSessionRequest_t>.DispatchDelegate(OnP2PSessionRequest));
       // ISSUE: method pointer
-      this._p2pSessionConnectfail = Callback<P2PSessionConnectFail_t>.Create(new Callback<P2PSessionConnectFail_t>.DispatchDelegate((object) this, __methodptr(OnSessionConnectFail)));
+      this._p2pSessionConnectfail = Callback<P2PSessionConnectFail_t>.Create(new Callback<P2PSessionConnectFail_t>.DispatchDelegate(OnSessionConnectFail));
       Main.OnEngineLoad += new Action(this.CheckParameters);
     }
 
@@ -52,7 +52,7 @@ namespace Terraria.Social.Steam
     public void ConnectToLobby(ulong lobbyId)
     {
       CSteamID lobbySteamId = new CSteamID(lobbyId);
-      if (!((CSteamID) ref lobbySteamId).IsValid())
+      if (!lobbySteamId.IsValid())
         return;
       Main.OpenPlayerSelect((Main.OnPlayerSelected) (playerData =>
       {
@@ -62,7 +62,7 @@ namespace Terraria.Social.Steam
         Main.statusText = Language.GetTextValue("Social.Joining");
         WeGameHelper.WriteDebugString(" CheckParameters， lobby.join");
         // ISSUE: method pointer
-        this._lobby.Join(lobbySteamId, new CallResult<LobbyEnter_t>.APIDispatchDelegate((object) this, __methodptr(OnLobbyEntered)));
+        this._lobby.Join(lobbySteamId, new CallResult<LobbyEnter_t>.APIDispatchDelegate(OnLobbyEntered));
       }));
     }
 
@@ -154,7 +154,7 @@ namespace Terraria.Social.Steam
         Main.menuMode = 882;
         Main.statusText = Language.GetTextValue("Social.JoiningFriend", (object) friendName);
         // ISSUE: method pointer
-        this._lobby.Join((CSteamID) result.m_steamIDLobby, new CallResult<LobbyEnter_t>.APIDispatchDelegate((object) this, __methodptr(OnLobbyEntered)));
+        this._lobby.Join((CSteamID) result.m_steamIDLobby, new CallResult<LobbyEnter_t>.APIDispatchDelegate(OnLobbyEntered));
       }))));
     }
 
@@ -165,7 +165,7 @@ namespace Terraria.Social.Steam
       this.SendAuthTicket(this._lobby.Owner);
       int num = 0;
       P2PSessionState_t p2PsessionStateT;
-      while (SteamNetworking.GetP2PSessionState(this._lobby.Owner, ref p2PsessionStateT) && p2PsessionStateT.m_bConnectionActive != 1)
+      while (SteamNetworking.GetP2PSessionState(this._lobby.Owner, out p2PsessionStateT) && p2PsessionStateT.m_bConnectionActive != 1)
       {
         switch ((byte) p2PsessionStateT.m_eP2PSessionError)
         {
@@ -208,8 +208,8 @@ namespace Terraria.Social.Steam
     private void SendAuthTicket(CSteamID address)
     {
       WeGameHelper.WriteDebugString(" SendAuthTicket");
-      if (HAuthTicket.op_Equality(this._authTicket, (HAuthTicket) HAuthTicket.Invalid))
-        this._authTicket = SteamUser.GetAuthSessionTicket(this._authData, this._authData.Length, ref this._authDataLength);
+      if (this._authTicket == (HAuthTicket) HAuthTicket.Invalid)
+        this._authTicket = SteamUser.GetAuthSessionTicket(this._authData, this._authData.Length, out this._authDataLength);
       int length = (int) this._authDataLength + 3;
       byte[] numArray = new byte[length];
       numArray[0] = (byte) (length & (int) byte.MaxValue);
@@ -222,7 +222,7 @@ namespace Terraria.Social.Steam
 
     private void ClearAuthTicket()
     {
-      if (HAuthTicket.op_Inequality(this._authTicket, (HAuthTicket) HAuthTicket.Invalid))
+      if (this._authTicket != (HAuthTicket) HAuthTicket.Invalid)
         SteamUser.CancelAuthTicket(this._authTicket);
       this._authTicket = (HAuthTicket) HAuthTicket.Invalid;
       for (int index = 0; index < this._authData.Length; ++index)

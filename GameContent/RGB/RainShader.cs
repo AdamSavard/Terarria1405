@@ -45,9 +45,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public RainShader()
-    {
-      base.\u002Ector();
+    public RainShader() : base()
+{
     }
   }
 }

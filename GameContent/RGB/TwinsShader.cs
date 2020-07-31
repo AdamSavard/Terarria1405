@@ -30,9 +30,8 @@ namespace Terraria.GameContent.RGB
       Color laserColor,
       Color mouthColor,
       Color flameColor,
-      Color backgroundColor)
-    {
-      this.\u002Ector();
+      Color backgroundColor) : base()
+{
       this._eyeColor = eyeColor.ToVector4();
       this._veinColor = veinColor.ToVector4();
       this._laserColor = laserColor.ToVector4();
@@ -79,7 +78,7 @@ namespace Terraria.GameContent.RGB
           num1 = 2f - num1;
           flag = false;
         }
-        Vector2 vector2_1 = new Vector2((float) ((double) num1 * 7.0 - 3.5), 0.0f) + fragment.get_CanvasCenter();
+        Vector2 vector2_1 = new Vector2((float) ((double) num1 * 7.0 - 3.5), 0.0f) + fragment.CanvasCenter;
         for (int index = 0; index < fragment.Count; ++index)
         {
           Vector2 canvasPositionOfIndex = fragment.GetCanvasPositionOfIndex(index);

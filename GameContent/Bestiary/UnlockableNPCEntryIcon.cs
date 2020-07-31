@@ -78,7 +78,7 @@ namespace Terraria.GameContent.Bestiary
           vector2.Y = bestiaryDrawModifiers.PortraitPositionYOverride.Value;
         if (bestiaryDrawModifiers.CustomTexturePath != null)
           asset = (Asset<Texture2D>) Main.Assets.Request<Texture2D>(bestiaryDrawModifiers.CustomTexturePath, (AssetRequestMode) 1);
-        if (asset != null && asset.get_IsLoaded())
+        if (asset != null && asset.IsLoaded)
           this._customTexture = asset;
       }
       this._positionOffsetCache = vector2;
@@ -187,7 +187,7 @@ namespace Terraria.GameContent.Bestiary
       this.UpdatePosition(settings);
       if (this._customTexture != null)
       {
-        spriteBatch.Draw(this._customTexture.get_Value(), this._npcCache.Center, new Rectangle?(), Color.White, 0.0f, this._customTexture.Size() / 2f, this._npcCache.scale, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(this._customTexture.Value, this._npcCache.Center, new Rectangle?(), Color.White, 0.0f, this._customTexture.Size() / 2f, this._npcCache.scale, SpriteEffects.None, 0.0f);
       }
       else
       {

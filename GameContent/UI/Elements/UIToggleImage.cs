@@ -53,12 +53,12 @@ namespace Terraria.GameContent.UI.Elements
       Point point;
       if (this._isOn)
       {
-        texture = this._onTexture.get_Value();
+        texture = this._onTexture.Value;
         point = this._onTextureOffset;
       }
       else
       {
-        texture = this._offTexture.get_Value();
+        texture = this._offTexture.Value;
         point = this._offTextureOffset;
       }
       Color color = this.IsMouseHovering ? Color.White : Color.Silver;

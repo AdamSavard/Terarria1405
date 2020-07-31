@@ -135,7 +135,7 @@ namespace Terraria.GameContent.UI.Elements
 
     private void InternalSetText(object text, float textScale, bool large)
     {
-      DynamicSpriteFont dynamicSpriteFont = large ? FontAssets.DeathText.get_Value() : FontAssets.MouseText.get_Value();
+      DynamicSpriteFont dynamicSpriteFont = large ? FontAssets.DeathText.Value : FontAssets.MouseText.Value;
       this._text = text;
       this._isLarge = large;
       this._textScale = textScale;

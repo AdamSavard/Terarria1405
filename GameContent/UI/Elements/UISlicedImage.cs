@@ -47,7 +47,7 @@ namespace Terraria.GameContent.UI.Elements
     protected override void DrawSelf(SpriteBatch spriteBatch)
     {
       CalculatedStyle dimensions = this.GetDimensions();
-      Utils.DrawSplicedPanel(spriteBatch, this._texture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, this._leftSliceDepth, this._rightSliceDepth, this._topSliceDepth, this._bottomSliceDepth, this._color);
+      Utils.DrawSplicedPanel(spriteBatch, this._texture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, this._leftSliceDepth, this._rightSliceDepth, this._topSliceDepth, this._bottomSliceDepth, this._color);
     }
 
     public void SetSliceDepths(int top, int bottom, int left, int right)

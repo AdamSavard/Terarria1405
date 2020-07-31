@@ -57,9 +57,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public UndergroundMushroomShader()
-    {
-      base.\u002Ector();
+    public UndergroundMushroomShader() : base()
+{
     }
   }
 }

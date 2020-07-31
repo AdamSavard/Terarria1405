@@ -79,7 +79,7 @@ namespace Terraria.UI.Chat
       int maxWidth = this._widthLimitInPixels;
       if (maxWidth == -1)
         maxWidth = Main.screenWidth - 320;
-      List<List<TextSnippet>> textSnippetListList = Utils.WordwrapStringSmart(this.OriginalText, this._color, FontAssets.MouseText.get_Value(), maxWidth, 10);
+      List<List<TextSnippet>> textSnippetListList = Utils.WordwrapStringSmart(this.OriginalText, this._color, FontAssets.MouseText.Value, maxWidth, 10);
       this._parsedText.Clear();
       for (int index = 0; index < textSnippetListList.Count; ++index)
         this._parsedText.Add(textSnippetListList[index].ToArray());

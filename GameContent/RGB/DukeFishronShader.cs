@@ -15,9 +15,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _primaryColor;
     private readonly Vector4 _secondaryColor;
 
-    public DukeFishronShader(Color primaryColor, Color secondaryColor)
+    public DukeFishronShader(Color primaryColor, Color secondaryColor) : base()
     {
-      this.\u002Ector();
       this._primaryColor = primaryColor.ToVector4();
       this._secondaryColor = secondaryColor.ToVector4();
     }

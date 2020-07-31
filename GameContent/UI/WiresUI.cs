@@ -228,7 +228,7 @@ namespace Terraria.GameContent.UI
               flag3 = false;
             if (flag3)
               flag1 = true;
-            Texture2D texture2D1 = TextureAssets.WireUi[(WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 8 : 0) + (flag3 ? 1 : 0)].get_Value();
+            Texture2D texture2D1 = TextureAssets.WireUi[(WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 8 : 0) + (flag3 ? 1 : 0)].Value;
             Texture2D texture2D2 = (Texture2D) null;
             switch (index)
             {
@@ -236,13 +236,13 @@ namespace Terraria.GameContent.UI
               case 1:
               case 2:
               case 3:
-                texture2D2 = TextureAssets.WireUi[2 + index].get_Value();
+                texture2D2 = TextureAssets.WireUi[2 + index].Value;
                 break;
               case 4:
-                texture2D2 = TextureAssets.WireUi[WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 7 : 6].get_Value();
+                texture2D2 = TextureAssets.WireUi[WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 7 : 6].Value;
                 break;
               case 5:
-                texture2D2 = TextureAssets.WireUi[10].get_Value();
+                texture2D2 = TextureAssets.WireUi[10].Value;
                 break;
             }
             Color color1 = Color.White;
@@ -376,7 +376,7 @@ namespace Terraria.GameContent.UI
               flag3 = false;
             if (flag3)
               flag1 = true;
-            Texture2D texture2D1 = TextureAssets.WireUi[(WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 8 : 0) + (flag3 ? 1 : 0)].get_Value();
+            Texture2D texture2D1 = TextureAssets.WireUi[(WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 8 : 0) + (flag3 ? 1 : 0)].Value;
             Texture2D texture2D2 = (Texture2D) null;
             switch (index)
             {
@@ -384,13 +384,13 @@ namespace Terraria.GameContent.UI
               case 1:
               case 2:
               case 3:
-                texture2D2 = TextureAssets.WireUi[2 + index].get_Value();
+                texture2D2 = TextureAssets.WireUi[2 + index].Value;
                 break;
               case 4:
-                texture2D2 = TextureAssets.WireUi[WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 7 : 6].get_Value();
+                texture2D2 = TextureAssets.WireUi[WiresUI.Settings.ToolMode.HasFlag((Enum) WiresUI.Settings.MultiToolMode.Cutter) ? 7 : 6].Value;
                 break;
               case 5:
-                texture2D2 = TextureAssets.WireUi[10].get_Value();
+                texture2D2 = TextureAssets.WireUi[10].Value;
                 break;
             }
             Color color1 = Color.White;
@@ -464,7 +464,7 @@ namespace Terraria.GameContent.UI
           else
             vector2 += new Vector2(0.0f, 10f);
         }
-        Texture2D texture1 = TextureAssets.BuilderAcc.get_Value();
+        Texture2D texture1 = TextureAssets.BuilderAcc.Value;
         Texture2D texture2 = texture1;
         Rectangle r1 = new Rectangle(140, 2, 6, 6);
         Rectangle r2 = new Rectangle(148, 2, 6, 6);

@@ -15,9 +15,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _baseColor;
     private readonly Vector4 _sandColor;
 
-    public DesertShader(Color baseColor, Color sandColor)
-    {
-      this.\u002Ector();
+    public DesertShader(Color baseColor, Color sandColor) : base()
+{
       this._baseColor = baseColor.ToVector4();
       this._sandColor = sandColor.ToVector4();
     }

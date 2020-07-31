@@ -98,15 +98,15 @@ namespace Terraria.GameContent.Skies
       for (int index = 0; index < num1; ++index)
       {
         double num2 = (double) index / (double) num1;
-        this._ufos[index] = new MartianSky.Ufo(TextureAssets.Extra[5].get_Value(), (float) (Main.rand.NextDouble() * 4.0 + 6.59999990463257));
-        this._ufos[index].GlowTexture = TextureAssets.GlowMask[90].get_Value();
+        this._ufos[index] = new MartianSky.Ufo(TextureAssets.Extra[5].Value, (float) (Main.rand.NextDouble() * 4.0 + 6.59999990463257));
+        this._ufos[index].GlowTexture = TextureAssets.GlowMask[90].Value;
       }
       for (int index = num1; index < this._ufos.Length; ++index)
       {
         double num2 = (double) (index - num1) / (double) (this._ufos.Length - num1);
-        this._ufos[index] = new MartianSky.Ufo(TextureAssets.Extra[6].get_Value(), (float) (Main.rand.NextDouble() * 5.0 + 1.60000002384186));
+        this._ufos[index] = new MartianSky.Ufo(TextureAssets.Extra[6].Value, (float) (Main.rand.NextDouble() * 5.0 + 1.60000002384186));
         this._ufos[index].Scale = 0.5f;
-        this._ufos[index].GlowTexture = TextureAssets.GlowMask[91].get_Value();
+        this._ufos[index].GlowTexture = TextureAssets.GlowMask[91].Value;
       }
     }
 

@@ -23474,7 +23474,7 @@ label_12:
         {
           float[] localAi = this.localAI;
           SlotId slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_PhantomPhoenixShot, this.Center);
-          double num = (double) ((SlotId) ref slotId).ToFloat();
+          double num = (double) slotId.ToFloat();
           localAi[0] = (float) num;
           ++this.localAI[1];
           for (int index = 0; index < 15; ++index)
@@ -23498,7 +23498,7 @@ label_12:
         {
           float[] localAi = this.localAI;
           SlotId invalid = (SlotId) SlotId.Invalid;
-          double num = (double) ((SlotId) ref invalid).ToFloat();
+          double num = (double) invalid.ToFloat();
           localAi[0] = (float) num;
         }
         if (this.alpha <= 0)
@@ -28722,7 +28722,7 @@ label_26:
       {
         float[] localAi = this.localAI;
         slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_GhastlyGlaiveImpactGhost, this.Center);
-        double num = (double) ((SlotId) ref slotId).ToFloat();
+        double num = (double) slotId.ToFloat();
         localAi[1] = (float) num;
       }
       ActiveSound activeSound = SoundEngine.GetActiveSound(SlotId.FromFloat(this.localAI[1]));
@@ -28730,7 +28730,7 @@ label_26:
       {
         float[] localAi = this.localAI;
         slotId = (SlotId) SlotId.Invalid;
-        double num = (double) ((SlotId) ref slotId).ToFloat();
+        double num = (double) slotId.ToFloat();
         localAi[1] = (float) num;
       }
       else
@@ -28955,7 +28955,7 @@ label_26:
         this.soundDelay = -1;
         float[] localAi = this.localAI;
         slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_BookStaffTwisterLoop, this.Center);
-        double num2 = (double) ((SlotId) ref slotId).ToFloat();
+        double num2 = (double) slotId.ToFloat();
         localAi[1] = (float) num2;
       }
       ActiveSound activeSound = SoundEngine.GetActiveSound(SlotId.FromFloat(this.localAI[1]));
@@ -28968,7 +28968,7 @@ label_26:
       {
         float[] localAi = this.localAI;
         slotId = (SlotId) SlotId.Invalid;
-        double num2 = (double) ((SlotId) ref slotId).ToFloat();
+        double num2 = (double) slotId.ToFloat();
         localAi[1] = (float) num2;
       }
       if ((double) this.localAI[0] >= 16.0 && (double) this.ai[0] < (double) num1 - 15.0)

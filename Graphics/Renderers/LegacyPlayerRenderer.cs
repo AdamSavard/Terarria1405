@@ -442,7 +442,7 @@ namespace Terraria.Graphics.Renderers
       if (drawPlayer.dead)
         return;
       SpriteEffects effects = drawPlayer.direction != 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-      camera.SpriteBatch.Draw(TextureAssets.Extra[37].get_Value(), new Vector2((float) (int) ((double) position.X - (double) camera.UnscaledPosition.X - (double) (drawPlayer.bodyFrame.Width / 2) + (double) (drawPlayer.width / 2)), (float) (int) ((double) position.Y - (double) camera.UnscaledPosition.Y + (double) drawPlayer.height - (double) drawPlayer.bodyFrame.Height + 8.0)) + drawPlayer.bodyPosition + new Vector2((float) (drawPlayer.bodyFrame.Width / 2), (float) (drawPlayer.bodyFrame.Height / 2)), new Rectangle?(), Lighting.GetColor((int) ((double) position.X + (double) drawPlayer.width * 0.5) / 16, (int) ((double) position.Y + (double) drawPlayer.height * 0.5) / 16, Color.White), 0.0f, new Vector2((float) (TextureAssets.Extra[37].Width() / 2), (float) (TextureAssets.Extra[37].Height() / 2)), 1f, effects, 0.0f);
+      camera.SpriteBatch.Draw(TextureAssets.Extra[37].Value, new Vector2((float) (int) ((double) position.X - (double) camera.UnscaledPosition.X - (double) (drawPlayer.bodyFrame.Width / 2) + (double) (drawPlayer.width / 2)), (float) (int) ((double) position.Y - (double) camera.UnscaledPosition.Y + (double) drawPlayer.height - (double) drawPlayer.bodyFrame.Height + 8.0)) + drawPlayer.bodyPosition + new Vector2((float) (drawPlayer.bodyFrame.Width / 2), (float) (drawPlayer.bodyFrame.Height / 2)), new Rectangle?(), Lighting.GetColor((int) ((double) position.X + (double) drawPlayer.width * 0.5) / 16, (int) ((double) position.Y + (double) drawPlayer.height * 0.5) / 16, Color.White), 0.0f, new Vector2((float) (TextureAssets.Extra[37].Width() / 2), (float) (TextureAssets.Extra[37].Height() / 2)), 1f, effects, 0.0f);
     }
 
     private void DrawGhost(Camera camera, Player drawPlayer, Vector2 position, float shadow = 0.0f)
@@ -453,7 +453,7 @@ namespace Terraria.Graphics.Renderers
       immuneAlpha.A = (byte) ((double) immuneAlpha.A * (1.0 - (double) Math.Max(0.5f, shadow - 0.5f)));
       Rectangle rectangle = new Rectangle(0, TextureAssets.Ghost.Height() / 4 * drawPlayer.ghostFrame, TextureAssets.Ghost.Width(), TextureAssets.Ghost.Height() / 4);
       Vector2 origin = new Vector2((float) rectangle.Width * 0.5f, (float) rectangle.Height * 0.5f);
-      camera.SpriteBatch.Draw(TextureAssets.Ghost.get_Value(), new Vector2((float) (int) ((double) position.X - (double) camera.UnscaledPosition.X + (double) (rectangle.Width / 2)), (float) (int) ((double) position.Y - (double) camera.UnscaledPosition.Y + (double) (rectangle.Height / 2))), new Rectangle?(rectangle), immuneAlpha, 0.0f, origin, 1f, effects, 0.0f);
+      camera.SpriteBatch.Draw(TextureAssets.Ghost.Value, new Vector2((float) (int) ((double) position.X - (double) camera.UnscaledPosition.X + (double) (rectangle.Width / 2)), (float) (int) ((double) position.Y - (double) camera.UnscaledPosition.Y + (double) (rectangle.Height / 2))), new Rectangle?(rectangle), immuneAlpha, 0.0f, origin, 1f, effects, 0.0f);
     }
   }
 }

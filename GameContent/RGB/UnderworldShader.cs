@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _frontColor;
     private readonly float _speed;
 
-    public UnderworldShader(Color backColor, Color frontColor, float speed)
-    {
-      this.\u002Ector();
+    public UnderworldShader(Color backColor, Color frontColor, float speed) : base()
+{
       this._backColor = backColor.ToVector4();
       this._frontColor = frontColor.ToVector4();
       this._speed = speed;

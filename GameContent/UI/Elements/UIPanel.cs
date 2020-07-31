@@ -65,10 +65,10 @@ namespace Terraria.GameContent.UI.Elements
     protected override void DrawSelf(SpriteBatch spriteBatch)
     {
       if (this._backgroundTexture != null)
-        this.DrawPanel(spriteBatch, this._backgroundTexture.get_Value(), this.BackgroundColor);
+        this.DrawPanel(spriteBatch, this._backgroundTexture.Value, this.BackgroundColor);
       if (this._borderTexture == null)
         return;
-      this.DrawPanel(spriteBatch, this._borderTexture.get_Value(), this.BorderColor);
+      this.DrawPanel(spriteBatch, this._borderTexture.Value, this.BorderColor);
     }
   }
 }

@@ -49,7 +49,7 @@ namespace Terraria.Social.Steam
         }.Start();
         Main.OnTickForThirdPartySoftwareOnly += new Action(this.PulseSteamTick);
         Main.OnTickForThirdPartySoftwareOnly += new Action(this.PulseSteamCallback);
-        if (!Platform.get_IsOSX())
+        if (!Platform.IsOSX)
           return;
         // ISSUE: method pointer
         this._onOverlayActivated = Callback<GameOverlayActivated_t>.Create(new Callback<GameOverlayActivated_t>.DispatchDelegate((object) this, __methodptr(OnOverlayActivated)));

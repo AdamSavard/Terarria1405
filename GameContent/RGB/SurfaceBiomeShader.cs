@@ -17,9 +17,8 @@ namespace Terraria.GameContent.RGB
     private Vector4 _surfaceColor;
     private float _starVisibility;
 
-    public SurfaceBiomeShader(Color primaryColor, Color secondaryColor)
-    {
-      this.\u002Ector();
+    public SurfaceBiomeShader(Color primaryColor, Color secondaryColor) : base()
+{
       this._primaryColor = primaryColor.ToVector4();
       this._secondaryColor = secondaryColor.ToVector4();
     }

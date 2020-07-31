@@ -34,7 +34,7 @@ namespace Terraria.GameContent.Events
       if ((double) ScreenDarkness.screenObstruction == 0.0)
         return;
       Color color = Color.Black * ScreenDarkness.screenObstruction;
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
     }
 
     public static void DrawFront(SpriteBatch spriteBatch)
@@ -42,7 +42,7 @@ namespace Terraria.GameContent.Events
       if ((double) ScreenDarkness.screenObstruction == 0.0)
         return;
       Color color = new Color(0, 0, 120) * ScreenDarkness.screenObstruction * 0.3f;
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
     }
   }
 }

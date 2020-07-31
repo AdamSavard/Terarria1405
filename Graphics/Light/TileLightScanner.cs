@@ -23,24 +23,28 @@ namespace Terraria.Graphics.Light
       this._world = world;
     }
 
-    public void ExportTo(Rectangle area, LightMap outputMap)
+    public void ExportTo(Rectangle area, LightMap outputMap) // TODO fix this
     {
-      // ISSUE: object of a compiler-generated type is created
-      // ISSUE: variable of a compiler-generated type
-      TileLightScanner.\u003C\u003Ec__DisplayClass3_0 cDisplayClass30 = new TileLightScanner.\u003C\u003Ec__DisplayClass3_0();
-      // ISSUE: reference to a compiler-generated field
-      cDisplayClass30.area = area;
-      // ISSUE: reference to a compiler-generated field
-      cDisplayClass30.\u003C\u003E4__this = this;
-      // ISSUE: reference to a compiler-generated field
-      cDisplayClass30.outputMap = outputMap;
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: reference to a compiler-generated field
-      // ISSUE: method pointer
-      FastParallel.For(cDisplayClass30.area.Left, cDisplayClass30.area.Right, new ParallelForAction((object) cDisplayClass30, __methodptr(\u003CExportTo\u003Eb__0)), (object) null);
+        // I think this is what this function is trying to do, needs ReLogic.Threading functions
+        //FastParallel.For(area.Left, area.Right, new ParallelForAction(ExportTo), (object) null);
+        // This is used by LightningEngine.ProcessScan and LegacyLightning.PreRenderPhase
+
+        // ISSUE: object of a compiler-generated type is created
+        // ISSUE: variable of a compiler-generated type
+        //TileLightScanner cDisplayClass30 = new TileLightScanner(this._world);
+        // ISSUE: reference to a compiler-generated field
+        //cDisplayClass30.area = area;
+        // ISSUE: reference to a compiler-generated field
+        //cDisplayClass30.\u003C\u003E4__this = this;
+        // ISSUE: reference to a compiler-generated field
+        //cDisplayClass30.outputMap = outputMap;
+        // ISSUE: reference to a compiler-generated field
+        // ISSUE: reference to a compiler-generated field
+        // ISSUE: method pointer
+        //FastParallel.For(area.Left, area.Right, new ParallelForAction(ExportTo));
     }
 
-    private bool IsTileNullOrTouchingNull(int x, int y)
+        private bool IsTileNullOrTouchingNull(int x, int y)
     {
       return !WorldGen.InWorld(x, y, 1) || this._world.Tiles[x, y] == null || (this._world.Tiles[x + 1, y] == null || this._world.Tiles[x - 1, y] == null) || this._world.Tiles[x, y - 1] == null || this._world.Tiles[x, y + 1] == null;
     }

@@ -13,6 +13,8 @@ namespace Terraria.Audio
 {
   public class SoundPlayer
   {
+    // so this is basically a hashmap(double/float/int key -> ActiveSound) and SlotId is basically a key
+    // SlotId.Invalid could be -1, really any unused key value
     private readonly SlotVector<ActiveSound> _trackedSounds = new SlotVector<ActiveSound>(4096);
 
     public SlotId Play(SoundStyle style, Vector2 position)

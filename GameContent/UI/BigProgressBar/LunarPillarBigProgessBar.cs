@@ -36,7 +36,7 @@ namespace Terraria.GameContent.UI.BigProgressBar
 
     public void Draw(ref BigProgressBarInfo info, SpriteBatch spriteBatch)
     {
-      Texture2D texture2D = TextureAssets.NpcHeadBoss[this._headIndex].get_Value();
+      Texture2D texture2D = TextureAssets.NpcHeadBoss[this._headIndex].Value;
       Rectangle barIconFrame = texture2D.Frame(1, 1, 0, 0, 0, 0);
       BigProgressBarHelper.DrawFancyBar(spriteBatch, this._lifePercentToShow, texture2D, barIconFrame, this._shieldPercentToShow);
     }

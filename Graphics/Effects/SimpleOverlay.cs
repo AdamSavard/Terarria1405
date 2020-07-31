@@ -49,7 +49,7 @@ namespace Terraria.Graphics.Effects
       this._shader.UseGlobalOpacity(this.Opacity);
       this._shader.UseTargetPosition(this.TargetPosition);
       this._shader.Apply();
-      spriteBatch.Draw(this._texture.get_Value(), new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Main.ColorOfTheSkies);
+      spriteBatch.Draw(this._texture.Value, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Main.ColorOfTheSkies);
     }
 
     public override void Update(GameTime gameTime)

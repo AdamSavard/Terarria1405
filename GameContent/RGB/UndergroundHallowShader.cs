@@ -50,9 +50,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public UndergroundHallowShader()
-    {
-      base.\u002Ector();
+    public UndergroundHallowShader() : base()
+{
     }
   }
 }

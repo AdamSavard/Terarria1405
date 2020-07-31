@@ -80,7 +80,7 @@ namespace Terraria.GameContent
       Asset<Texture2D> tex = TextureAssets.Projectile[734];
       Rectangle r = tex.Frame(1, 8, 0, this._frameNumber, 0, 0);
       Color color = Color.Lerp(Lighting.GetColor(this._position.ToTileCoordinates()), Color.White, 0.5f) * this._opacity;
-      DrawData drawData1 = new DrawData(tex.get_Value(), this._position - Main.screenPosition, new Rectangle?(r), color, 0.0f, r.Size() / 2f, 1f, SpriteEffects.None, 0);
+      DrawData drawData1 = new DrawData(tex.Value, this._position - Main.screenPosition, new Rectangle?(r), color, 0.0f, r.Size() / 2f, 1f, SpriteEffects.None, 0);
       drawDataList.Add(drawData1);
       for (float num = 0.0f; (double) num < 1.0; num += 0.34f)
       {
@@ -98,7 +98,7 @@ namespace Terraria.GameContent
       if (averageTileLighting <= 10)
         return;
       Color selectionGlowColor = Colors.GetSelectionGlowColor(selectionMode == 2, averageTileLighting);
-      drawData1 = new DrawData(TextureAssets.Extra[93].get_Value(), this._position - Main.screenPosition, new Rectangle?(r), selectionGlowColor, 0.0f, r.Size() / 2f, 1f, SpriteEffects.None, 0);
+      drawData1 = new DrawData(TextureAssets.Extra[93].Value, this._position - Main.screenPosition, new Rectangle?(r), selectionGlowColor, 0.0f, r.Size() / 2f, 1f, SpriteEffects.None, 0);
       drawDataList.Add(drawData1);
     }
   }

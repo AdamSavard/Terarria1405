@@ -53,10 +53,10 @@ namespace Terraria.GameContent.Skies.CreditsRoll
           ++Hue;
         Color rgb = Main.hslToRgb(Hue, 1f, 0.5f);
         string text = this._text.Value;
-        Vector2 origin = FontAssets.DeathText.get_Value().MeasureString(text) * 0.5f;
+        Vector2 origin = FontAssets.DeathText.Value.MeasureString(text) * 0.5f;
         float num5 = (float) (1.0 - (1.0 - (double) num3) * (1.0 - (double) num3));
-        ChatManager.DrawColorCodedStringShadow(info.SpriteBatch, FontAssets.DeathText.get_Value(), text, position, rgb * num5 * num5 * 0.25f, 0.0f, origin, Vector2.One, -1f, 2f);
-        ChatManager.DrawColorCodedString(info.SpriteBatch, FontAssets.DeathText.get_Value(), text, position, Color.White * num5, 0.0f, origin, Vector2.One, -1f, false);
+        ChatManager.DrawColorCodedStringShadow(info.SpriteBatch, FontAssets.DeathText.Value, text, position, rgb * num5 * num5 * 0.25f, 0.0f, origin, Vector2.One, -1f, 2f);
+        ChatManager.DrawColorCodedString(info.SpriteBatch, FontAssets.DeathText.Value, text, position, Color.White * num5, 0.0f, origin, Vector2.One, -1f, false);
       }
     }
 
@@ -248,7 +248,7 @@ namespace Terraria.GameContent.Skies.CreditsRoll
           return;
         Vector2 position = (info.AnchorPositionOnScreen + this._offset).Floor();
         bool flag = num < 6 || (double) num >= (double) this.DedicatedTimeNeeded - 6.0;
-        Texture2D texture2D = TextureAssets.Extra[48].get_Value();
+        Texture2D texture2D = TextureAssets.Extra[48].Value;
         Rectangle rectangle = texture2D.Frame(8, 38, flag ? 0 : 1, 0, 0, 0);
         Vector2 origin = new Vector2((float) (rectangle.Width / 2), (float) rectangle.Height);
         SpriteEffects effect = this._effect;
@@ -273,7 +273,7 @@ namespace Terraria.GameContent.Skies.CreditsRoll
       private Rectangle GetFrame(int wrappedTime)
       {
         int num = wrappedTime >= 10 ? 1 : 0;
-        return TextureAssets.Extra[48].get_Value().Frame(8, 38, this._emoteId % 4 * 2 + num, this._emoteId / 4 + 1, 0, 0);
+        return TextureAssets.Extra[48].Value.Frame(8, 38, this._emoteId % 4 * 2 + num, this._emoteId / 4 + 1, 0, 0);
       }
     }
   }

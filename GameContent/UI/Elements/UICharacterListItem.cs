@@ -233,9 +233,9 @@ namespace Terraria.GameContent.UI.Elements
 
     private void DrawPanel(SpriteBatch spriteBatch, Vector2 position, float width)
     {
-      spriteBatch.Draw(this._innerPanelTexture.get_Value(), position, new Rectangle?(new Rectangle(0, 0, 8, this._innerPanelTexture.Height())), Color.White);
-      spriteBatch.Draw(this._innerPanelTexture.get_Value(), new Vector2(position.X + 8f, position.Y), new Rectangle?(new Rectangle(8, 0, 8, this._innerPanelTexture.Height())), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 16.0) / 8.0), 1f), SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._innerPanelTexture.get_Value(), new Vector2((float) ((double) position.X + (double) width - 8.0), position.Y), new Rectangle?(new Rectangle(16, 0, 8, this._innerPanelTexture.Height())), Color.White);
+      spriteBatch.Draw(this._innerPanelTexture.Value, position, new Rectangle?(new Rectangle(0, 0, 8, this._innerPanelTexture.Height())), Color.White);
+      spriteBatch.Draw(this._innerPanelTexture.Value, new Vector2(position.X + 8f, position.Y), new Rectangle?(new Rectangle(8, 0, 8, this._innerPanelTexture.Height())), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 16.0) / 8.0), 1f), SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._innerPanelTexture.Value, new Vector2((float) ((double) position.X + (double) width - 8.0), position.Y), new Rectangle?(new Rectangle(16, 0, 8, this._innerPanelTexture.Height())), Color.White);
     }
 
     protected override void DrawSelf(SpriteBatch spriteBatch)
@@ -245,16 +245,16 @@ namespace Terraria.GameContent.UI.Elements
       CalculatedStyle dimensions = this._playerPanel.GetDimensions();
       float x = dimensions.X + dimensions.Width;
       Utils.DrawBorderString(spriteBatch, this._data.Name, new Vector2(x + 6f, dimensions.Y - 2f), Color.White, 1f, 0.0f, 0.0f, -1);
-      spriteBatch.Draw(this._dividerTexture.get_Value(), new Vector2(x, innerDimensions.Y + 21f), new Rectangle?(), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) this.GetDimensions().X + (double) this.GetDimensions().Width - (double) x) / 8.0), 1f), SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._dividerTexture.Value, new Vector2(x, innerDimensions.Y + 21f), new Rectangle?(), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) this.GetDimensions().X + (double) this.GetDimensions().Width - (double) x) / 8.0), 1f), SpriteEffects.None, 0.0f);
       Vector2 vector2 = new Vector2(x + 6f, innerDimensions.Y + 29f);
       float width1 = 200f;
       Vector2 position1 = vector2;
       this.DrawPanel(spriteBatch, position1, width1);
-      spriteBatch.Draw(TextureAssets.Heart.get_Value(), position1 + new Vector2(5f, 2f), Color.White);
+      spriteBatch.Draw(TextureAssets.Heart.Value, position1 + new Vector2(5f, 2f), Color.White);
       position1.X += 10f + (float) TextureAssets.Heart.Width();
       Utils.DrawBorderString(spriteBatch, this._data.Player.statLifeMax.ToString() + Language.GetTextValue("GameUI.PlayerLifeMax"), position1 + new Vector2(0.0f, 3f), Color.White, 1f, 0.0f, 0.0f, -1);
       position1.X += 65f;
-      spriteBatch.Draw(TextureAssets.Mana.get_Value(), position1 + new Vector2(5f, 2f), Color.White);
+      spriteBatch.Draw(TextureAssets.Mana.Value, position1 + new Vector2(5f, 2f), Color.White);
       position1.X += 10f + (float) TextureAssets.Mana.Width();
       Utils.DrawBorderString(spriteBatch, this._data.Player.statManaMax.ToString() + Language.GetTextValue("GameUI.PlayerManaMax"), position1 + new Vector2(0.0f, 3f), Color.White, 1f, 0.0f, 0.0f, -1);
       vector2.X += width1 + 5f;
@@ -283,7 +283,7 @@ namespace Terraria.GameContent.UI.Elements
           color = Main.creativeModeColor;
           break;
       }
-      Vector2 pos1 = position2 + new Vector2((float) ((double) width2 * 0.5 - (double) FontAssets.MouseText.get_Value().MeasureString(text1).X * 0.5), 3f);
+      Vector2 pos1 = position2 + new Vector2((float) ((double) width2 * 0.5 - (double) FontAssets.MouseText.Value.MeasureString(text1).X * 0.5), 3f);
       Utils.DrawBorderString(spriteBatch, text1, pos1, color, 1f, 0.0f, 0.0f, -1);
       vector2.X += width2 + 5f;
       Vector2 position3 = vector2;
@@ -292,7 +292,7 @@ namespace Terraria.GameContent.UI.Elements
       TimeSpan playTime = this._data.GetPlayTime();
       int num = playTime.Days * 24 + playTime.Hours;
       string text2 = (num < 10 ? (object) "0" : (object) "").ToString() + (object) num + playTime.ToString("\\:mm\\:ss");
-      Vector2 pos2 = position3 + new Vector2((float) ((double) width3 * 0.5 - (double) FontAssets.MouseText.get_Value().MeasureString(text2).X * 0.5), 3f);
+      Vector2 pos2 = position3 + new Vector2((float) ((double) width3 * 0.5 - (double) FontAssets.MouseText.Value.MeasureString(text2).X * 0.5), 3f);
       Utils.DrawBorderString(spriteBatch, text2, pos2, Color.White, 1f, 0.0f, 0.0f, -1);
     }
   }

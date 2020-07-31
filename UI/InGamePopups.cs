@@ -85,7 +85,7 @@ namespace Terraria.UI
         if ((double) opacity <= 0.0)
           return;
         float num1 = this.Scale * 1.1f;
-        Vector2 size = (FontAssets.ItemStack.get_Value().MeasureString(this._title) + new Vector2(58f, 10f)) * num1;
+        Vector2 size = (FontAssets.ItemStack.Value.MeasureString(this._title) + new Vector2(58f, 10f)) * num1;
         Rectangle rectangle = Utils.CenteredRectangle(bottomAnchorPosition + new Vector2(0.0f, (float) (-(double) size.Y * 0.5)), size);
         Vector2 mouseScreen = Main.MouseScreen;
         int num2 = rectangle.Contains(mouseScreen.ToPoint()) ? 1 : 0;
@@ -93,8 +93,8 @@ namespace Terraria.UI
         Utils.DrawInvBG(sb, rectangle, c);
         float scale = num1 * 0.3f;
         Vector2 position = rectangle.Right() - Vector2.UnitX * num1 * (float) (12.0 + (double) scale * (double) this._achievementIconFrame.Width);
-        sb.Draw(this._achievementTexture.get_Value(), position, new Rectangle?(this._achievementIconFrame), Color.White * opacity, 0.0f, new Vector2(0.0f, (float) (this._achievementIconFrame.Height / 2)), scale, SpriteEffects.None, 0.0f);
-        sb.Draw(this._achievementBorderTexture.get_Value(), position, new Rectangle?(), Color.White * opacity, 0.0f, new Vector2(0.0f, (float) (this._achievementIconFrame.Height / 2)), scale, SpriteEffects.None, 0.0f);
+        sb.Draw(this._achievementTexture.Value, position, new Rectangle?(this._achievementIconFrame), Color.White * opacity, 0.0f, new Vector2(0.0f, (float) (this._achievementIconFrame.Height / 2)), scale, SpriteEffects.None, 0.0f);
+        sb.Draw(this._achievementBorderTexture.Value, position, new Rectangle?(), Color.White * opacity, 0.0f, new Vector2(0.0f, (float) (this._achievementIconFrame.Height / 2)), scale, SpriteEffects.None, 0.0f);
         Color color = new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor / 5, (int) Main.mouseTextColor);
         Utils.DrawBorderString(sb, this._title, position - Vector2.UnitX * 10f, color * opacity, num1 * 0.9f, 1f, 0.4f, -1);
         if (num2 == 0)
@@ -201,19 +201,19 @@ namespace Terraria.UI
           FullId = this._request.UserFullIdentifier
         });
         float num = this.Scale * 1.1f;
-        Vector2 size = (FontAssets.ItemStack.get_Value().MeasureString(text) + new Vector2(58f, 10f)) * num;
+        Vector2 size = (FontAssets.ItemStack.Value.MeasureString(text) + new Vector2(58f, 10f)) * num;
         Rectangle R = Utils.CenteredRectangle(bottomAnchorPosition + new Vector2(0.0f, (float) (-(double) size.Y * 0.5)), size);
         Vector2 mouseScreen = Main.MouseScreen;
         Color c = R.Contains(mouseScreen.ToPoint()) ? new Color(64, 109, 164) * 0.75f : new Color(64, 109, 164) * 0.5f;
         Utils.DrawInvBG(spriteBatch, R, c);
         new Vector2((float) R.Left, (float) R.Center.Y).X += 32f;
-        Texture2D texture2D1 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonPlay", (AssetRequestMode) 1)).get_Value();
+        Texture2D texture2D1 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonPlay", (AssetRequestMode) 1)).Value;
         Vector2 position = new Vector2((float) (R.Left + 7), (float) ((double) MathHelper.Lerp((float) R.Top, (float) R.Bottom, 0.5f) - (double) (texture2D1.Height / 2) - 1.0));
         bool flag1 = Utils.CenteredRectangle(position + new Vector2((float) (texture2D1.Width / 2), 0.0f), texture2D1.Size()).Contains(mouseScreen.ToPoint());
         spriteBatch.Draw(texture2D1, position, new Rectangle?(), Color.White * (flag1 ? 1f : 0.5f), 0.0f, new Vector2(0.0f, 0.5f) * texture2D1.Size(), 1f, SpriteEffects.None, 0.0f);
         if (flag1)
           this.OnMouseOver(false);
-        Texture2D texture2D2 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonDelete", (AssetRequestMode) 1)).get_Value();
+        Texture2D texture2D2 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonDelete", (AssetRequestMode) 1)).Value;
         position = new Vector2((float) (R.Left + 7), (float) ((double) MathHelper.Lerp((float) R.Top, (float) R.Bottom, 0.5f) + (double) (texture2D2.Height / 2) + 1.0));
         bool flag2 = Utils.CenteredRectangle(position + new Vector2((float) (texture2D2.Width / 2), 0.0f), texture2D2.Size()).Contains(mouseScreen.ToPoint());
         spriteBatch.Draw(texture2D2, position, new Rectangle?(), Color.White * (flag2 ? 1f : 0.5f), 0.0f, new Vector2(0.0f, 0.5f) * texture2D2.Size(), 1f, SpriteEffects.None, 0.0f);
@@ -251,7 +251,7 @@ namespace Terraria.UI
       {
         string userWrapperText = this._request.GetUserWrapperText();
         string userDisplayName = this._request.UserDisplayName;
-        Utils.TrimTextIfNeeded(ref userDisplayName, FontAssets.MouseText.get_Value(), 0.9f, (float) (area.Width / 4));
+        Utils.TrimTextIfNeeded(ref userDisplayName, FontAssets.MouseText.Value, 0.9f, (float) (area.Width / 4));
         var data = new
         {
           DisplayName = userDisplayName,
@@ -263,13 +263,13 @@ namespace Terraria.UI
         Utils.DrawInvBG(spriteBatch, area, c);
         Vector2 pos = new Vector2((float) area.Left, (float) area.Center.Y);
         pos.X += 32f;
-        Texture2D texture2D1 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonPlay", (AssetRequestMode) 1)).get_Value();
+        Texture2D texture2D1 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonPlay", (AssetRequestMode) 1)).Value;
         Vector2 position = new Vector2((float) (area.Left + 7), (float) ((double) MathHelper.Lerp((float) area.Top, (float) area.Bottom, 0.5f) - (double) (texture2D1.Height / 2) - 1.0));
         bool flag1 = Utils.CenteredRectangle(position + new Vector2((float) (texture2D1.Width / 2), 0.0f), texture2D1.Size()).Contains(mouseScreen.ToPoint());
         spriteBatch.Draw(texture2D1, position, new Rectangle?(), Color.White * (flag1 ? 1f : 0.5f), 0.0f, new Vector2(0.0f, 0.5f) * texture2D1.Size(), 1f, SpriteEffects.None, 0.0f);
         if (flag1)
           this.OnMouseOver(false);
-        Texture2D texture2D2 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonDelete", (AssetRequestMode) 1)).get_Value();
+        Texture2D texture2D2 = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/ButtonDelete", (AssetRequestMode) 1)).Value;
         position = new Vector2((float) (area.Left + 7), (float) ((double) MathHelper.Lerp((float) area.Top, (float) area.Bottom, 0.5f) + (double) (texture2D2.Height / 2) + 1.0));
         bool flag2 = Utils.CenteredRectangle(position + new Vector2((float) (texture2D2.Width / 2), 0.0f), texture2D2.Size()).Contains(mouseScreen.ToPoint());
         spriteBatch.Draw(texture2D2, position, new Rectangle?(), Color.White * (flag2 ? 1f : 0.5f), 0.0f, new Vector2(0.0f, 0.5f) * texture2D2.Size(), 1f, SpriteEffects.None, 0.0f);

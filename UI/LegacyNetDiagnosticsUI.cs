@@ -101,7 +101,7 @@ namespace Terraria.UI
           str = "TX Bytes: " + string.Format("{0:0,0}", (object) LegacyNetDiagnosticsUI.txData);
           num2 += index * 20;
         }
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str, new Vector2((float) num1, (float) num2), Color.White, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str, new Vector2((float) num1, (float) num2), Color.White, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
       }
     }
 
@@ -113,22 +113,22 @@ namespace Terraria.UI
     {
       float num = 0.7f;
       string str1 = msgId.ToString() + ": ";
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str1, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str1, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
       x += 30;
       string str2 = "rx:" + string.Format("{0:0,0}", (object) LegacyNetDiagnosticsUI.rxMsgType[msgId]);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str2, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str2, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
       x += 70;
       string str3 = string.Format("{0:0,0}", (object) LegacyNetDiagnosticsUI.rxDataType[msgId]);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str3, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str3, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
       x += 70;
       string str4 = msgId.ToString() + ": ";
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str4, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str4, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
       x += 30;
       string str5 = "tx:" + string.Format("{0:0,0}", (object) LegacyNetDiagnosticsUI.txMsgType[msgId]);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str5, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str5, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
       x += 70;
       string str6 = string.Format("{0:0,0}", (object) LegacyNetDiagnosticsUI.txDataType[msgId]);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), str6, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, str6, new Vector2((float) x, (float) y), Color.White, 0.0f, new Vector2(), num, SpriteEffects.None, 0.0f);
     }
 
     public void CountReadModuleMessage(int moduleMessageId, int messageLength)

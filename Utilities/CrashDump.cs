@@ -37,7 +37,7 @@ namespace Terraria.Utilities
       CrashDump.ExceptionInfo exceptionInfo,
       string outputDirectory)
     {
-      if (!Platform.get_IsWindows())
+      if (!Platform.IsWindows)
         return false;
       string path = Path.Combine(outputDirectory, CrashDump.CreateDumpName());
       if (!Utils.TryCreatingDirectory(outputDirectory))
@@ -51,7 +51,7 @@ namespace Terraria.Utilities
       CrashDump.Options options,
       CrashDump.ExceptionInfo exceptionInfo)
     {
-      if (!Platform.get_IsWindows())
+      if (!Platform.IsWindows)
         return false;
       Process currentProcess = Process.GetCurrentProcess();
       IntPtr handle = currentProcess.Handle;

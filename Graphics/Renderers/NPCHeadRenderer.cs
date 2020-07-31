@@ -34,7 +34,7 @@ namespace Terraria.Graphics.Renderers
       if (this._contents[headId] == null)
       {
         this._contents[headId] = new NPCHeadDrawRenderTargetContent();
-        this._contents[headId].SetTexture(this._matchingArray[headId].get_Value());
+        this._contents[headId].SetTexture(this._matchingArray[headId].Value);
       }
       NPCHeadDrawRenderTargetContent content = this._contents[headId];
       if (content.IsReady)

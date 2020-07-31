@@ -52,9 +52,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public JungleShader()
-    {
-      base.\u002Ector();
+    public JungleShader() : base()
+{
     }
   }
 }

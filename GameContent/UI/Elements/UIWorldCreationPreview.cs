@@ -67,58 +67,58 @@ namespace Terraria.GameContent.UI.Elements
       {
         case 0:
         case 3:
-          spriteBatch.Draw(this._BackgroundNormalTexture.get_Value(), position, Color.White);
+          spriteBatch.Draw(this._BackgroundNormalTexture.Value, position, Color.White);
           color = Color.White;
           break;
         case 1:
-          spriteBatch.Draw(this._BackgroundExpertTexture.get_Value(), position, Color.White);
+          spriteBatch.Draw(this._BackgroundExpertTexture.Value, position, Color.White);
           color = Color.DarkGray;
           break;
         case 2:
-          spriteBatch.Draw(this._BackgroundMasterTexture.get_Value(), position, Color.White);
+          spriteBatch.Draw(this._BackgroundMasterTexture.Value, position, Color.White);
           color = Color.DarkGray;
           break;
       }
       switch (this._size)
       {
         case 0:
-          spriteBatch.Draw(this._SizeSmallTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._SizeSmallTexture.Value, position, color);
           break;
         case 1:
-          spriteBatch.Draw(this._SizeMediumTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._SizeMediumTexture.Value, position, color);
           break;
         case 2:
-          spriteBatch.Draw(this._SizeLargeTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._SizeLargeTexture.Value, position, color);
           break;
       }
       switch (this._evil)
       {
         case 0:
-          spriteBatch.Draw(this._EvilRandomTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._EvilRandomTexture.Value, position, color);
           break;
         case 1:
-          spriteBatch.Draw(this._EvilCorruptionTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._EvilCorruptionTexture.Value, position, color);
           break;
         case 2:
-          spriteBatch.Draw(this._EvilCrimsonTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._EvilCrimsonTexture.Value, position, color);
           break;
       }
       switch (this._difficulty)
       {
         case 0:
-          spriteBatch.Draw(this._BunnyNormalTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._BunnyNormalTexture.Value, position, color);
           break;
         case 1:
-          spriteBatch.Draw(this._BunnyExpertTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._BunnyExpertTexture.Value, position, color);
           break;
         case 2:
-          spriteBatch.Draw(this._BunnyMasterTexture.get_Value(), position, color * 1.2f);
+          spriteBatch.Draw(this._BunnyMasterTexture.Value, position, color * 1.2f);
           break;
         case 3:
-          spriteBatch.Draw(this._BunnyCreativeTexture.get_Value(), position, color);
+          spriteBatch.Draw(this._BunnyCreativeTexture.Value, position, color);
           break;
       }
-      spriteBatch.Draw(this._BorderTexture.get_Value(), new Vector2(dimensions.X, dimensions.Y), Color.White);
+      spriteBatch.Draw(this._BorderTexture.Value, new Vector2(dimensions.X, dimensions.Y), Color.White);
     }
   }
 }

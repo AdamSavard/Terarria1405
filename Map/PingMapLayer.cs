@@ -34,7 +34,7 @@ namespace Terraria.Map
           double totalSeconds = (now - ping.Time).TotalSeconds;
           int num = (int) (totalSeconds * 10.0);
           frame.CurrentRow = (byte) ((uint) num % (uint) frame.RowCount);
-          context.Draw(TextureAssets.MapPing.get_Value(), ping.Position, frame, Alignment.Center);
+          context.Draw(TextureAssets.MapPing.Value, ping.Position, frame, Alignment.Center);
           if (totalSeconds > 15.0)
             this._pings.Remove((SlotId) current.Id);
         }
@@ -43,7 +43,7 @@ namespace Terraria.Map
 
     public void Add(Vector2 position)
     {
-      if (this._pings.get_Count() == this._pings.get_Capacity())
+      if (this._pings.Count == this._pings.Capacity)
         return;
       this._pings.Add(new PingMapLayer.Ping(position));
     }

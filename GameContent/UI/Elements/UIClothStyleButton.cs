@@ -59,12 +59,12 @@ namespace Terraria.GameContent.UI.Elements
       else
         this._soundedHover = false;
       CalculatedStyle dimensions = this.GetDimensions();
-      Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White * 0.5f);
+      Utils.DrawSplicedPanel(spriteBatch, this._BasePanelTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White * 0.5f);
       if (this._realSkinVariant == this.ClothStyleId)
-        Utils.DrawSplicedPanel(spriteBatch, this._selectedBorderTexture.get_Value(), (int) dimensions.X + 3, (int) dimensions.Y + 3, (int) dimensions.Width - 6, (int) dimensions.Height - 6, 10, 10, 10, 10, Color.White);
+        Utils.DrawSplicedPanel(spriteBatch, this._selectedBorderTexture.Value, (int) dimensions.X + 3, (int) dimensions.Y + 3, (int) dimensions.Width - 6, (int) dimensions.Height - 6, 10, 10, 10, 10, Color.White);
       if (!this._hovered)
         return;
-      Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.get_Value(), (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White);
+      Utils.DrawSplicedPanel(spriteBatch, this._hoveredBorderTexture.Value, (int) dimensions.X, (int) dimensions.Y, (int) dimensions.Width, (int) dimensions.Height, 10, 10, 10, 10, Color.White);
     }
 
     public override void MouseDown(UIMouseEvent evt)

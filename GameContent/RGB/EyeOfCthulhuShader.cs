@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _veinColor;
     private readonly Vector4 _backgroundColor;
 
-    public EyeOfCthulhuShader(Color eyeColor, Color veinColor, Color backgroundColor)
+    public EyeOfCthulhuShader(Color eyeColor, Color veinColor, Color backgroundColor) : base()
     {
-      this.\u002Ector();
       this._eyeColor = eyeColor.ToVector4();
       this._veinColor = veinColor.ToVector4();
       this._backgroundColor = backgroundColor.ToVector4();
@@ -59,7 +58,7 @@ namespace Terraria.GameContent.RGB
           num1 = 2f - num1;
           num2 = -1;
         }
-        Vector2 vector2_1 = new Vector2((float) ((double) num1 * 7.0 - 3.5), 0.0f) + fragment.get_CanvasCenter();
+        Vector2 vector2_1 = new Vector2((float) ((double) num1 * 7.0 - 3.5), 0.0f) + fragment.CanvasCenter;
         for (int index = 0; index < fragment.Count; ++index)
         {
           Vector2 canvasPositionOfIndex = fragment.GetCanvasPositionOfIndex(index);

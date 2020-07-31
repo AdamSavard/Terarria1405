@@ -59,9 +59,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public HallowSurfaceShader()
-    {
-      base.\u002Ector();
+    public HallowSurfaceShader() : base()
+{
     }
   }
 }

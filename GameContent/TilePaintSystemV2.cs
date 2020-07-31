@@ -273,7 +273,7 @@ namespace Terraria.GameContent
 
       public override void Prepare()
       {
-        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.TreeTop[this.Key.TextureIndex].get_Name(), (AssetRequestMode) 1)).get_Value(), new Rectangle?());
+        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.TreeTop[this.Key.TextureIndex].Name, (AssetRequestMode) 1)).Value, new Rectangle?());
       }
 
       public override void PrepareShader()
@@ -288,7 +288,7 @@ namespace Terraria.GameContent
 
       public override void Prepare()
       {
-        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.TreeBranch[this.Key.TextureIndex].get_Name(), (AssetRequestMode) 1)).get_Value(), new Rectangle?());
+        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.TreeBranch[this.Key.TextureIndex].Name, (AssetRequestMode) 1)).Value, new Rectangle?());
       }
 
       public override void PrepareShader()
@@ -303,7 +303,7 @@ namespace Terraria.GameContent
 
       public override void Prepare()
       {
-        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.Tile[this.Key.TileType].get_Name(), (AssetRequestMode) 1)).get_Value(), new Rectangle?());
+        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.Tile[this.Key.TileType].Name, (AssetRequestMode) 1)).Value, new Rectangle?());
       }
 
       public override void PrepareShader()
@@ -318,7 +318,7 @@ namespace Terraria.GameContent
 
       public override void Prepare()
       {
-        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.Wall[this.Key.WallType].get_Name(), (AssetRequestMode) 1)).get_Value(), new Rectangle?());
+        this.PrepareTextureIfNecessary(((Asset<Texture2D>) Main.Assets.Request<Texture2D>(TextureAssets.Wall[this.Key.WallType].Name, (AssetRequestMode) 1)).Value, new Rectangle?());
       }
 
       public override void PrepareShader()

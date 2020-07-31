@@ -149,7 +149,7 @@ namespace Terraria.GameContent.Shaders
             if (!this._useViscosityFilter && (npc.honeyWet || npc.lavaWet))
               num2 *= 0.3f;
             if (npc.wet)
-              tileBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Vector4(vector2_5.X, vector2_5.Y, (float) npc.width * 2f, (float) npc.height * 2f) * 0.25f, new Rectangle?(), new VertexColors(new Color((float) ((double) vector2_4.X * 0.5 + 0.5), (float) ((double) vector2_4.Y * 0.5 + 0.5), 0.5f * num2)), new Vector2((float) TextureAssets.MagicPixel.Width() / 2f, (float) TextureAssets.MagicPixel.Height() / 2f), SpriteEffects.None, npc.rotation);
+              tileBatch.Draw(TextureAssets.MagicPixel.Value, new Vector4(vector2_5.X, vector2_5.Y, (float) npc.width * 2f, (float) npc.height * 2f) * 0.25f, new Rectangle?(), new VertexColors(new Color((float) ((double) vector2_4.X * 0.5 + 0.5), (float) ((double) vector2_4.Y * 0.5 + 0.5), 0.5f * num2)), new Vector2((float) TextureAssets.MagicPixel.Width() / 2f, (float) TextureAssets.MagicPixel.Height() / 2f), SpriteEffects.None, npc.rotation);
             if (npc.wetCount != (byte) 0)
             {
               float num3 = 0.195f * (float) Math.Sqrt((double) npc.velocity.Length());
@@ -176,7 +176,7 @@ namespace Terraria.GameContent.Shaders
             if (!this._useViscosityFilter && (player.honeyWet || player.lavaWet))
               num1 *= 0.3f;
             if (player.wet)
-              tileBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Vector4(vector2_4.X - (float) ((double) player.width * 2.0 * 0.5), vector2_4.Y - (float) ((double) player.height * 2.0 * 0.5), (float) player.width * 2f, (float) player.height * 2f) * 0.25f, new VertexColors(new Color((float) ((double) velocity.X * 0.5 + 0.5), (float) ((double) velocity.Y * 0.5 + 0.5), 0.5f * num1)));
+              tileBatch.Draw(TextureAssets.MagicPixel.Value, new Vector4(vector2_4.X - (float) ((double) player.width * 2.0 * 0.5), vector2_4.Y - (float) ((double) player.height * 2.0 * 0.5), (float) player.width * 2f, (float) player.height * 2f) * 0.25f, new VertexColors(new Color((float) ((double) velocity.X * 0.5 + 0.5), (float) ((double) velocity.Y * 0.5 + 0.5), 0.5f * num1)));
             if (player.wetCount != (byte) 0)
             {
               float num2 = 5f;
@@ -218,7 +218,7 @@ namespace Terraria.GameContent.Shaders
               num4 *= 0.3f;
             float z = Math.Max(12f, (float) projectile.width * 0.75f);
             float w = Math.Max(12f, (float) projectile.height * 0.75f);
-            tileBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Vector4(vector2_3.X - z * 0.5f, vector2_3.Y - w * 0.5f, z, w) * 0.25f, new VertexColors(new Color((float) ((double) velocity.X * 0.5 + 0.5), (float) ((double) velocity.Y * 0.5 + 0.5), num4 * 0.5f)));
+            tileBatch.Draw(TextureAssets.MagicPixel.Value, new Vector4(vector2_3.X - z * 0.5f, vector2_3.Y - w * 0.5f, z, w) * 0.25f, new VertexColors(new Color((float) ((double) velocity.X * 0.5 + 0.5), (float) ((double) velocity.Y * 0.5 + 0.5), num4 * 0.5f)));
           }
         }
       }
@@ -231,7 +231,7 @@ namespace Terraria.GameContent.Shaders
           Vector2 vector2_3 = this._rippleQueue[index].Position - vector2_1;
           Vector2 size = this._rippleQueue[index].Size;
           Rectangle sourceRectangle = this._rippleQueue[index].SourceRectangle;
-          Texture2D texture = this._rippleShapeTexture.get_Value();
+          Texture2D texture = this._rippleShapeTexture.Value;
           tileBatch.Draw(texture, new Vector4(vector2_3.X, vector2_3.Y, size.X, size.Y) * 0.25f, new Rectangle?(sourceRectangle), new VertexColors(this._rippleQueue[index].WaveData), new Vector2((float) (sourceRectangle.Width / 2), (float) (sourceRectangle.Height / 2)), SpriteEffects.None, this._rippleQueue[index].Rotation);
         }
         tileBatch.End();

@@ -97,12 +97,12 @@ namespace Terraria.GameContent.UI
 
     public void DrawBackground(SpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle((int) this.MinimapPosition.X - 6, (int) this.MinimapPosition.Y - 6, 244, 244), Color.Black * Main.mapMinimapAlpha);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle((int) this.MinimapPosition.X - 6, (int) this.MinimapPosition.Y - 6, 244, 244), Color.Black * Main.mapMinimapAlpha);
     }
 
     public void DrawForeground(SpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(this._frameTexture.get_Value(), this.FramePosition, Color.White);
+      spriteBatch.Draw(this._frameTexture.Value, this.FramePosition, Color.White);
       this._zoomInButton.Draw(spriteBatch, this.FramePosition);
       this._zoomOutButton.Draw(spriteBatch, this.FramePosition);
       this._resetButton.Draw(spriteBatch, this.FramePosition);
@@ -154,7 +154,7 @@ namespace Terraria.GameContent.UI
       {
         if (!this.IsHighlighted)
           return;
-        spriteBatch.Draw(this._hoverTexture.get_Value(), this._position + parentPosition, Color.White);
+        spriteBatch.Draw(this._hoverTexture.Value, this._position + parentPosition, Color.White);
       }
 
       public bool IsTouchingPoint(Vector2 testPoint, Vector2 parentPosition)

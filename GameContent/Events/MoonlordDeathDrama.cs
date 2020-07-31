@@ -90,25 +90,25 @@ namespace Terraria.GameContent.Events
       if ((double) MoonlordDeathDrama.whitening == 0.0)
         return;
       Color color = Color.White * MoonlordDeathDrama.whitening;
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(-2, -2, Main.screenWidth + 4, Main.screenHeight + 4), new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
     }
 
     public static void ThrowPieces(Vector2 MoonlordCoreCenter, int DramaSeed)
     {
       UnifiedRandom r = new UnifiedRandom(DramaSeed);
       Vector2 vector2_1 = Vector2.UnitY.RotatedBy((double) r.NextFloat() * 1.57079637050629 - 0.785398185253143 + 3.14159274101257, new Vector2());
-      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Spine", (AssetRequestMode) 1)).get_Value(), new Vector2(64f, 150f), MoonlordCoreCenter + new Vector2(0.0f, 50f), vector2_1 * 6f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
+      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Spine", (AssetRequestMode) 1)).Value, new Vector2(64f, 150f), MoonlordCoreCenter + new Vector2(0.0f, 50f), vector2_1 * 6f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
       Vector2 vector2_2 = Vector2.UnitY.RotatedBy((double) r.NextFloat() * 1.57079637050629 - 0.785398185253143 + 3.14159274101257, new Vector2());
-      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Shoulder", (AssetRequestMode) 1)).get_Value(), new Vector2(40f, 120f), MoonlordCoreCenter + new Vector2(50f, -120f), vector2_2 * 10f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
+      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Shoulder", (AssetRequestMode) 1)).Value, new Vector2(40f, 120f), MoonlordCoreCenter + new Vector2(50f, -120f), vector2_2 * 10f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
       Vector2 vector2_3 = Vector2.UnitY.RotatedBy((double) r.NextFloat() * 1.57079637050629 - 0.785398185253143 + 3.14159274101257, new Vector2());
-      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Torso", (AssetRequestMode) 1)).get_Value(), new Vector2(192f, 252f), MoonlordCoreCenter, vector2_3 * 8f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
+      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Torso", (AssetRequestMode) 1)).Value, new Vector2(192f, 252f), MoonlordCoreCenter, vector2_3 * 8f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
       Vector2 vector2_4 = Vector2.UnitY.RotatedBy((double) r.NextFloat() * 1.57079637050629 - 0.785398185253143 + 3.14159274101257, new Vector2());
-      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Head", (AssetRequestMode) 1)).get_Value(), new Vector2(138f, 185f), MoonlordCoreCenter - new Vector2(0.0f, 200f), vector2_4 * 12f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
+      MoonlordDeathDrama._pieces.Add(new MoonlordDeathDrama.MoonlordPiece(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Head", (AssetRequestMode) 1)).Value, new Vector2(138f, 185f), MoonlordCoreCenter - new Vector2(0.0f, 200f), vector2_4 * 12f, 0.0f, (float) ((double) r.NextFloat() * 0.100000001490116 - 0.0500000007450581)));
     }
 
     public static void AddExplosion(Vector2 spot)
     {
-      MoonlordDeathDrama._explosions.Add(new MoonlordDeathDrama.MoonlordExplosion(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Explosion", (AssetRequestMode) 1)).get_Value(), spot, Main.rand.Next(2, 4)));
+      MoonlordDeathDrama._explosions.Add(new MoonlordDeathDrama.MoonlordExplosion(((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/Misc/MoonExplosion/Explosion", (AssetRequestMode) 1)).Value, spot, Main.rand.Next(2, 4)));
     }
 
     public static void RequestLight(float light, Vector2 spot)

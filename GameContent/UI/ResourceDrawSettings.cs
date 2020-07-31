@@ -43,7 +43,7 @@ namespace Terraria.GameContent.UI
         rectangle.Y += (int) ((double) position.Y - (double) origin.Y);
         if (rectangle.Contains(point))
           isHovered = true;
-        spriteBatch.Draw(texture.get_Value(), position, new Rectangle?(r), Color.White, 0.0f, origin, drawScale, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(texture.Value, position, new Rectangle?(r), Color.White, 0.0f, origin, drawScale, SpriteEffects.None, 0.0f);
         topLeftAnchor += this.OffsetPerDraw + r.Size() * this.OffsetPerDrawByTexturePercentile;
       }
     }

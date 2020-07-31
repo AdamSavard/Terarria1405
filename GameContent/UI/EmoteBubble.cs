@@ -158,7 +158,7 @@ namespace Terraria.GameContent.UI
 
     private void Draw(SpriteBatch sb)
     {
-      Texture2D texture2D = TextureAssets.Extra[48].get_Value();
+      Texture2D texture2D = TextureAssets.Extra[48].Value;
       SpriteEffects effect = SpriteEffects.None;
       Vector2 vector2 = this.GetPosition(out effect).Floor();
       bool flag = this.lifeTime < 6 || this.lifeTimeStart - this.lifeTime < 6;
@@ -186,7 +186,7 @@ namespace Terraria.GameContent.UI
       {
         if (this.emote != -1)
           return;
-        Texture2D texture = TextureAssets.NpcHead[this.metadata].get_Value();
+        Texture2D texture = TextureAssets.NpcHead[this.metadata].Value;
         float scale = 1f;
         if ((double) texture.Width / 22.0 > 1.0)
           scale = 22f / (float) texture.Width;

@@ -128,13 +128,13 @@ namespace Terraria.GameContent.Drawing
                 bool flag2 = this._tileArray[index2, index1 - 1].wall > (ushort) 0 && wallBlend[(int) this._tileArray[index2, index1 - 1].wall] != wallBlend[(int) tile.wall];
                 bool flag3 = this._tileArray[index2, index1 + 1].wall > (ushort) 0 && wallBlend[(int) this._tileArray[index2, index1 + 1].wall] != wallBlend[(int) tile.wall];
                 if (num14 != 0)
-                  spriteBatch.Draw(TextureAssets.WallOutline.get_Value(), new Vector2((float) (index2 * 16 - (int) screenPosition.X), (float) (index1 * 16 - (int) screenPosition.Y)) + vector2, new Rectangle?(new Rectangle(0, 0, 2, 16)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(TextureAssets.WallOutline.Value, new Vector2((float) (index2 * 16 - (int) screenPosition.X), (float) (index1 * 16 - (int) screenPosition.Y)) + vector2, new Rectangle?(new Rectangle(0, 0, 2, 16)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
                 if (flag1)
-                  spriteBatch.Draw(TextureAssets.WallOutline.get_Value(), new Vector2((float) (index2 * 16 - (int) screenPosition.X + 14), (float) (index1 * 16 - (int) screenPosition.Y)) + vector2, new Rectangle?(new Rectangle(14, 0, 2, 16)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(TextureAssets.WallOutline.Value, new Vector2((float) (index2 * 16 - (int) screenPosition.X + 14), (float) (index1 * 16 - (int) screenPosition.Y)) + vector2, new Rectangle?(new Rectangle(14, 0, 2, 16)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
                 if (flag2)
-                  spriteBatch.Draw(TextureAssets.WallOutline.get_Value(), new Vector2((float) (index2 * 16 - (int) screenPosition.X), (float) (index1 * 16 - (int) screenPosition.Y)) + vector2, new Rectangle?(new Rectangle(0, 0, 16, 2)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(TextureAssets.WallOutline.Value, new Vector2((float) (index2 * 16 - (int) screenPosition.X), (float) (index1 * 16 - (int) screenPosition.Y)) + vector2, new Rectangle?(new Rectangle(0, 0, 16, 2)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
                 if (flag3)
-                  spriteBatch.Draw(TextureAssets.WallOutline.get_Value(), new Vector2((float) (index2 * 16 - (int) screenPosition.X), (float) (index1 * 16 - (int) screenPosition.Y + 14)) + vector2, new Rectangle?(new Rectangle(0, 14, 16, 2)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(TextureAssets.WallOutline.Value, new Vector2((float) (index2 * 16 - (int) screenPosition.X), (float) (index1 * 16 - (int) screenPosition.Y + 14)) + vector2, new Rectangle?(new Rectangle(0, 14, 16, 2)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
               }
             }
           }
@@ -147,7 +147,7 @@ namespace Terraria.GameContent.Drawing
 
     private Texture2D GetTileDrawTexture(Tile tile, int tileX, int tileY)
     {
-      Texture2D texture2D = TextureAssets.Wall[(int) tile.wall].get_Value();
+      Texture2D texture2D = TextureAssets.Wall[(int) tile.wall].Value;
       Texture2D requestIfNotReady = this._paintSystem.TryGetWallAndRequestIfNotReady((int) tile.wall, (int) tile.wallColor());
       if (requestIfNotReady != null)
         texture2D = requestIfNotReady;

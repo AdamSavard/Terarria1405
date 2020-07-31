@@ -68,7 +68,7 @@ namespace Terraria.GameContent.UI.Elements
       Utils.DrawSettingsPanel(spriteBatch, position, num2, color);
       position.X += 8f;
       position.Y += 2f + num1;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), this._TextDisplayFunction(), position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, this._TextDisplayFunction(), position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
       position.X -= 17f;
       TextureAssets.ColorBar.Frame(1, 1, 0, 0, 0, 0);
       position = new Vector2((float) ((double) dimensions.X + (double) dimensions.Width - 10.0), dimensions.Y + 10f + num1);

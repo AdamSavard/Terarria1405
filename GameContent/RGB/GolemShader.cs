@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _coreColor;
     private readonly Vector4 _backgroundColor;
 
-    public GolemShader(Color glowColor, Color coreColor, Color backgroundColor)
-    {
-      this.\u002Ector();
+    public GolemShader(Color glowColor, Color coreColor, Color backgroundColor) : base()
+{
       this._glowColor = glowColor.ToVector4();
       this._coreColor = coreColor.ToVector4();
       this._backgroundColor = backgroundColor.ToVector4();

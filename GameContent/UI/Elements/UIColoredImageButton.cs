@@ -50,15 +50,15 @@ namespace Terraria.GameContent.UI.Elements
     {
       CalculatedStyle dimensions = this.GetDimensions();
       Vector2 position = dimensions.Position() + new Vector2(dimensions.Width, dimensions.Height) / 2f;
-      spriteBatch.Draw(this._backPanelTexture.get_Value(), position, new Rectangle?(), Color.White * (this.IsMouseHovering ? this._visibilityActive : this._visibilityInactive), 0.0f, this._backPanelTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._backPanelTexture.Value, position, new Rectangle?(), Color.White * (this.IsMouseHovering ? this._visibilityActive : this._visibilityInactive), 0.0f, this._backPanelTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
       Color white = Color.White;
       if (this._hovered)
-        spriteBatch.Draw(this._backPanelBorderTexture.get_Value(), position, new Rectangle?(), Color.White, 0.0f, this._backPanelBorderTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(this._backPanelBorderTexture.Value, position, new Rectangle?(), Color.White, 0.0f, this._backPanelBorderTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
       if (this._selected)
-        spriteBatch.Draw(this._backPanelHighlightTexture.get_Value(), position, new Rectangle?(), Color.White, 0.0f, this._backPanelHighlightTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(this._backPanelHighlightTexture.Value, position, new Rectangle?(), Color.White, 0.0f, this._backPanelHighlightTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
       if (this._middleTexture != null)
-        spriteBatch.Draw(this._middleTexture.get_Value(), position, new Rectangle?(), Color.White, 0.0f, this._middleTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._texture.get_Value(), position, new Rectangle?(), this._color, 0.0f, this._texture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(this._middleTexture.Value, position, new Rectangle?(), Color.White, 0.0f, this._middleTexture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._texture.Value, position, new Rectangle?(), this._color, 0.0f, this._texture.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
     }
 
     public override void MouseOver(UIMouseEvent evt)

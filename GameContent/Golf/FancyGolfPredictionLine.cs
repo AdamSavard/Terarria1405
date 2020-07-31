@@ -56,7 +56,7 @@ namespace Terraria.GameContent.Golf
     {
       this._drawer.Begin(camera.GameViewMatrix.TransformationMatrix);
       int count = this._positions.Count;
-      Texture2D texture2D = TextureAssets.Extra[33].get_Value();
+      Texture2D texture2D = TextureAssets.Extra[33].Value;
       Vector2 vector2_1 = new Vector2(3.5f, 3.5f);
       Vector2 origin = texture2D.Size() / 2f;
       Vector2 unscaledPosition = camera.UnscaledPosition;

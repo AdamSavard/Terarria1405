@@ -825,7 +825,7 @@ namespace Terraria.GameContent.UI.States
     {
       SoundEngine.PlaySound(12, -1, -1, 1, 1f, 0.0f);
       Vector3 hsl;
-      if (!this.GetHexColor(((IClipboard) Platform.Get<IClipboard>()).get_Value(), out hsl))
+      if (!this.GetHexColor(((IClipboard) Platform.Get<IClipboard>()).Value, out hsl))
         return;
       this.ApplyPendingColor(UICharacterCreation.ScaledHslToRgb(hsl.X, hsl.Y, hsl.Z));
       this._currentColorHSL = hsl;
@@ -861,7 +861,7 @@ namespace Terraria.GameContent.UI.States
       SoundEngine.PlaySound(12, -1, -1, 1, 1f, 0.0f);
       try
       {
-        string str1 = ((IClipboard) Platform.Get<IClipboard>()).get_Value();
+        string str1 = ((IClipboard) Platform.Get<IClipboard>()).Value;
         int startIndex = str1.IndexOf("{");
         if (startIndex == -1)
           return;
@@ -1222,13 +1222,13 @@ namespace Terraria.GameContent.UI.States
         text = Language.GetTextValue("UI.RandomizePlayer");
       if (text != null)
       {
-        float x = FontAssets.MouseText.get_Value().MeasureString(text).X;
+        float x = FontAssets.MouseText.Value.MeasureString(text).X;
         Vector2 vector2 = new Vector2((float) Main.mouseX, (float) Main.mouseY) + new Vector2(16f);
         if ((double) vector2.Y > (double) (Main.screenHeight - 30))
           vector2.Y = (float) (Main.screenHeight - 30);
         if ((double) vector2.X > (double) Main.screenWidth - (double) x)
           vector2.X = (float) (Main.screenWidth - 460);
-        Utils.DrawBorderStringFourWay(spriteBatch, FontAssets.MouseText.get_Value(), text, vector2.X, vector2.Y, new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor), Color.Black, Vector2.Zero, 1f);
+        Utils.DrawBorderStringFourWay(spriteBatch, FontAssets.MouseText.Value, text, vector2.X, vector2.Y, new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor), Color.Black, Vector2.Zero, 1f);
       }
       this.SetupGamepadPoints(spriteBatch);
     }

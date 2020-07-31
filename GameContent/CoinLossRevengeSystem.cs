@@ -417,8 +417,8 @@ namespace Terraria.GameContent
         Vector2 vector2 = (this._location / 16f - mapTopLeft) * mapScale + mapX2Y2AndOff;
         if (mapRect.HasValue && !mapRect.Value.Contains(vector2.ToPoint()))
           return false;
-        TextureAssets.MapDeath.get_Value();
-        Texture2D texture2D = this._coinsValue >= 100 ? (this._coinsValue >= 10000 ? (this._coinsValue >= 1000000 ? TextureAssets.Coin[3].get_Value() : TextureAssets.Coin[2].get_Value()) : TextureAssets.Coin[1].get_Value()) : TextureAssets.Coin[0].get_Value();
+        TextureAssets.MapDeath.Value;
+        Texture2D texture2D = this._coinsValue >= 100 ? (this._coinsValue >= 10000 ? (this._coinsValue >= 1000000 ? TextureAssets.Coin[3].Value : TextureAssets.Coin[2].Value) : TextureAssets.Coin[1].Value) : TextureAssets.Coin[0].Value;
         Rectangle r = texture2D.Frame(1, 8, 0, 0, 0, 0);
         spriteBatch.Draw(texture2D, vector2, new Rectangle?(r), Color.White, 0.0f, r.Size() / 2f, drawScale, SpriteEffects.None, 0.0f);
         return Utils.CenteredRectangle(vector2, r.Size() * drawScale).Contains(Main.MouseScreen.ToPoint());

@@ -3744,22 +3744,22 @@ namespace Terraria
       switch (drawType)
       {
         case 0:
-          texture1 = this._data.backTexture.get_Value();
-          texture2 = this._data.backTextureGlow.get_Value();
+          texture1 = this._data.backTexture.Value;
+          texture2 = this._data.backTextureGlow.Value;
           break;
         case 1:
-          texture1 = this._data.backTextureExtra.get_Value();
-          texture2 = this._data.backTextureExtraGlow.get_Value();
+          texture1 = this._data.backTextureExtra.Value;
+          texture2 = this._data.backTextureExtraGlow.Value;
           break;
         case 2:
           if (this._type == 0 && this._idleTime >= this._idleTimeNext)
             return;
-          texture1 = this._data.frontTexture.get_Value();
-          texture2 = this._data.frontTextureGlow.get_Value();
+          texture1 = this._data.frontTexture.Value;
+          texture2 = this._data.frontTextureGlow.Value;
           break;
         case 3:
-          texture1 = this._data.frontTextureExtra.get_Value();
-          texture2 = this._data.frontTextureExtraGlow.get_Value();
+          texture1 = this._data.frontTextureExtra.Value;
+          texture2 = this._data.frontTextureExtraGlow.Value;
           break;
         default:
           texture1 = (Texture2D) null;
@@ -4029,7 +4029,7 @@ namespace Terraria
                 }
               }
             }
-            Texture2D texture2D = TextureAssets.Extra[142].get_Value();
+            Texture2D texture2D = TextureAssets.Extra[142].Value;
             Rectangle rectangle2 = texture2D.Frame(1, 8, 0, mountSpecificData2.frame, 0, 0);
             if (flag1)
               rectangle2.Height -= 2;
@@ -4046,7 +4046,7 @@ namespace Terraria
             if (effect.HasFlag((Enum) SpriteEffects.FlipHorizontally))
               num5 = 22;
             Vector2 vector2 = new Vector2((float) num5, -10f);
-            Texture2D texture2D = TextureAssets.Extra[151].get_Value();
+            Texture2D texture2D = TextureAssets.Extra[151].Value;
             Rectangle rectangle2 = texture2D.Frame(1, 1, 0, 0, 0, 0);
             drawData = new DrawData(texture2D, Position + vector2, new Rectangle?(rectangle2), drawColor, rotation1, origin, scale1, effect, 0);
             drawData.shader = Mount.currentShader;
@@ -4062,7 +4062,7 @@ namespace Terraria
             Rectangle rectangle2 = new Rectangle(0, height * this._frameExtra, this._data.textureWidth, height);
             if (flag1)
               rectangle2.Height -= 2;
-            drawData = new DrawData(TextureAssets.Extra[207].get_Value(), position, new Rectangle?(rectangle2), drawColor, rotation1, origin, scale1, effect, 0);
+            drawData = new DrawData(TextureAssets.Extra[207].Value, position, new Rectangle?(rectangle2), drawColor, rotation1, origin, scale1, effect, 0);
             drawData.shader = Mount.currentShader;
             playerDrawData.Add(drawData);
             break;
@@ -4116,7 +4116,7 @@ namespace Terraria
                 Vector2 v = vector2_3 - vector2_5;
                 float rotation2 = v.ToRotation();
                 Vector2 scale2 = new Vector2(2f, v.Length());
-                drawData = new DrawData(TextureAssets.MagicPixel.get_Value(), vector2_4 + Position, new Rectangle?(rectangle3), color3, rotation2 - 1.570796f, Vector2.Zero, scale2, SpriteEffects.None, 0);
+                drawData = new DrawData(TextureAssets.MagicPixel.Value, vector2_4 + Position, new Rectangle?(rectangle3), color3, rotation2 - 1.570796f, Vector2.Zero, scale2, SpriteEffects.None, 0);
                 drawData.ignorePlayerRotation = true;
                 drawData.shader = Mount.currentShader;
                 playerDrawData.Add(drawData);
@@ -4139,7 +4139,7 @@ namespace Terraria
         case 23:
           if (drawType != 0)
             break;
-          Texture2D texture2D1 = TextureAssets.Extra[114].get_Value();
+          Texture2D texture2D1 = TextureAssets.Extra[114].Value;
           rectangle1 = texture2D1.Frame(2, 1, 0, 0, 0, 0);
           int width = rectangle1.Width;
           rectangle1.Width -= 2;
@@ -4183,14 +4183,14 @@ namespace Terraria
         case 50:
           if (drawType != 0)
             break;
-          drawData = new DrawData(TextureAssets.Extra[205].get_Value(), Position, new Rectangle?(rectangle1), drawColor, rotation1, origin, scale1, effect, 0);
+          drawData = new DrawData(TextureAssets.Extra[205].Value, Position, new Rectangle?(rectangle1), drawColor, rotation1, origin, scale1, effect, 0);
           drawData.shader = Mount.currentShader;
           playerDrawData.Add(drawData);
           Vector2 position1 = Position + new Vector2(0.0f, (float) (8 - this.PlayerOffset + 20));
           Rectangle rectangle4 = new Rectangle(0, height * this._frameExtra, this._data.textureWidth, height);
           if (flag1)
             rectangle4.Height -= 2;
-          drawData = new DrawData(TextureAssets.Extra[206].get_Value(), position1, new Rectangle?(rectangle4), drawColor, rotation1, origin, scale1, effect, 0);
+          drawData = new DrawData(TextureAssets.Extra[206].Value, position1, new Rectangle?(rectangle4), drawColor, rotation1, origin, scale1, effect, 0);
           drawData.shader = Mount.currentShader;
           playerDrawData.Add(drawData);
           break;

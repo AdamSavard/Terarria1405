@@ -53,7 +53,7 @@ namespace Terraria.GameContent.Skies
     {
       this._lanterns[i].Depth = (float) ((1.0 - (double) i / (double) this._lanterns.Length) * 4.40000009536743 + 1.60000002384186);
       this._lanterns[i].Speed = (float) (-1.5 - 2.5 * this._random.NextDouble());
-      this._lanterns[i].Texture = this._texture.get_Value();
+      this._lanterns[i].Texture = this._texture.Value;
       this._lanterns[i].Variant = this._random.Next(3);
       this._lanterns[i].TimeUntilFloat = (int) ((double) (2000 + this._random.Next(1200)) * 2.0);
       this._lanterns[i].TimeUntilFloatMax = this._lanterns[i].TimeUntilFloat;

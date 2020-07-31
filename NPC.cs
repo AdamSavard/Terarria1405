@@ -12295,7 +12295,7 @@ label_19:
         }
         if (Main.dedServ)
           this.frame = new Microsoft.Xna.Framework.Rectangle();
-        else if (TextureAssets.Npc[this.type] != null && TextureAssets.Npc[this.type].get_IsLoaded())
+        else if (TextureAssets.Npc[this.type] != null && TextureAssets.Npc[this.type].IsLoaded)
           this.frame = new Microsoft.Xna.Framework.Rectangle(0, 0, TextureAssets.Npc[this.type].Width(), TextureAssets.Npc[this.type].Height() / Main.npcFrameCount[this.type]);
         else
           this.setFrameSize = true;
@@ -25612,7 +25612,7 @@ label_422:
             Projectile.NewProjectile(this.Center, this.velocity, 687, Damage1, 0.0f, Main.myPlayer, 0.0f, (float) this.whoAmI);
           float[] localAi = this.localAI;
           SlotId slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_BetsyFlameBreath, this.Center);
-          double num30 = (double) ((SlotId) ref slotId).ToFloat();
+          double num30 = (double) slotId.ToFloat();
           localAi[2] = (float) num30;
         }
         if ((double) this.ai[1] >= (double) num10)
@@ -25856,7 +25856,7 @@ label_422:
         return;
       float[] localAi1 = this.localAI;
       SlotId invalid = (SlotId) SlotId.Invalid;
-      double num32 = (double) ((SlotId) ref invalid).ToFloat();
+      double num32 = (double) invalid.ToFloat();
       localAi1[2] = (float) num32;
     }
 
@@ -26598,7 +26598,7 @@ label_422:
           {
             float[] localAi = this.localAI;
             slotId1 = (SlotId) SlotId.Invalid;
-            double num31 = (double) ((SlotId) ref slotId1).ToFloat();
+            double num31 = (double) slotId1.ToFloat();
             localAi[1] = (float) num31;
           }
           if ((double) this.ai[0] == 1.0)
@@ -26618,7 +26618,7 @@ label_422:
             {
               float[] localAi = this.localAI;
               slotId1 = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_WitherBeastAuraPulse, this.Center);
-              double num31 = (double) ((SlotId) ref slotId1).ToFloat();
+              double num31 = (double) slotId1.ToFloat();
               localAi[1] = (float) num31;
             }
             else
@@ -26712,11 +26712,11 @@ label_422:
           {
             float[] localAi1 = this.localAI;
             SlotId invalid = (SlotId) SlotId.Invalid;
-            double num31 = (double) ((SlotId) ref invalid).ToFloat();
+            double num31 = (double) invalid.ToFloat();
             localAi1[0] = (float) num31;
             float[] localAi2 = this.localAI;
             slotId2 = (SlotId) SlotId.Invalid;
-            double num32 = (double) ((SlotId) ref slotId2).ToFloat();
+            double num32 = (double) slotId2.ToFloat();
             localAi2[1] = (float) num32;
           }
           flag21 = DD2Event.EnemiesShouldChasePlayers;
@@ -26781,11 +26781,11 @@ label_422:
           if ((double) this.ai[0] > 0.0 && (double) this.ai[1] == 0.0 && this.life > 0)
           {
             SlotId slotId3 = SlotId.FromFloat(this.localAI[0]);
-            if (!((SlotId) ref slotId3).get_IsValid())
+            if (!slotId3.IsValid)
             {
               float[] localAi = this.localAI;
               slotId2 = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldIgnite, this.Center);
-              double num31 = (double) ((SlotId) ref slotId2).ToFloat();
+              double num31 = (double) slotId2.ToFloat();
               localAi[0] = (float) num31;
             }
             ++this.localAI[2];
@@ -26793,11 +26793,11 @@ label_422:
             {
               float[] localAi1 = this.localAI;
               slotId2 = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldIgniteLoop, this.Center);
-              double num31 = (double) ((SlotId) ref slotId2).ToFloat();
+              double num31 = (double) slotId2.ToFloat();
               localAi1[0] = (float) num31;
               float[] localAi2 = this.localAI;
               slotId2 = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldScreamChargeLoop, this.Center);
-              double num32 = (double) ((SlotId) ref slotId2).ToFloat();
+              double num32 = (double) slotId2.ToFloat();
               localAi2[1] = (float) num32;
             }
           }
@@ -26818,7 +26818,7 @@ label_422:
             {
               float[] localAi = this.localAI;
               slotId2 = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldIgniteLoop, this.Center);
-              double num31 = (double) ((SlotId) ref slotId2).ToFloat();
+              double num31 = (double) slotId2.ToFloat();
               localAi[0] = (float) num31;
             }
             else
@@ -26828,7 +26828,7 @@ label_422:
             {
               float[] localAi = this.localAI;
               slotId2 = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldScreamChargeLoop, this.Center);
-              double num31 = (double) ((SlotId) ref slotId2).ToFloat();
+              double num31 = (double) slotId2.ToFloat();
               localAi[1] = (float) num31;
             }
             else
@@ -28621,13 +28621,13 @@ label_422:
           {
             float[] localAi1 = this.localAI;
             slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_WyvernDiveDown, this.Center);
-            double num18 = (double) ((SlotId) ref slotId).ToFloat();
+            double num18 = (double) slotId.ToFloat();
             localAi1[1] = (float) num18;
             if (Main.rand.Next(5) == 0)
             {
               float[] localAi2 = this.localAI;
               slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_WyvernScream, this.Center);
-              double num19 = (double) ((SlotId) ref slotId).ToFloat();
+              double num19 = (double) slotId.ToFloat();
               localAi2[2] = (float) num19;
             }
           }
@@ -28635,7 +28635,7 @@ label_422:
           {
             float[] localAi = this.localAI;
             slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldFlyerChargeScream, this.Center);
-            double num18 = (double) ((SlotId) ref slotId).ToFloat();
+            double num18 = (double) slotId.ToFloat();
             localAi[1] = (float) num18;
             SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldIgnite, this.Center);
           }
@@ -28659,7 +28659,7 @@ label_422:
           {
             float[] localAi = this.localAI;
             slotId = SoundEngine.PlayTrackedSound((SoundStyle) SoundID.DD2_KoboldIgniteLoop, this.Center);
-            double num18 = (double) ((SlotId) ref slotId).ToFloat();
+            double num18 = (double) slotId.ToFloat();
             localAi[2] = (float) num18;
           }
           else
@@ -28723,7 +28723,7 @@ label_422:
       {
         float[] localAi = this.localAI;
         slotId = (SlotId) SlotId.Invalid;
-        double num18 = (double) ((SlotId) ref slotId).ToFloat();
+        double num18 = (double) slotId.ToFloat();
         localAi[1] = (float) num18;
       }
       if (this.type == 558 || this.type == 559 || this.type == 560)
@@ -28737,7 +28737,7 @@ label_422:
         {
           float[] localAi = this.localAI;
           slotId = (SlotId) SlotId.Invalid;
-          double num18 = (double) ((SlotId) ref slotId).ToFloat();
+          double num18 = (double) slotId.ToFloat();
           localAi[2] = (float) num18;
         }
       }
@@ -29496,7 +29496,7 @@ label_422:
       int num1 = 1;
       if (!Main.dedServ)
       {
-        if (!TextureAssets.Npc[this.type].get_IsLoaded())
+        if (!TextureAssets.Npc[this.type].IsLoaded)
           return;
         num1 = TextureAssets.Npc[this.type].Height() / Main.npcFrameCount[this.type];
       }
@@ -34184,7 +34184,7 @@ label_422:
           if (Main.netMode != 2 && !Main.dedServ)
           {
             int index = (int) this.ai[0];
-            if (Main.npc[index].active && Main.npc[index].type == 415 && TextureAssets.Npc[415].get_IsLoaded())
+            if (Main.npc[index].active && Main.npc[index].type == 415 && TextureAssets.Npc[415].IsLoaded)
             {
               this.frame.Y = Main.npc[index].frame.Y / (TextureAssets.Npc[415].Height() / Main.npcFrameCount[415]) * num1;
               break;

@@ -101,7 +101,7 @@ namespace Terraria.GameContent.UI.Elements
       out bool wasInBar,
       Func<float, Color> blipColorFunc)
     {
-      Texture2D texture = TextureAssets.ColorBar.get_Value();
+      Texture2D texture = TextureAssets.ColorBar.Value;
       Vector2 vector2 = new Vector2((float) texture.Width, (float) texture.Height) * drawScale;
       drawPosition.X -= (float) (int) vector2.X;
       Rectangle destinationRectangle1 = new Rectangle((int) drawPosition.X, (int) drawPosition.Y - (int) vector2.Y / 2, (int) vector2.X, (int) vector2.Y);
@@ -113,7 +113,7 @@ namespace Terraria.GameContent.UI.Elements
       {
         float num3 = num2 / 167f;
         Color color = blipColorFunc(num3);
-        sb.Draw(TextureAssets.ColorBlip.get_Value(), new Vector2(num1 + num2 * drawScale, y), new Rectangle?(), color, 0.0f, Vector2.Zero, drawScale, SpriteEffects.None, 0.0f);
+        sb.Draw(TextureAssets.ColorBlip.Value, new Vector2(num1 + num2 * drawScale, y), new Rectangle?(), color, 0.0f, Vector2.Zero, drawScale, SpriteEffects.None, 0.0f);
       }
       destinationRectangle1.X = (int) num1 - 2;
       destinationRectangle1.Y = (int) y;
@@ -127,7 +127,7 @@ namespace Terraria.GameContent.UI.Elements
         flag = false;
       if (flag || lockMode == 1)
       {
-        sb.Draw(TextureAssets.ColorHighlight.get_Value(), destinationRectangle2, Main.OurFavoriteColor);
+        sb.Draw(TextureAssets.ColorHighlight.Value, destinationRectangle2, Main.OurFavoriteColor);
         if (!this._alreadyHovered)
           SoundEngine.PlaySound(12, -1, -1, 1, 1f, 0.0f);
         this._alreadyHovered = true;
@@ -137,7 +137,7 @@ namespace Terraria.GameContent.UI.Elements
       wasInBar = false;
       if (!this.IgnoresMouseInteraction)
       {
-        sb.Draw(TextureAssets.ColorSlider.get_Value(), new Vector2(num1 + 167f * drawScale * sliderPosition, y + 4f * drawScale), new Rectangle?(), Color.White, 0.0f, new Vector2(0.5f * (float) TextureAssets.ColorSlider.get_Value().Width, 0.5f * (float) TextureAssets.ColorSlider.get_Value().Height), drawScale, SpriteEffects.None, 0.0f);
+        sb.Draw(TextureAssets.ColorSlider.Value, new Vector2(num1 + 167f * drawScale * sliderPosition, y + 4f * drawScale), new Rectangle?(), Color.White, 0.0f, new Vector2(0.5f * (float) TextureAssets.ColorSlider.Value.Width, 0.5f * (float) TextureAssets.ColorSlider.Value.Height), drawScale, SpriteEffects.None, 0.0f);
         if (Main.mouseX >= destinationRectangle1.X && Main.mouseX <= destinationRectangle1.X + destinationRectangle1.Width)
         {
           wasInBar = flag;

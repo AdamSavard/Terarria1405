@@ -51,11 +51,11 @@ namespace Terraria.GameContent.Skies
     {
       if ((double) maxDepth >= 3.40282346638529E+38 && (double) minDepth < 3.40282346638529E+38)
       {
-        spriteBatch.Draw(TextureAssets.BlackTile.get_Value(), new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.Black * this._fadeOpacity);
-        spriteBatch.Draw(this._bgTexture.get_Value(), new Rectangle(0, Math.Max(0, (int) ((Main.worldSurface * 16.0 - (double) Main.screenPosition.Y - 2400.0) * 0.100000001490116)), Main.screenWidth, Main.screenHeight), Color.White * Math.Min(1f, (float) (((double) Main.screenPosition.Y - 800.0) / 1000.0) * this._fadeOpacity));
+        spriteBatch.Draw(TextureAssets.BlackTile.Value, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), Color.Black * this._fadeOpacity);
+        spriteBatch.Draw(this._bgTexture.Value, new Rectangle(0, Math.Max(0, (int) ((Main.worldSurface * 16.0 - (double) Main.screenPosition.Y - 2400.0) * 0.100000001490116)), Main.screenWidth, Main.screenHeight), Color.White * Math.Min(1f, (float) (((double) Main.screenPosition.Y - 800.0) / 1000.0) * this._fadeOpacity));
         Vector2 vector2_1 = new Vector2((float) (Main.screenWidth >> 1), (float) (Main.screenHeight >> 1));
         Vector2 vector2_2 = 0.01f * (new Vector2((float) Main.maxTilesX * 8f, (float) Main.worldSurface / 2f) - Main.screenPosition);
-        spriteBatch.Draw(this._planetTexture.get_Value(), vector2_1 + new Vector2(-200f, -200f) + vector2_2, new Rectangle?(), Color.White * 0.9f * this._fadeOpacity, 0.0f, new Vector2((float) (this._planetTexture.Width() >> 1), (float) (this._planetTexture.Height() >> 1)), 1f, SpriteEffects.None, 1f);
+        spriteBatch.Draw(this._planetTexture.Value, vector2_1 + new Vector2(-200f, -200f) + vector2_2, new Rectangle?(), Color.White * 0.9f * this._fadeOpacity, 0.0f, new Vector2((float) (this._planetTexture.Width() >> 1), (float) (this._planetTexture.Height() >> 1)), 1f, SpriteEffects.None, 1f);
       }
       int num1 = -1;
       int num2 = 0;
@@ -81,12 +81,12 @@ namespace Terraria.GameContent.Skies
         if (rectangle.Contains((int) position.X, (int) position.Y))
         {
           float num4 = vector2_1.X * 450f;
-          spriteBatch.Draw(this._beamTexture.get_Value(), position, new Rectangle?(), Color.White * 0.2f * num3 * this._fadeOpacity, 0.0f, Vector2.Zero, new Vector2(num4 / 70f, num4 / 45f), SpriteEffects.None, 0.0f);
+          spriteBatch.Draw(this._beamTexture.Value, position, new Rectangle?(), Color.White * 0.2f * num3 * this._fadeOpacity, 0.0f, Vector2.Zero, new Vector2(num4 / 70f, num4 / 45f), SpriteEffects.None, 0.0f);
           int index2 = 0;
           for (float num5 = 0.0f; (double) num5 <= 1.0; num5 += 0.03f)
           {
             float num6 = (float) (1.0 - ((double) num5 + (double) Main.GlobalTimeWrappedHourly * 0.0199999995529652 + Math.Sin((double) index1)) % 1.0);
-            spriteBatch.Draw(this._rockTextures[index2].get_Value(), position + new Vector2((float) (Math.Sin((double) num5 * 1582.0) * ((double) num4 * 0.5) + (double) num4 * 0.5), num6 * 2000f), new Rectangle?(), Color.White * num6 * num3 * this._fadeOpacity, num6 * 20f, new Vector2((float) (this._rockTextures[index2].Width() >> 1), (float) (this._rockTextures[index2].Height() >> 1)), 0.9f, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(this._rockTextures[index2].Value, position + new Vector2((float) (Math.Sin((double) num5 * 1582.0) * ((double) num4 * 0.5) + (double) num4 * 0.5), num6 * 2000f), new Rectangle?(), Color.White * num6 * num3 * this._fadeOpacity, num6 * 20f, new Vector2((float) (this._rockTextures[index2].Width() >> 1), (float) (this._rockTextures[index2].Height() >> 1)), 0.9f, SpriteEffects.None, 0.0f);
             index2 = (index2 + 1) % this._rockTextures.Length;
           }
         }

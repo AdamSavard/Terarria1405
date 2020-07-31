@@ -91,11 +91,12 @@ namespace Terraria.Graphics.Light
 
     private void BlurPass()
     {
+      // really hard to figure out what these two lines are meant to be
       // ISSUE: method pointer
-      FastParallel.For(0, this.Width, new ParallelForAction((object) this, __methodptr(\u003CBlurPass\u003Eb__42_0)), (object) null);
+      FastParallel.For(0, this.Width, new ParallelForAction((startIndex, endIndex, context) => BlurLine(startIndex, endIndex, (int)context)));
       // ISSUE: method pointer
-      FastParallel.For(0, this.Height, new ParallelForAction((object) this, __methodptr(\u003CBlurPass\u003Eb__42_1)), (object) null);
-    }
+      FastParallel.For(0, this.Height, new ParallelForAction((startIndex, endIndex, context) => BlurLine(startIndex, endIndex, (int)context)));
+        }
 
     private void BlurLine(int startIndex, int endIndex, int stride)
     {

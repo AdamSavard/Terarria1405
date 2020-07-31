@@ -31,9 +31,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public BlizzardShader()
-    {
-      base.\u002Ector();
+    public BlizzardShader() : base()
+{
     }
   }
 }

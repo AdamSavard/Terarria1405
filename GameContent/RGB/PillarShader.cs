@@ -15,9 +15,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _primaryColor;
     private readonly Vector4 _secondaryColor;
 
-    public PillarShader(Color primaryColor, Color secondaryColor)
-    {
-      this.\u002Ector();
+    public PillarShader(Color primaryColor, Color secondaryColor) : base()
+{
       this._primaryColor = primaryColor.ToVector4();
       this._secondaryColor = secondaryColor.ToVector4();
     }

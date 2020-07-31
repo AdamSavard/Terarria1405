@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _iceColor;
     private readonly Vector4 _shineColor;
 
-    public IceShader(Color baseColor, Color iceColor)
-    {
-      this.\u002Ector();
+    public IceShader(Color baseColor, Color iceColor) : base()
+{
       this._baseColor = baseColor.ToVector4();
       this._iceColor = iceColor.ToVector4();
     }

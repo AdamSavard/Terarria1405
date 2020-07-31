@@ -326,7 +326,7 @@ namespace Terraria
                       Vector2 position = (new Vector2((float) (x * 16 - (int) Main.screenPosition.X), (float) (y * 16 - (int) Main.screenPosition.Y)) + vector2_1 + origin + zero).Floor();
                       spriteBatch.Draw(requestIfNotReady, position, new Rectangle?(new Rectangle((int) tile.frameX, (int) tile.frameY, 16, 16)), color2, rotation, origin, scale, SpriteEffects.None, 0.0f);
                       color2.A = (byte) 180;
-                      spriteBatch.Draw(TextureAssets.TileCrack.get_Value(), position, new Rectangle?(rectangle), color2, rotation, origin, scale, SpriteEffects.None, 0.0f);
+                      spriteBatch.Draw(TextureAssets.TileCrack.Value, position, new Rectangle?(rectangle), color2, rotation, origin, scale, SpriteEffects.None, 0.0f);
                     }
                   }
                 }

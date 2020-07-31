@@ -88,18 +88,18 @@ namespace Terraria.GameContent.UI
     {
       int i = this._valuePerUnit.Keys.ElementAt<int>(0);
       Main.instance.LoadItem(i);
-      Texture2D texture2D = TextureAssets.Item[i].get_Value();
+      Texture2D texture2D = TextureAssets.Item[i].Value;
       if (horizontal)
       {
-        Vector2 position = new Vector2((float) ((double) shopx + (double) ChatManager.GetStringSize(FontAssets.MouseText.get_Value(), text, Vector2.One, -1f).X + 45.0), shopy + 50f);
+        Vector2 position = new Vector2((float) ((double) shopx + (double) ChatManager.GetStringSize(FontAssets.MouseText.Value, text, Vector2.One, -1f).X + 45.0), shopy + 50f);
         sb.Draw(texture2D, position, new Rectangle?(), Color.White, 0.0f, texture2D.Size() / 2f, this.CurrencyDrawScale, SpriteEffects.None, 0.0f);
-        Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.get_Value(), totalCoins.ToString(), position.X - 11f, position.Y, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
+        Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.Value, totalCoins.ToString(), position.X - 11f, position.Y, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
       }
       else
       {
         int num = totalCoins > 99L ? -6 : 0;
         sb.Draw(texture2D, new Vector2(shopx + 11f, shopy + 75f), new Rectangle?(), Color.White, 0.0f, texture2D.Size() / 2f, this.CurrencyDrawScale, SpriteEffects.None, 0.0f);
-        Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.get_Value(), totalCoins.ToString(), shopx + (float) num, shopy + 75f, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
+        Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.Value, totalCoins.ToString(), shopx + (float) num, shopy + 75f, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
       }
     }
 

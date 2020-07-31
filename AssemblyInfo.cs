@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
-[assembly: Extension]
+//[assembly: Extension]
 [assembly: AssemblyTitle("Terraria")]
 [assembly: AssemblyProduct("Terraria")]
 [assembly: AssemblyDescription("")]

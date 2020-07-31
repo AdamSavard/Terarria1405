@@ -30,9 +30,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public SandstormShader()
-    {
-      base.\u002Ector();
+    public SandstormShader() : base()
+{
     }
   }
 }

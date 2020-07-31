@@ -19,7 +19,7 @@ namespace Terraria.GameContent.UI.BigProgressBar
       Rectangle destinationRectangle1 = Utils.CenteredRectangle(Main.ScreenSize.ToVector2() * new Vector2(0.5f, 1f) + new Vector2(0.0f, -50f), new Vector2(400f, 20f));
       Rectangle destinationRectangle2 = destinationRectangle1;
       destinationRectangle2.Inflate(2, 2);
-      Texture2D texture = TextureAssets.MagicPixel.get_Value();
+      Texture2D texture = TextureAssets.MagicPixel.Value;
       Rectangle rectangle = new Rectangle(0, 0, 1, 1);
       Rectangle destinationRectangle3 = destinationRectangle1;
       destinationRectangle3.Width = (int) ((double) destinationRectangle3.Width * (double) lifePercent);
@@ -34,7 +34,7 @@ namespace Terraria.GameContent.UI.BigProgressBar
       Texture2D barIconTexture,
       Rectangle barIconFrame)
     {
-      Texture2D texture2D = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/UI_BossBar", (AssetRequestMode) 1)).get_Value();
+      Texture2D texture2D = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/UI_BossBar", (AssetRequestMode) 1)).Value;
       Point p1 = new Point(456, 22);
       Point p2 = new Point(32, 24);
       int verticalFrames = 6;
@@ -70,7 +70,7 @@ namespace Terraria.GameContent.UI.BigProgressBar
       Rectangle barIconFrame,
       float shieldPercent)
     {
-      Texture2D texture2D = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/UI_BossBar", (AssetRequestMode) 1)).get_Value();
+      Texture2D texture2D = ((Asset<Texture2D>) Main.Assets.Request<Texture2D>("Images/UI/UI_BossBar", (AssetRequestMode) 1)).Value;
       Point p1 = new Point(456, 22);
       Point p2 = new Point(32, 24);
       int verticalFrames = 6;

@@ -51,7 +51,7 @@ namespace Terraria.GameContent.UI.Elements
 
     protected override void DrawSelf(SpriteBatch spriteBatch)
     {
-      if (!this._texOuterCorrupt.get_IsLoaded() || !this._texOuterCrimson.get_IsLoaded() || !this._texOuterLower.get_IsLoaded())
+      if (!this._texOuterCorrupt.IsLoaded || !this._texOuterCrimson.IsLoaded || !this._texOuterLower.IsLoaded)
         return;
       bool flag = WorldGen.crimson;
       if (WorldGen.drunkWorldGen && Main.rand.Next(2) == 0)
@@ -69,8 +69,8 @@ namespace Terraria.GameContent.UI.Elements
       this.DrawFilling2(spriteBatch, vector2 + new Vector2(50f, 60f), 8, completedWidth2, this._smallBarWidth, filled, Color.Lerp(filled, Color.Black, 0.5f), new Color(33, 33, 33));
       Rectangle rectangle = this.GetDimensions().ToRectangle();
       rectangle.X -= 8;
-      spriteBatch.Draw(flag ? this._texOuterCrimson.get_Value() : this._texOuterCorrupt.get_Value(), rectangle.TopLeft(), Color.White);
-      spriteBatch.Draw(this._texOuterLower.get_Value(), rectangle.TopLeft() + new Vector2(44f, 60f), Color.White);
+      spriteBatch.Draw(flag ? this._texOuterCrimson.Value : this._texOuterCorrupt.Value, rectangle.TopLeft(), Color.White);
+      spriteBatch.Draw(this._texOuterLower.Value, rectangle.TopLeft() + new Vector2(44f, 60f), Color.White);
     }
 
     private void DrawFilling(
@@ -100,8 +100,8 @@ namespace Terraria.GameContent.UI.Elements
       }
       if (texShadow != null)
         spritebatch.Draw(texShadow, topLeft, new Rectangle?(new Rectangle(0, 0, completedWidth, texShadow.Height)), Color.White);
-      spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle((int) topLeft.X + completedWidth, (int) topLeft.Y, totalWidth - completedWidth, tex.Height), new Rectangle?(new Rectangle(0, 0, 1, 1)), empty);
-      spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle((int) topLeft.X + completedWidth - 2, (int) topLeft.Y, 2, tex.Height), new Rectangle?(new Rectangle(0, 0, 1, 1)), separator);
+      spritebatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle((int) topLeft.X + completedWidth, (int) topLeft.Y, totalWidth - completedWidth, tex.Height), new Rectangle?(new Rectangle(0, 0, 1, 1)), empty);
+      spritebatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle((int) topLeft.X + completedWidth - 2, (int) topLeft.Y, 2, tex.Height), new Rectangle?(new Rectangle(0, 0, 1, 1)), separator);
     }
 
     private void DrawFilling2(
@@ -116,9 +116,9 @@ namespace Terraria.GameContent.UI.Elements
     {
       if (completedWidth % 2 != 0)
         --completedWidth;
-      spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle((int) topLeft.X, (int) topLeft.Y, completedWidth, height), new Rectangle?(new Rectangle(0, 0, 1, 1)), filled);
-      spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle((int) topLeft.X + completedWidth, (int) topLeft.Y, totalWidth - completedWidth, height), new Rectangle?(new Rectangle(0, 0, 1, 1)), empty);
-      spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle((int) topLeft.X + completedWidth - 2, (int) topLeft.Y, 2, height), new Rectangle?(new Rectangle(0, 0, 1, 1)), separator);
+      spritebatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle((int) topLeft.X, (int) topLeft.Y, completedWidth, height), new Rectangle?(new Rectangle(0, 0, 1, 1)), filled);
+      spritebatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle((int) topLeft.X + completedWidth, (int) topLeft.Y, totalWidth - completedWidth, height), new Rectangle?(new Rectangle(0, 0, 1, 1)), empty);
+      spritebatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle((int) topLeft.X + completedWidth - 2, (int) topLeft.Y, 2, height), new Rectangle?(new Rectangle(0, 0, 1, 1)), separator);
     }
   }
 }

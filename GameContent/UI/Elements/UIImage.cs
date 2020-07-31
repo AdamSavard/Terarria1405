@@ -40,15 +40,15 @@ namespace Terraria.GameContent.UI.Elements
       CalculatedStyle dimensions = this.GetDimensions();
       if (this.ScaleToFit)
       {
-        spriteBatch.Draw(this._texture.get_Value(), dimensions.ToRectangle(), this.Color);
+        spriteBatch.Draw(this._texture.Value, dimensions.ToRectangle(), this.Color);
       }
       else
       {
-        Vector2 vector2_1 = this._texture.get_Value().Size();
+        Vector2 vector2_1 = this._texture.Value.Size();
         Vector2 vector2_2 = dimensions.Position() + vector2_1 * (1f - this.ImageScale) / 2f + vector2_1 * this.NormalizedOrigin;
         if (this.RemoveFloatingPointsFromDrawPosition)
           vector2_2 = vector2_2.Floor();
-        spriteBatch.Draw(this._texture.get_Value(), vector2_2, new Rectangle?(), this.Color, this.Rotation, vector2_1 * this.NormalizedOrigin, this.ImageScale, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(this._texture.Value, vector2_2, new Rectangle?(), this.Color, this.Rotation, vector2_1 * this.NormalizedOrigin, this.ImageScale, SpriteEffects.None, 0.0f);
       }
     }
   }

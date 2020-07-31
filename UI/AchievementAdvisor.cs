@@ -152,16 +152,16 @@ namespace Terraria.UI
         color = new Color(220, 220, 220, 220);
       Vector2 vector2_1 = new Vector2(-4f) * scale;
       Vector2 vector2_2 = new Vector2(-8f) * scale;
-      Texture2D texture = this._achievementsBorderMouseHoverFatTexture.get_Value();
+      Texture2D texture = this._achievementsBorderMouseHoverFatTexture.Value;
       if ((double) scale > 0.5)
       {
-        texture = this._achievementsBorderMouseHoverThinTexture.get_Value();
+        texture = this._achievementsBorderMouseHoverThinTexture.Value;
         vector2_2 = new Vector2(-5f) * scale;
       }
       Rectangle frame = card.frame;
       frame.X += 528;
-      spriteBatch.Draw(this._achievementsTexture.get_Value(), position, new Rectangle?(frame), color, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._achievementsBorderTexture.get_Value(), position + vector2_1, new Rectangle?(), color, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._achievementsTexture.Value, position, new Rectangle?(frame), color, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._achievementsBorderTexture.Value, position + vector2_1, new Rectangle?(), color, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
       if (!hovered)
         return;
       spriteBatch.Draw(texture, position + vector2_2, new Rectangle?(), Main.OurFavoriteColor, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);

@@ -26,7 +26,7 @@ namespace Terraria.GameContent.UI.Elements
         if (!(this._text != value))
           return;
         this._text = value;
-        Vector2 vector2 = FontAssets.DeathText.get_Value().MeasureString(this.Text);
+        Vector2 vector2 = FontAssets.DeathText.Value.MeasureString(this.Text);
         this.Width.Pixels = vector2.X;
         this.Height.Pixels = vector2.Y;
         this.Width.Precent = 0.0f;
@@ -49,11 +49,11 @@ namespace Terraria.GameContent.UI.Elements
     {
       CalculatedStyle dimensions = this.GetDimensions();
       float num = 1.2f;
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.get_Value(), this.Text, new Vector2(dimensions.X - num, dimensions.Y - num), Color.Black);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.get_Value(), this.Text, new Vector2(dimensions.X + num, dimensions.Y - num), Color.Black);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.get_Value(), this.Text, new Vector2(dimensions.X - num, dimensions.Y + num), Color.Black);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.get_Value(), this.Text, new Vector2(dimensions.X + num, dimensions.Y + num), Color.Black);
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.get_Value(), this.Text, new Vector2(dimensions.X, dimensions.Y), Color.White);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.Value, this.Text, new Vector2(dimensions.X - num, dimensions.Y - num), Color.Black);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.Value, this.Text, new Vector2(dimensions.X + num, dimensions.Y - num), Color.Black);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.Value, this.Text, new Vector2(dimensions.X - num, dimensions.Y + num), Color.Black);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.Value, this.Text, new Vector2(dimensions.X + num, dimensions.Y + num), Color.Black);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.DeathText.Value, this.Text, new Vector2(dimensions.X, dimensions.Y), Color.White);
     }
   }
 }

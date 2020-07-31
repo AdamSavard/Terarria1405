@@ -73,7 +73,7 @@ namespace Terraria
         NPC npc = new NPC();
         npc.SetDefaults(npcNetID, new NPCSpawnParams());
         string typeName = npc.TypeName;
-        Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(typeName);
+        Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(typeName);
         PopupText popupText = Main.popupText[nextItemTextSlot];
         Main.popupText[nextItemTextSlot].alpha = 1f;
         popupText.alphaDir = -1;
@@ -119,8 +119,8 @@ namespace Terraria
           string str2 = newItem.Name;
           if (Main.popupText[index].stack > 1)
             str2 = str2 + " (" + (object) Main.popupText[index].stack + ")";
-          FontAssets.MouseText.get_Value().MeasureString(str2);
-          Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(str1);
+          FontAssets.MouseText.Value.MeasureString(str2);
+          Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(str1);
           if (Main.popupText[index].lifeTime < 0)
             Main.popupText[index].scale = 1f;
           if (Main.popupText[index].lifeTime < 60)
@@ -138,7 +138,7 @@ namespace Terraria
               num += 1000000 * stack;
             Main.popupText[index].coinValue += num;
             string name = PopupText.ValueToName(Main.popupText[index].coinValue);
-            vector2 = FontAssets.MouseText.get_Value().MeasureString(name);
+            vector2 = FontAssets.MouseText.Value.MeasureString(name);
             Main.popupText[index].name = name;
             if (Main.popupText[index].coinValue >= 1000000)
             {
@@ -184,7 +184,7 @@ namespace Terraria
         string str = newItem.AffixName();
         if (stack > 1)
           str = str + " (" + (object) stack + ")";
-        Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(str);
+        Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(str);
         Main.popupText[nextItemTextSlot].alpha = 1f;
         Main.popupText[nextItemTextSlot].alphaDir = -1;
         Main.popupText[nextItemTextSlot].active = true;
@@ -414,7 +414,7 @@ namespace Terraria
       string str1 = this.name;
       if (this.stack > 1)
         str1 = str1 + " (" + (object) this.stack + ")";
-      Vector2 vector2_1 = FontAssets.MouseText.get_Value().MeasureString(str1) * this.scale;
+      Vector2 vector2_1 = FontAssets.MouseText.Value.MeasureString(str1) * this.scale;
       vector2_1.Y *= 0.8f;
       Rectangle rectangle1 = new Rectangle((int) ((double) this.position.X - (double) vector2_1.X / 2.0), (int) ((double) this.position.Y - (double) vector2_1.Y / 2.0), (int) vector2_1.X, (int) vector2_1.Y);
       for (int index = 0; index < 20; ++index)
@@ -424,7 +424,7 @@ namespace Terraria
           string str2 = Main.popupText[index].name;
           if (Main.popupText[index].stack > 1)
             str2 = str2 + " (" + (object) Main.popupText[index].stack + ")";
-          Vector2 vector2_2 = FontAssets.MouseText.get_Value().MeasureString(str2) * Main.popupText[index].scale;
+          Vector2 vector2_2 = FontAssets.MouseText.Value.MeasureString(str2) * Main.popupText[index].scale;
           vector2_2.Y *= 0.8f;
           Rectangle rectangle2 = new Rectangle((int) ((double) Main.popupText[index].position.X - (double) vector2_2.X / 2.0), (int) ((double) Main.popupText[index].position.Y - (double) vector2_2.Y / 2.0), (int) vector2_2.X, (int) vector2_2.Y);
           if (rectangle1.Intersects(rectangle2) && ((double) this.position.Y < (double) Main.popupText[index].position.Y || (double) this.position.Y == (double) Main.popupText[index].position.Y && whoAmI < index))

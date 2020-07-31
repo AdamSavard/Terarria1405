@@ -60,7 +60,7 @@ namespace Terraria
           int index2 = 0;
           if (dramatic)
             index2 = 1;
-          Vector2 vector2 = FontAssets.CombatText[index2].get_Value().MeasureString(text);
+          Vector2 vector2 = FontAssets.CombatText[index2].Value.MeasureString(text);
           Main.combatText[index1].alpha = 1f;
           Main.combatText[index1].alphaDir = -1;
           Main.combatText[index1].active = true;

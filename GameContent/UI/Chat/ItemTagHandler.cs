@@ -108,7 +108,7 @@ namespace Terraria.GameContent.UI.Chat
         if (Main.netMode != 2 && !Main.dedServ)
         {
           Main.instance.LoadItem(this._item.type);
-          Texture2D texture2D = TextureAssets.Item[this._item.type].get_Value();
+          Texture2D texture2D = TextureAssets.Item[this._item.type].Value;
           Rectangle rectangle = Main.itemAnimations[this._item.type] == null ? texture2D.Frame(1, 1, 0, 0, 0, 0) : Main.itemAnimations[this._item.type].GetFrame(texture2D, -1);
           if (rectangle.Height > 32)
             num2 = 32f / (float) rectangle.Height;

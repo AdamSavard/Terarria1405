@@ -50,9 +50,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public UndergroundCorruptionShader()
-    {
-      base.\u002Ector();
+    public UndergroundCorruptionShader() : base()
+{
     }
   }
 }

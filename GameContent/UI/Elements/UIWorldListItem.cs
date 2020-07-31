@@ -326,9 +326,9 @@ namespace Terraria.GameContent.UI.Elements
 
     private void DrawPanel(SpriteBatch spriteBatch, Vector2 position, float width)
     {
-      spriteBatch.Draw(this._innerPanelTexture.get_Value(), position, new Rectangle?(new Rectangle(0, 0, 8, this._innerPanelTexture.Height())), Color.White);
-      spriteBatch.Draw(this._innerPanelTexture.get_Value(), new Vector2(position.X + 8f, position.Y), new Rectangle?(new Rectangle(8, 0, 8, this._innerPanelTexture.Height())), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 16.0) / 8.0), 1f), SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._innerPanelTexture.get_Value(), new Vector2((float) ((double) position.X + (double) width - 8.0), position.Y), new Rectangle?(new Rectangle(16, 0, 8, this._innerPanelTexture.Height())), Color.White);
+      spriteBatch.Draw(this._innerPanelTexture.Value, position, new Rectangle?(new Rectangle(0, 0, 8, this._innerPanelTexture.Height())), Color.White);
+      spriteBatch.Draw(this._innerPanelTexture.Value, new Vector2(position.X + 8f, position.Y), new Rectangle?(new Rectangle(8, 0, 8, this._innerPanelTexture.Height())), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 16.0) / 8.0), 1f), SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._innerPanelTexture.Value, new Vector2((float) ((double) position.X + (double) width - 8.0), position.Y), new Rectangle?(new Rectangle(16, 0, 8, this._innerPanelTexture.Height())), Color.White);
     }
 
     protected override void DrawSelf(SpriteBatch spriteBatch)
@@ -339,7 +339,7 @@ namespace Terraria.GameContent.UI.Elements
       float x1 = dimensions.X + dimensions.Width;
       Color color1 = this._data.IsValid ? Color.White : Color.Red;
       Utils.DrawBorderString(spriteBatch, this._data.Name, new Vector2(x1 + 6f, dimensions.Y - 2f), color1, 1f, 0.0f, 0.0f, -1);
-      spriteBatch.Draw(this._dividerTexture.get_Value(), new Vector2(x1, innerDimensions.Y + 21f), new Rectangle?(), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) this.GetDimensions().X + (double) this.GetDimensions().Width - (double) x1) / 8.0), 1f), SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._dividerTexture.Value, new Vector2(x1, innerDimensions.Y + 21f), new Rectangle?(), Color.White, 0.0f, Vector2.Zero, new Vector2((float) (((double) this.GetDimensions().X + (double) this.GetDimensions().Width - (double) x1) / 8.0), 1f), SpriteEffects.None, 0.0f);
       Vector2 position = new Vector2(x1 + 6f, innerDimensions.Y + 29f);
       float width1 = 100f;
       this.DrawPanel(spriteBatch, position, width1);
@@ -363,7 +363,7 @@ namespace Terraria.GameContent.UI.Elements
           textValue1 = Language.GetTextValue("UI.Normal");
           break;
       }
-      float x2 = FontAssets.MouseText.get_Value().MeasureString(textValue1).X;
+      float x2 = FontAssets.MouseText.Value.MeasureString(textValue1).X;
       float x3 = (float) ((double) width1 * 0.5 - (double) x2 * 0.5);
       Utils.DrawBorderString(spriteBatch, textValue1, position + new Vector2(x3, 3f), color2, 1f, 0.0f, 0.0f, -1);
       position.X += width1 + 5f;
@@ -372,14 +372,14 @@ namespace Terraria.GameContent.UI.Elements
         width2 += 40f;
       this.DrawPanel(spriteBatch, position, width2);
       string textValue2 = Language.GetTextValue("UI.WorldSizeFormat", (object) this._data.WorldSizeName);
-      float x4 = FontAssets.MouseText.get_Value().MeasureString(textValue2).X;
+      float x4 = FontAssets.MouseText.Value.MeasureString(textValue2).X;
       float x5 = (float) ((double) width2 * 0.5 - (double) x4 * 0.5);
       Utils.DrawBorderString(spriteBatch, textValue2, position + new Vector2(x5, 3f), Color.White, 1f, 0.0f, 0.0f, -1);
       position.X += width2 + 5f;
       float width3 = innerDimensions.X + innerDimensions.Width - position.X;
       this.DrawPanel(spriteBatch, position, width3);
       string textValue3 = Language.GetTextValue("UI.WorldCreatedFormat", !GameCulture.FromCultureName(GameCulture.CultureName.English).IsActive ? (object) this._data.CreationTime.ToShortDateString() : (object) this._data.CreationTime.ToString("d MMMM yyyy"));
-      float x6 = FontAssets.MouseText.get_Value().MeasureString(textValue3).X;
+      float x6 = FontAssets.MouseText.Value.MeasureString(textValue3).X;
       float x7 = (float) ((double) width3 * 0.5 - (double) x6 * 0.5);
       Utils.DrawBorderString(spriteBatch, textValue3, position + new Vector2(x7, 3f), Color.White, 1f, 0.0f, 0.0f, -1);
       position.X += width3 + 5f;

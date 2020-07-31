@@ -29,7 +29,7 @@ namespace Terraria.GameContent.Bestiary
 
     public IEntryIcon CreateClone()
     {
-      return (IEntryIcon) new CustomEntryIcon(this._text.Key, this._textureAsset.get_Name(), this._unlockCondition);
+      return (IEntryIcon) new CustomEntryIcon(this._text.Key, this._textureAsset.Name, this._unlockCondition);
     }
 
     public void Update(
@@ -46,7 +46,7 @@ namespace Terraria.GameContent.Bestiary
       EntryIconDrawSettings settings)
     {
       Rectangle iconbox = settings.iconbox;
-      spriteBatch.Draw(this._textureAsset.get_Value(), iconbox.Center.ToVector2() + Vector2.One, new Rectangle?(this._sourceRectangle), Color.White, 0.0f, this._sourceRectangle.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._textureAsset.Value, iconbox.Center.ToVector2() + Vector2.One, new Rectangle?(this._sourceRectangle), Color.White, 0.0f, this._sourceRectangle.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
     }
 
     public string GetHoverText(BestiaryUICollectionInfo providedInfo)

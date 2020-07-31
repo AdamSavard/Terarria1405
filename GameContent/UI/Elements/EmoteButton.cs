@@ -62,9 +62,9 @@ namespace Terraria.GameContent.UI.Elements
       Color color = Color.Black;
       if (this._hovered)
         color = Main.OurFavoriteColor;
-      spriteBatch.Draw(this._texture.get_Value(), position, new Rectangle?(rectangle), white, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._texture.get_Value(), position, new Rectangle?(frame), white, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._textureBorder.get_Value(), position - Vector2.One * 2f, new Rectangle?(), color, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._texture.Value, position, new Rectangle?(rectangle), white, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._texture.Value, position, new Rectangle?(frame), white, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._textureBorder.Value, position - Vector2.One * 2f, new Rectangle?(), color, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
       if (!this._hovered)
         return;
       string cursorText = "/" + Language.GetTextValue("EmojiName." + EmoteID.Search.GetName(this._emoteIndex));

@@ -356,7 +356,7 @@ namespace Terraria
         if (str1 == "\n")
         {
           // ISSUE: explicit reference operation
-          ^ref strArray[index1++] += str1;
+          strArray[index1++] += str1;
           flag = true;
           if (index1 < maxLines)
             stringList2.RemoveAt(0);
@@ -669,12 +669,12 @@ namespace Terraria
 
     public static int Width(this Asset<Texture2D> asset)
     {
-      return !asset.get_IsLoaded() ? 0 : asset.get_Value().Width;
+      return !asset.IsLoaded ? 0 : asset.Value.Width;
     }
 
     public static int Height(this Asset<Texture2D> asset)
     {
-      return !asset.get_IsLoaded() ? 0 : asset.get_Value().Height;
+      return !asset.IsLoaded ? 0 : asset.Value.Height;
     }
 
     public static Rectangle Frame(
@@ -686,7 +686,7 @@ namespace Terraria
       int sizeOffsetX = 0,
       int sizeOffsetY = 0)
     {
-      return !tex.get_IsLoaded() ? Rectangle.Empty : tex.get_Value().Frame(horizontalFrames, verticalFrames, frameX, frameY, sizeOffsetX, sizeOffsetY);
+      return !tex.IsLoaded ? Rectangle.Empty : tex.Value.Frame(horizontalFrames, verticalFrames, frameX, frameY, sizeOffsetX, sizeOffsetY);
     }
 
     public static Rectangle OffsetSize(this Rectangle rect, int xSize, int ySize)
@@ -698,7 +698,7 @@ namespace Terraria
 
     public static Vector2 Size(this Asset<Texture2D> tex)
     {
-      return !tex.get_IsLoaded() ? Vector2.Zero : tex.get_Value().Size();
+      return !tex.IsLoaded ? Vector2.Zero : tex.Value.Size();
     }
 
     public static Rectangle Frame(
@@ -1446,7 +1446,7 @@ namespace Terraria
     {
       if (maxCharactersDisplayed != -1 && text.Length > maxCharactersDisplayed)
         text.Substring(0, maxCharactersDisplayed);
-      DynamicSpriteFont font = FontAssets.MouseText.get_Value();
+      DynamicSpriteFont font = FontAssets.MouseText.Value;
       Vector2 vector2 = font.MeasureString(text);
       ChatManager.DrawColorCodedStringWithShadow(sb, font, text, pos, color, 0.0f, new Vector2(anchorx, anchory) * vector2, new Vector2(scale), -1f, 1.5f);
       return vector2 * scale;
@@ -1464,7 +1464,7 @@ namespace Terraria
     {
       if (maxCharactersDisplayed != -1 && text.Length > maxCharactersDisplayed)
         text.Substring(0, maxCharactersDisplayed);
-      DynamicSpriteFont dynamicSpriteFont = FontAssets.DeathText.get_Value();
+      DynamicSpriteFont dynamicSpriteFont = FontAssets.DeathText.Value;
       for (int index1 = -1; index1 < 2; ++index1)
       {
         for (int index2 = -1; index2 < 2; ++index2)
@@ -1488,7 +1488,7 @@ namespace Terraria
     {
       if (c == new Color())
         c = new Color(63, 65, 151, (int) byte.MaxValue) * 0.785f;
-      Texture2D texture = TextureAssets.InventoryBack13.get_Value();
+      Texture2D texture = TextureAssets.InventoryBack13.Value;
       if (w < 20)
         w = 20;
       if (h < 20)
@@ -1547,7 +1547,7 @@ namespace Terraria
       float width,
       Color color)
     {
-      Utils.DrawPanel(TextureAssets.SettingsPanel.get_Value(), 2, 0, spriteBatch, position, width, color);
+      Utils.DrawPanel(TextureAssets.SettingsPanel.Value, 2, 0, spriteBatch, position, width, color);
     }
 
     public static void DrawSettings2Panel(
@@ -1556,7 +1556,7 @@ namespace Terraria
       float width,
       Color color)
     {
-      Utils.DrawPanel(TextureAssets.SettingsPanel.get_Value(), 2, 0, spriteBatch, position, width, color);
+      Utils.DrawPanel(TextureAssets.SettingsPanel.Value, 2, 0, spriteBatch, position, width, color);
     }
 
     public static void DrawPanel(
@@ -1644,7 +1644,7 @@ namespace Terraria
       for (float num2 = 0.0f; (double) num2 <= (double) num1; num2 += 4f)
       {
         float num3 = num2 / num1;
-        spriteBatch.Draw(TextureAssets.BlackTile.get_Value(), vector2 - screenPosition, new Rectangle?(), new Color(new Vector4(num3, num3, num3, 1f) * color.ToVector4()), rotation, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(TextureAssets.BlackTile.Value, vector2 - screenPosition, new Rectangle?(), new Color(new Vector4(num3, num3, num3, 1f) * color.ToVector4()), rotation, Vector2.Zero, 0.25f, SpriteEffects.None, 0.0f);
         vector2 = start + num2 * v;
       }
     }
@@ -1666,7 +1666,7 @@ namespace Terraria
       for (float num2 = 0.0f; (double) num2 <= (double) num1; num2 += width)
       {
         float amount = num2 / num1;
-        spriteBatch.Draw(TextureAssets.BlackTile.get_Value(), vector2 - screenPosition, new Rectangle?(), Color.Lerp(colorStart, colorEnd, amount), rotation, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(TextureAssets.BlackTile.Value, vector2 - screenPosition, new Rectangle?(), Color.Lerp(colorStart, colorEnd, amount), rotation, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
         vector2 = start + num2 * v;
       }
     }
@@ -1763,10 +1763,10 @@ namespace Terraria
       if (Main.ThickMouse && cursorSlot == 0 || cursorSlot == 1)
         vector2_2 = Main.DrawThickCursor(cursorSlot == 1);
       if (flag2)
-        sb.Draw(TextureAssets.Cursors[cursorSlot].get_Value(), vector2_1 + vector2_2 + Vector2.One, new Rectangle?(), color.MultiplyRGB(new Color(0.2f, 0.2f, 0.2f, 0.5f)), rot, origin, scale * 1.1f, SpriteEffects.None, 0.0f);
+        sb.Draw(TextureAssets.Cursors[cursorSlot].Value, vector2_1 + vector2_2 + Vector2.One, new Rectangle?(), color.MultiplyRGB(new Color(0.2f, 0.2f, 0.2f, 0.5f)), rot, origin, scale * 1.1f, SpriteEffects.None, 0.0f);
       if (!flag3)
         return;
-      sb.Draw(TextureAssets.Cursors[cursorSlot].get_Value(), vector2_1 + vector2_2, new Rectangle?(), color, rot, origin, scale, SpriteEffects.None, 0.0f);
+      sb.Draw(TextureAssets.Cursors[cursorSlot].Value, vector2_1 + vector2_2, new Rectangle?(), color, rot, origin, scale, SpriteEffects.None, 0.0f);
     }
 
     public delegate bool TileActionAttempt(int x, int y);

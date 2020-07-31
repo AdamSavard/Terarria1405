@@ -115,7 +115,7 @@ namespace Terraria.GameContent.Creative
       Vector2 size = this._buttonTexture.Size();
       Rectangle rectangle = Utils.CenteredRectangle(location + size / 2f, size);
       UILinkPointNavigator.SetPosition(311, rectangle.Center.ToVector2());
-      spritebatch.Draw(this._buttonTexture.get_Value(), location, new Rectangle?(), Color.White, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+      spritebatch.Draw(this._buttonTexture.Value, location, new Rectangle?(), Color.White, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
       Main.LocalPlayer.creativeInterface = false;
       if (!rectangle.Contains(Main.MouseScreen.ToPoint()))
         return;
@@ -125,7 +125,7 @@ namespace Terraria.GameContent.Creative
         Main.instance.MouseText(Language.GetTextValue("CreativePowers.PowersMenuOpen"), 0, (byte) 0, -1, -1, -1, -1, 0);
       else
         Main.instance.MouseText(Language.GetTextValue("CreativePowers.PowersMenuClosed"), 0, (byte) 0, -1, -1, -1, -1, 0);
-      spritebatch.Draw(this._buttonBorderTexture.get_Value(), location, new Rectangle?(), Color.White, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+      spritebatch.Draw(this._buttonBorderTexture.Value, location, new Rectangle?(), Color.White, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
       if (!Main.mouseLeft || !Main.mouseLeftRelease)
         return;
       this.ToggleMenu();

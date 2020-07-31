@@ -46,7 +46,7 @@ namespace Terraria.GameContent.UI.Elements
         Rectangle itemSlotHitbox = this.GetItemSlotHitbox(startX, startY, startItemIndex, i);
         Item inv = ContentSamples.ItemsByType[index];
         int context = 29;
-        if (TextureAssets.Item[index].get_State() == null)
+        if (TextureAssets.Item[index].State == null)
           --itemsPerLine;
         bool flag = false;
         if (this.IsMouseHovering && itemSlotHitbox.Contains(Main.MouseScreen.ToPoint()) && !PlayerInput.IgnoreMouseInterface)
@@ -67,7 +67,7 @@ namespace Terraria.GameContent.UI.Elements
       {
         int i = this._itemIdsToLoadTexturesFor[0];
         this._itemIdsToLoadTexturesFor.RemoveAt(0);
-        if (TextureAssets.Item[i].get_State() == null)
+        if (TextureAssets.Item[i].State == null)
         {
           Main.instance.LoadItem(i);
           itemsPerLine -= 4;

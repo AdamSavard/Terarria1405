@@ -12,9 +12,8 @@ namespace Terraria.GameContent.RGB
 {
   internal class DebugKeyboard : RgbDevice
   {
-    private DebugKeyboard(Fragment fragment)
-    {
-      this.\u002Ector((RgbDeviceVendor) 4, (RgbDeviceType) 6, fragment, new DeviceColorProfile());
+    private DebugKeyboard(Fragment fragment) : base((RgbDeviceVendor) 4, (RgbDeviceType) 6, fragment, new DeviceColorProfile())
+{
     }
 
     public static DebugKeyboard Create()
@@ -36,13 +35,14 @@ namespace Terraria.GameContent.RGB
       return new DebugKeyboard(Fragment.FromCustom(pointArray, vector2Array));
     }
 
-    public virtual void Present()
+
+    public override void Present()
     {
     }
 
-    public virtual void DebugDraw(IDebugDrawer drawer, Vector2 position, float scale)
+    public override void DebugDraw(IDebugDrawer drawer, Vector2 position, float scale)
     {
-      for (int index = 0; index < this.get_LedCount(); ++index)
+      for (int index = 0; index < this.LedCount; ++index)
       {
         Vector2 ledCanvasPosition = this.GetLedCanvasPosition(index);
         drawer.DrawSquare(new Vector4(ledCanvasPosition * scale + position, scale / 100f, scale / 100f), new Color(this.GetUnprocessedLedColor(index)));

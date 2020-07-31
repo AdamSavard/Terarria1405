@@ -20,8 +20,9 @@ namespace Terraria.WorldBuilding
     public WorldGenConfiguration(JObject configurationRoot)
       : base(configurationRoot)
     {
-      this._biomeRoot = (JObject) configurationRoot.get_Item("Biomes") ?? new JObject();
-      this._passRoot = (JObject) configurationRoot.get_Item("Passes") ?? new JObject();
+      // Item function maybe supposed to be Value<JObject> here. type casting is redundant
+      this._biomeRoot = configurationRoot.Value<JObject>("Biomes") ?? new JObject();
+      this._passRoot = configurationRoot.Value<JObject>("Passes") ?? new JObject();
     }
 
     public T CreateBiome<T>() where T : MicroBiome, new()
@@ -32,13 +33,13 @@ namespace Terraria.WorldBuilding
     public T CreateBiome<T>(string name) where T : MicroBiome, new()
     {
       JToken jtoken;
-      return this._biomeRoot.TryGetValue(name, ref jtoken) ? jtoken.ToObject<T>() : new T();
+      return this._biomeRoot.TryGetValue(name, out jtoken) ? jtoken.ToObject<T>() : new T();
     }
 
     public GameConfiguration GetPassConfiguration(string name)
     {
       JToken jtoken;
-      return this._passRoot.TryGetValue(name, ref jtoken) ? new GameConfiguration((JObject) jtoken) : new GameConfiguration(new JObject());
+      return this._passRoot.TryGetValue(name, out jtoken) ? new GameConfiguration((JObject) jtoken) : new GameConfiguration(new JObject());
     }
 
     public static WorldGenConfiguration FromEmbeddedPath(string path)

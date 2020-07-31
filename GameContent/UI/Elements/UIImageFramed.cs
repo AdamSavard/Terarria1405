@@ -56,7 +56,7 @@ namespace Terraria.GameContent.UI.Elements
     protected override void DrawSelf(SpriteBatch spriteBatch)
     {
       CalculatedStyle dimensions = this.GetDimensions();
-      spriteBatch.Draw(this._texture.get_Value(), dimensions.Position(), new Rectangle?(this._frame), this.Color);
+      spriteBatch.Draw(this._texture.Value, dimensions.Position(), new Rectangle?(this._frame), this.Color);
     }
   }
 }

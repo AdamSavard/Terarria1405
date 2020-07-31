@@ -28,7 +28,7 @@ namespace Terraria.GameContent.UI.Elements
     protected override void DrawSelf(SpriteBatch spriteBatch)
     {
       CalculatedStyle dimensions = this.GetDimensions();
-      Utils.DrawPanel(this._texture.get_Value(), this.EdgeWidth, 0, spriteBatch, dimensions.Position(), dimensions.Width, this.Color);
+      Utils.DrawPanel(this._texture.Value, this.EdgeWidth, 0, spriteBatch, dimensions.Position(), dimensions.Width, this.Color);
     }
 
     public override bool ContainsPoint(Vector2 point)

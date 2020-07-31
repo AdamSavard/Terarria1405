@@ -381,7 +381,7 @@ namespace Terraria.UI
       switch (Main.cursorOverride)
       {
         case 2:
-          if (ChatManager.AddChatText(FontAssets.MouseText.get_Value(), ItemTagHandler.GenerateTag(I), Vector2.One))
+          if (ChatManager.AddChatText(FontAssets.MouseText.Value, ItemTagHandler.GenerateTag(I), Vector2.One))
             SoundEngine.PlaySound(12, -1, -1, 1, 1f, 0.0f);
           return true;
         case 3:
@@ -1577,78 +1577,78 @@ label_95:
             num1 = 0;
         }
       }
-      Texture2D texture2D1 = TextureAssets.InventoryBack.get_Value();
+      Texture2D texture2D1 = TextureAssets.InventoryBack.Value;
       Color color2 = Main.inventoryBack;
       bool flag2 = false;
       if (obj.type > 0 && obj.stack > 0 && (obj.favorited && context != 13) && (context != 21 && context != 22 && context != 14))
       {
-        texture2D1 = TextureAssets.InventoryBack10.get_Value();
+        texture2D1 = TextureAssets.InventoryBack10.Value;
         if (context == 0 && slot < 10 && player.selectedItem == slot)
         {
           color2 = Color.White;
-          texture2D1 = TextureAssets.InventoryBack17.get_Value();
+          texture2D1 = TextureAssets.InventoryBack17.Value;
         }
       }
       else if (obj.type > 0 && obj.stack > 0 && (ItemSlot.Options.HighlightNewItems && obj.newAndShiny) && (context != 13 && context != 21 && (context != 14 && context != 22)))
       {
-        texture2D1 = TextureAssets.InventoryBack15.get_Value();
+        texture2D1 = TextureAssets.InventoryBack15.Value;
         float num2 = (float) ((double) ((float) Main.mouseTextColor / (float) byte.MaxValue) * 0.200000002980232 + 0.800000011920929);
         color2 = color2.MultiplyRGBA(new Color(num2, num2, num2));
       }
       else if (PlayerInput.UsingGamepadUI && obj.type > 0 && (obj.stack > 0 && num1 != 0) && (context != 13 && context != 21 && context != 22))
       {
-        texture2D1 = TextureAssets.InventoryBack15.get_Value();
+        texture2D1 = TextureAssets.InventoryBack15.Value;
         float num2 = (float) ((double) ((float) Main.mouseTextColor / (float) byte.MaxValue) * 0.200000002980232 + 0.800000011920929);
         color2 = num1 != 1 ? color2.MultiplyRGBA(new Color(num2 / 2f, num2, num2 / 2f)) : color2.MultiplyRGBA(new Color(num2, num2 / 2f, num2 / 2f));
       }
       else if (context == 0 && slot < 10)
       {
-        texture2D1 = TextureAssets.InventoryBack9.get_Value();
+        texture2D1 = TextureAssets.InventoryBack9.Value;
         if (player.selectedItem == slot && !PlayerInput.UsingGamepad)
         {
-          texture2D1 = TextureAssets.InventoryBack14.get_Value();
+          texture2D1 = TextureAssets.InventoryBack14.Value;
           color2 = Color.White;
         }
       }
       else if (context == 28)
       {
-        texture2D1 = TextureAssets.InventoryBack7.get_Value();
+        texture2D1 = TextureAssets.InventoryBack7.Value;
         color2 = Color.White;
       }
       else if (context == 10 || context == 8 || (context == 16 || context == 17) || (context == 19 || context == 18 || context == 20))
-        texture2D1 = TextureAssets.InventoryBack3.get_Value();
+        texture2D1 = TextureAssets.InventoryBack3.Value;
       else if (context == 11 || context == 9 || (context == 24 || context == 23) || context == 26)
-        texture2D1 = TextureAssets.InventoryBack8.get_Value();
+        texture2D1 = TextureAssets.InventoryBack8.Value;
       else if (context == 12 || context == 25 || context == 27)
       {
-        texture2D1 = TextureAssets.InventoryBack12.get_Value();
+        texture2D1 = TextureAssets.InventoryBack12.Value;
       }
       else
       {
         switch (context)
         {
           case 3:
-            texture2D1 = TextureAssets.InventoryBack5.get_Value();
+            texture2D1 = TextureAssets.InventoryBack5.Value;
             break;
           case 4:
-            texture2D1 = TextureAssets.InventoryBack2.get_Value();
+            texture2D1 = TextureAssets.InventoryBack2.Value;
             break;
           default:
             if (context == 7 || context == 5)
             {
-              texture2D1 = TextureAssets.InventoryBack4.get_Value();
+              texture2D1 = TextureAssets.InventoryBack4.Value;
               break;
             }
             switch (context)
             {
               case 6:
-                texture2D1 = TextureAssets.InventoryBack7.get_Value();
+                texture2D1 = TextureAssets.InventoryBack7.Value;
                 break;
               case 13:
                 byte num3 = 200;
                 if (slot == Main.player[Main.myPlayer].selectedItem)
                 {
-                  texture2D1 = TextureAssets.InventoryBack14.get_Value();
+                  texture2D1 = TextureAssets.InventoryBack14.Value;
                   num3 = byte.MaxValue;
                 }
                 color2 = new Color((int) num3, (int) num3, (int) num3, (int) num3);
@@ -1662,14 +1662,14 @@ label_95:
                 switch (context)
                 {
                   case 15:
-                    texture2D1 = TextureAssets.InventoryBack6.get_Value();
+                    texture2D1 = TextureAssets.InventoryBack6.Value;
                     break;
                   case 22:
-                    texture2D1 = TextureAssets.InventoryBack4.get_Value();
+                    texture2D1 = TextureAssets.InventoryBack4.Value;
                     if (ItemSlot.DrawGoldBGForCraftingMaterial)
                     {
                       ItemSlot.DrawGoldBGForCraftingMaterial = false;
-                      texture2D1 = TextureAssets.InventoryBack14.get_Value();
+                      texture2D1 = TextureAssets.InventoryBack14.Value;
                       float t = (float) color2.A / (float) byte.MaxValue;
                       color2 = Color.White * ((double) t >= 0.699999988079071 ? 1f : Utils.GetLerpValue(0.0f, 0.7f, t, true));
                       break;
@@ -1677,7 +1677,7 @@ label_95:
                     break;
                   case 29:
                     color2 = new Color(53, 69, (int) sbyte.MaxValue, (int) byte.MaxValue);
-                    texture2D1 = TextureAssets.InventoryBack18.get_Value();
+                    texture2D1 = TextureAssets.InventoryBack18.Value;
                     break;
                   case 30:
                     flag2 = !flag1;
@@ -1698,7 +1698,7 @@ label_95:
         Color color5 = color4;
         double num6 = (double) num5 / 2.0;
         color2 = Color.Lerp(color3, color5, (float) num6);
-        texture2D1 = TextureAssets.InventoryBack13.get_Value();
+        texture2D1 = TextureAssets.InventoryBack13.Value;
       }
       if ((context == 4 || context == 3) && (ItemSlot.inventoryGlowTimeChest[slot] > 0 && !inv[slot].favorited) && !inv[slot].IsAir)
       {
@@ -1710,16 +1710,16 @@ label_95:
         float num4 = (float) ItemSlot.inventoryGlowTimeChest[slot] / 300f;
         float num5 = num4 * num4;
         color2 = Color.Lerp(color3, color4, num5 / 2f);
-        texture2D1 = TextureAssets.InventoryBack13.get_Value();
+        texture2D1 = TextureAssets.InventoryBack13.Value;
       }
       if (flag1)
       {
-        texture2D1 = TextureAssets.InventoryBack14.get_Value();
+        texture2D1 = TextureAssets.InventoryBack14.Value;
         color2 = Color.White;
       }
       if (context == 28 && Main.MouseScreen.Between(position, position + texture2D1.Size() * inventoryScale) && !player.mouseInterface)
       {
-        texture2D1 = TextureAssets.InventoryBack14.get_Value();
+        texture2D1 = TextureAssets.InventoryBack14.Value;
         color2 = Color.White;
       }
       if (!flag2)
@@ -1783,7 +1783,7 @@ label_95:
       }
       if ((obj.type <= 0 || obj.stack <= 0) && num7 != -1)
       {
-        Texture2D texture2D2 = TextureAssets.Extra[54].get_Value();
+        Texture2D texture2D2 = TextureAssets.Extra[54].Value;
         Rectangle r = texture2D2.Frame(3, 6, num7 % 3, num7 / 3, 0, 0);
         r.Width -= 2;
         r.Height -= 2;
@@ -1793,7 +1793,7 @@ label_95:
       if (obj.type > 0 && obj.stack > 0)
       {
         Main.instance.LoadItem(obj.type);
-        Texture2D texture2D2 = TextureAssets.Item[obj.type].get_Value();
+        Texture2D texture2D2 = TextureAssets.Item[obj.type].Value;
         Rectangle r = Main.itemAnimations[obj.type] == null ? texture2D2.Frame(1, 1, 0, 0, 0, 0) : Main.itemAnimations[obj.type].GetFrame(texture2D2, -1);
         Color currentColor = color1;
         float scale1 = 1f;
@@ -1808,9 +1808,9 @@ label_95:
         if (obj.color != Color.Transparent)
           spriteBatch.Draw(texture2D2, position1, new Rectangle?(r), obj.GetColor(color1), 0.0f, origin, scale2 * scale1, SpriteEffects.None, 0.0f);
         if (ItemID.Sets.TrapSigned[obj.type])
-          spriteBatch.Draw(TextureAssets.Wire.get_Value(), position + new Vector2(40f, 40f) * inventoryScale, new Rectangle?(new Rectangle(4, 58, 8, 8)), color1, 0.0f, new Vector2(4f), 1f, SpriteEffects.None, 0.0f);
+          spriteBatch.Draw(TextureAssets.Wire.Value, position + new Vector2(40f, 40f) * inventoryScale, new Rectangle?(new Rectangle(4, 58, 8, 8)), color1, 0.0f, new Vector2(4f), 1f, SpriteEffects.None, 0.0f);
         if (obj.stack > 1)
-          ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), obj.stack.ToString(), position + new Vector2(10f, 26f) * inventoryScale, color1, 0.0f, Vector2.Zero, new Vector2(inventoryScale), -1f, inventoryScale);
+          ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, obj.stack.ToString(), position + new Vector2(10f, 26f) * inventoryScale, color1, 0.0f, Vector2.Zero, new Vector2(inventoryScale), -1f, inventoryScale);
         int num4 = -1;
         if (context == 13)
         {
@@ -1864,30 +1864,30 @@ label_95:
           }
         }
         if (num4 != -1)
-          ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), num4.ToString(), position + new Vector2(8f, 30f) * inventoryScale, color1, 0.0f, Vector2.Zero, new Vector2(inventoryScale * 0.8f), -1f, inventoryScale);
+          ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, num4.ToString(), position + new Vector2(8f, 30f) * inventoryScale, color1, 0.0f, Vector2.Zero, new Vector2(inventoryScale * 0.8f), -1f, inventoryScale);
         if (context == 13)
         {
           string text = string.Concat((object) (slot + 1));
           if (text == "10")
             text = "0";
-          ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), text, position + new Vector2(8f, 4f) * inventoryScale, color1, 0.0f, Vector2.Zero, new Vector2(inventoryScale), -1f, inventoryScale);
+          ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, text, position + new Vector2(8f, 4f) * inventoryScale, color1, 0.0f, Vector2.Zero, new Vector2(inventoryScale), -1f, inventoryScale);
         }
         if (context == 13 && obj.potion)
         {
-          Vector2 position2 = position + texture2D1.Size() * inventoryScale / 2f - TextureAssets.Cd.get_Value().Size() * inventoryScale / 2f;
+          Vector2 position2 = position + texture2D1.Size() * inventoryScale / 2f - TextureAssets.Cd.Value.Size() * inventoryScale / 2f;
           Color color3 = obj.GetAlpha(color1) * ((float) player.potionDelay / (float) player.potionDelayTime);
-          spriteBatch.Draw(TextureAssets.Cd.get_Value(), position2, new Rectangle?(), color3, 0.0f, new Vector2(), scale2, SpriteEffects.None, 0.0f);
+          spriteBatch.Draw(TextureAssets.Cd.Value, position2, new Rectangle?(), color3, 0.0f, new Vector2(), scale2, SpriteEffects.None, 0.0f);
         }
         if ((context == 10 || context == 18) && (obj.expertOnly && !Main.expertMode))
         {
-          Vector2 position2 = position + texture2D1.Size() * inventoryScale / 2f - TextureAssets.Cd.get_Value().Size() * inventoryScale / 2f;
+          Vector2 position2 = position + texture2D1.Size() * inventoryScale / 2f - TextureAssets.Cd.Value.Size() * inventoryScale / 2f;
           Color white = Color.White;
-          spriteBatch.Draw(TextureAssets.Cd.get_Value(), position2, new Rectangle?(), white, 0.0f, new Vector2(), scale2, SpriteEffects.None, 0.0f);
+          spriteBatch.Draw(TextureAssets.Cd.Value, position2, new Rectangle?(), white, 0.0f, new Vector2(), scale2, SpriteEffects.None, 0.0f);
         }
       }
       else if (context == 6)
       {
-        Texture2D texture2D2 = TextureAssets.Trash.get_Value();
+        Texture2D texture2D2 = TextureAssets.Trash.Value;
         Vector2 position1 = position + texture2D1.Size() * inventoryScale / 2f - texture2D2.Size() * inventoryScale / 2f;
         spriteBatch.Draw(texture2D2, position1, new Rectangle?(), new Color(100, 100, 100, 100), 0.0f, new Vector2(), inventoryScale, SpriteEffects.None, 0.0f);
       }
@@ -1906,7 +1906,7 @@ label_95:
           num4 -= 2;
           float num5 = num2 * 1.4f;
         }
-        ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), text, position + new Vector2(6f, (float) (4 + num4)) * inventoryScale, baseColor, 0.0f, Vector2.Zero, new Vector2(inventoryScale), -1f, inventoryScale);
+        ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, text, position + new Vector2(6f, (float) (4 + num4)) * inventoryScale, baseColor, 0.0f, Vector2.Zero, new Vector2(inventoryScale), -1f, inventoryScale);
       }
       if (ID == -1)
         return;
@@ -2204,7 +2204,7 @@ label_95:
       int[] coinsArray,
       bool horizontal = false)
     {
-      Utils.DrawBorderStringFourWay(sb, FontAssets.MouseText.get_Value(), text, shopx, shopy + 40f, Color.White * ((float) Main.mouseTextColor / (float) byte.MaxValue), Color.Black, Vector2.Zero, 1f);
+      Utils.DrawBorderStringFourWay(sb, FontAssets.MouseText.Value, text, shopx, shopy + 40f, Color.White * ((float) Main.mouseTextColor / (float) byte.MaxValue), Color.Black, Vector2.Zero, 1f);
       if (horizontal)
       {
         for (int index = 0; index < 4; ++index)
@@ -2214,9 +2214,9 @@ label_95:
           {
             int coins = coinsArray[3 - index];
           }
-          Vector2 position = new Vector2((float) ((double) shopx + (double) ChatManager.GetStringSize(FontAssets.MouseText.get_Value(), text, Vector2.One, -1f).X + (double) (24 * index) + 45.0), shopy + 50f);
-          sb.Draw(TextureAssets.Item[74 - index].get_Value(), position, new Rectangle?(), Color.White, 0.0f, TextureAssets.Item[74 - index].get_Value().Size() / 2f, 1f, SpriteEffects.None, 0.0f);
-          Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.get_Value(), coinsArray[3 - index].ToString(), position.X - 11f, position.Y, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
+          Vector2 position = new Vector2((float) ((double) shopx + (double) ChatManager.GetStringSize(FontAssets.MouseText.Value, text, Vector2.One, -1f).X + (double) (24 * index) + 45.0), shopy + 50f);
+          sb.Draw(TextureAssets.Item[74 - index].Value, position, new Rectangle?(), Color.White, 0.0f, TextureAssets.Item[74 - index].Value.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+          Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.Value, coinsArray[3 - index].ToString(), position.X - 11f, position.Y, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
         }
       }
       else
@@ -2225,8 +2225,8 @@ label_95:
         {
           Main.instance.LoadItem(74 - index);
           int num = index != 0 || coinsArray[3 - index] <= 99 ? 0 : -6;
-          sb.Draw(TextureAssets.Item[74 - index].get_Value(), new Vector2(shopx + 11f + (float) (24 * index), shopy + 75f), new Rectangle?(), Color.White, 0.0f, TextureAssets.Item[74 - index].get_Value().Size() / 2f, 1f, SpriteEffects.None, 0.0f);
-          Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.get_Value(), coinsArray[3 - index].ToString(), shopx + (float) (24 * index) + (float) num, shopy + 75f, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
+          sb.Draw(TextureAssets.Item[74 - index].Value, new Vector2(shopx + 11f + (float) (24 * index), shopy + 75f), new Rectangle?(), Color.White, 0.0f, TextureAssets.Item[74 - index].Value.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+          Utils.DrawBorderStringFourWay(sb, FontAssets.ItemStack.Value, coinsArray[3 - index].ToString(), shopx + (float) (24 * index) + (float) num, shopy + 75f, Color.White, Color.Black, new Vector2(0.3f), 0.75f);
         }
       }
     }
@@ -2253,13 +2253,13 @@ label_95:
         Main.instance.LoadItem(346);
         Main.instance.LoadItem(87);
         if (num4 > 0L)
-          sb.Draw(TextureAssets.Item[4076].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 92f, shopy + 45f), TextureAssets.Item[4076].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+          sb.Draw(TextureAssets.Item[4076].Value, Utils.CenteredRectangle(new Vector2(shopx + 92f, shopy + 45f), TextureAssets.Item[4076].Value.Size() * 0.65f), new Rectangle?(), Color.White);
         if (num3 > 0L)
-          sb.Draw(TextureAssets.Item[3813].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 92f, shopy + 45f), TextureAssets.Item[3813].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+          sb.Draw(TextureAssets.Item[3813].Value, Utils.CenteredRectangle(new Vector2(shopx + 92f, shopy + 45f), TextureAssets.Item[3813].Value.Size() * 0.65f), new Rectangle?(), Color.White);
         if (num2 > 0L)
-          sb.Draw(TextureAssets.Item[346].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 80f, shopy + 50f), TextureAssets.Item[346].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+          sb.Draw(TextureAssets.Item[346].Value, Utils.CenteredRectangle(new Vector2(shopx + 80f, shopy + 50f), TextureAssets.Item[346].Value.Size() * 0.65f), new Rectangle?(), Color.White);
         if (num1 > 0L)
-          sb.Draw(TextureAssets.Item[87].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 70f, shopy + 60f), TextureAssets.Item[87].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+          sb.Draw(TextureAssets.Item[87].Value, Utils.CenteredRectangle(new Vector2(shopx + 70f, shopy + 60f), TextureAssets.Item[87].Value.Size() * 0.65f), new Rectangle?(), Color.White);
         ItemSlot.DrawMoney(sb, Lang.inter[66].Value, shopx, shopy, Utils.CoinsSplit(count), horizontal);
       }
     }
@@ -2325,12 +2325,12 @@ label_95:
       if ((double) ItemSlot.CircularRadialOpacity == 0.0)
         return;
       Player player = Main.player[Main.myPlayer];
-      TextureAssets.HotbarRadial[2].get_Value();
+      TextureAssets.HotbarRadial[2].Value;
       float num1 = ItemSlot.CircularRadialOpacity * 0.9f;
       float num2 = ItemSlot.CircularRadialOpacity * 1f;
       float num3 = (float) Main.mouseTextColor / (float) byte.MaxValue;
       Color color = Color.White * ((float) (1.0 - (1.0 - (double) num3) * (1.0 - (double) num3)) * 0.785f) * num1;
-      Texture2D texture2D = TextureAssets.HotbarRadial[1].get_Value();
+      Texture2D texture2D = TextureAssets.HotbarRadial[1].Value;
       float num4 = 6.283185f / (float) player.CircularRadial.RadialCount;
       float num5 = -1.570796f;
       for (int index = 0; index < player.CircularRadial.RadialCount; ++index)
@@ -2357,8 +2357,8 @@ label_95:
       if ((double) ItemSlot.QuicksRadialOpacity == 0.0)
         return;
       Player player = Main.player[Main.myPlayer];
-      Texture2D texture2D = TextureAssets.HotbarRadial[2].get_Value();
-      Texture2D texture = TextureAssets.QuicksIcon.get_Value();
+      Texture2D texture2D = TextureAssets.HotbarRadial[2].Value;
+      Texture2D texture = TextureAssets.QuicksIcon.Value;
       float num1 = ItemSlot.QuicksRadialOpacity * 0.9f;
       float num2 = ItemSlot.QuicksRadialOpacity * 1f;
       float num3 = (float) Main.mouseTextColor / (float) byte.MaxValue;
@@ -2419,7 +2419,7 @@ label_95:
       Player player = Main.player[Main.myPlayer];
       if (player.chest != -1)
         return;
-      Texture2D texture2D = TextureAssets.HotbarRadial[0].get_Value();
+      Texture2D texture2D = TextureAssets.HotbarRadial[0].Value;
       float num = (float) Main.mouseTextColor / (float) byte.MaxValue;
       Color color = Color.White * ((float) (1.0 - (1.0 - (double) num) * (1.0 - (double) num)) * 0.785f);
       sb.Draw(texture2D, position, new Rectangle?(), color, 0.0f, texture2D.Size() / 2f, Main.inventoryScale, SpriteEffects.None, 0.0f);

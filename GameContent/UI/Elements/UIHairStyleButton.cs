@@ -45,9 +45,9 @@ namespace Terraria.GameContent.UI.Elements
       Vector2 vector2 = new Vector2(-5f, -5f);
       base.DrawSelf(spriteBatch);
       if (this._player.hair == this.HairStyleId)
-        spriteBatch.Draw(this._selectedBorderTexture.get_Value(), this.GetDimensions().Center() - this._selectedBorderTexture.Size() / 2f, Color.White);
+        spriteBatch.Draw(this._selectedBorderTexture.Value, this.GetDimensions().Center() - this._selectedBorderTexture.Size() / 2f, Color.White);
       if (this._hovered)
-        spriteBatch.Draw(this._hoveredBorderTexture.get_Value(), this.GetDimensions().Center() - this._hoveredBorderTexture.Size() / 2f, Color.White);
+        spriteBatch.Draw(this._hoveredBorderTexture.Value, this.GetDimensions().Center() - this._hoveredBorderTexture.Size() / 2f, Color.White);
       int hair = this._player.hair;
       this._player.hair = this.HairStyleId;
       Main.PlayerRenderer.DrawPlayerHead(Main.Camera, this._player, this.GetDimensions().Center() + vector2, 1f, 1f, new Color());

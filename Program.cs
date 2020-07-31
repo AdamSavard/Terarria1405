@@ -130,7 +130,7 @@ namespace Terraria
       try
       {
         Console.OutputEncoding = Encoding.UTF8;
-        if (Platform.get_IsWindows())
+        if (Platform.IsWindows)
           Console.InputEncoding = Encoding.Unicode;
         else
           Console.InputEncoding = Encoding.UTF8;
@@ -145,7 +145,7 @@ namespace Terraria
       Thread.CurrentThread.Name = "Main Thread";
       if (monoArgs)
         args = Utils.ConvertMonoArgsToDotNet(args);
-      if (Platform.get_IsOSX())
+      if (Platform.IsOSX)
         Main.OnEngineLoad += (Action) (() => Main.instance.IsMouseVisible = false);
       Program.LaunchParameters = Utils.ParseArguements(args);
       ThreadPool.SetMinThreads(8, 8);

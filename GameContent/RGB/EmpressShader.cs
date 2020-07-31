@@ -82,9 +82,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public EmpressShader()
-    {
-      base.\u002Ector();
+    public EmpressShader() : base()
+{
     }
   }
 }

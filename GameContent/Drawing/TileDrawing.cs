@@ -370,7 +370,7 @@ namespace Terraria.GameContent.Drawing
             ushort type = tileCache.type;
             short frameX = tileCache.frameX;
             short frameY = tileCache.frameY;
-            if (!TextureAssets.Tile[(int) type].get_IsLoaded())
+            if (!TextureAssets.Tile[(int) type].IsLoaded)
               Main.instance.LoadTiles((int) type);
             switch (type)
             {
@@ -684,7 +684,7 @@ namespace Terraria.GameContent.Drawing
           num = 1;
         else if (drawData.tileFrameY == (short) 36)
           num = 2;
-        Main.spriteBatch.Draw(TextureAssets.ShroomCap.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X - 22), (float) (tileY * 16 - (int) screenPosition.Y - 26)) + screenOffset, new Rectangle?(new Rectangle(num * 62, 0, 60, 42)), Lighting.GetColor(tileX, tileY), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.ShroomCap.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X - 22), (float) (tileY * 16 - (int) screenPosition.Y - 26)) + screenOffset, new Rectangle?(new Rectangle(num * 62, 0, 60, 42)), Lighting.GetColor(tileX, tileY), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       }
       Rectangle normalTileRect = new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight - drawData.halfBrickHeight);
       Vector2 vector2 = new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop + drawData.halfBrickHeight)) + screenOffset;
@@ -773,7 +773,7 @@ namespace Terraria.GameContent.Drawing
       {
         short num3 = Main.tileGlowMask[(int) drawData.tileCache.type];
         if (TextureAssets.GlowMask.IndexInRange<Asset<Texture2D>>((int) num3))
-          drawData.drawTexture = TextureAssets.GlowMask[(int) num3].get_Value();
+          drawData.drawTexture = TextureAssets.GlowMask[(int) num3].Value;
         double num4 = Main.timeForVisualEffects * 0.08;
         Color color = Color.White;
         bool flag = false;
@@ -882,7 +882,7 @@ namespace Terraria.GameContent.Drawing
 
     private Texture2D GetTileDrawTexture(Tile tile, int tileX, int tileY)
     {
-      Texture2D texture2D = TextureAssets.Tile[(int) tile.type].get_Value();
+      Texture2D texture2D = TextureAssets.Tile[(int) tile.type].Value;
       int tileStyle = 0;
       int num = (int) tile.type;
       switch (tile.type)
@@ -911,7 +911,7 @@ namespace Terraria.GameContent.Drawing
       int tileY,
       int paintOverride)
     {
-      Texture2D texture2D = TextureAssets.Tile[(int) tile.type].get_Value();
+      Texture2D texture2D = TextureAssets.Tile[(int) tile.type].Value;
       int tileStyle = 0;
       int num = (int) tile.type;
       switch (tile.type)
@@ -1149,21 +1149,21 @@ namespace Terraria.GameContent.Drawing
         case 270:
           return new TileDrawing.TileFlameData()
           {
-            flameTexture = TextureAssets.FireflyJar.get_Value(),
+            flameTexture = TextureAssets.FireflyJar.Value,
             flameColor = new Color(200, 200, 200, 0),
             flameCount = 1
           };
         case 271:
           return new TileDrawing.TileFlameData()
           {
-            flameTexture = TextureAssets.LightningbugJar.get_Value(),
+            flameTexture = TextureAssets.LightningbugJar.Value,
             flameColor = new Color(200, 200, 200, 0),
             flameCount = 1
           };
         case 581:
           return new TileDrawing.TileFlameData()
           {
-            flameTexture = TextureAssets.GlowMask[291].get_Value(),
+            flameTexture = TextureAssets.GlowMask[291].Value,
             flameColor = new Color(200, 100, 100, 0),
             flameCount = 1
           };
@@ -1209,7 +1209,7 @@ namespace Terraria.GameContent.Drawing
           }
           TileDrawing.TileFlameData tileFlameData = new TileDrawing.TileFlameData()
           {
-            flameTexture = TextureAssets.Flames[index].get_Value(),
+            flameTexture = TextureAssets.Flames[index].Value,
             flameSeed = num
           };
           switch (index)
@@ -1660,22 +1660,22 @@ namespace Terraria.GameContent.Drawing
       TileDrawInfo drawData)
     {
       if (drawData.typeCache == (ushort) 548 && (int) drawData.tileFrameX / 54 > 6)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[297].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[297].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 613)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[298].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[298].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 614)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[299].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[299].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 593)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[295].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[295].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 594)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[296].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[296].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), Color.White, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 215 && drawData.tileFrameY < (short) 36)
       {
         int index = 15;
         Color color = new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, 0);
         if ((int) drawData.tileFrameX / 54 == 5)
           color = new Color((float) Main.DiscoR / (float) byte.MaxValue, (float) Main.DiscoG / (float) byte.MaxValue, (float) Main.DiscoB / (float) byte.MaxValue, 0.0f);
-        Main.spriteBatch.Draw(TextureAssets.Flames[index].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), color, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.Flames[index].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), color, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       }
       if (drawData.typeCache == (ushort) 85)
       {
@@ -1701,26 +1701,26 @@ namespace Terraria.GameContent.Drawing
         }
       }
       if (drawData.typeCache == (ushort) 286)
-        Main.spriteBatch.Draw(TextureAssets.GlowSnail.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 100, (int) byte.MaxValue, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowSnail.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 100, (int) byte.MaxValue, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 582)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[293].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[293].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 391)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[131].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(250, 250, 250, 200), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[131].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(250, 250, 250, 200), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 619)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[300].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 100, (int) byte.MaxValue, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[300].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 100, (int) byte.MaxValue, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 270)
-        Main.spriteBatch.Draw(TextureAssets.FireflyJar.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.FireflyJar.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 271)
-        Main.spriteBatch.Draw(TextureAssets.LightningbugJar.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.LightningbugJar.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 581)
-        Main.spriteBatch.Draw(TextureAssets.GlowMask[291].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.GlowMask[291].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 316 || drawData.typeCache == (ushort) 317 || drawData.typeCache == (ushort) 318)
       {
         int index = (tileX - (int) drawData.tileFrameX / 18) / 2 * ((tileY - (int) drawData.tileFrameY / 18) / 3) % Main.cageFrames;
-        Main.spriteBatch.Draw(TextureAssets.JellyfishBowl[(int) drawData.typeCache - 316].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + Main.jellyfishCageFrame[(int) drawData.typeCache - 316, index] * 36, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.JellyfishBowl[(int) drawData.typeCache - 316].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + Main.jellyfishCageFrame[(int) drawData.typeCache - 316, index] * 36, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       }
       if (drawData.typeCache == (ushort) 149 && drawData.tileFrameX < (short) 54)
-        Main.spriteBatch.Draw(TextureAssets.XmasLight.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.XmasLight.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache == (ushort) 300 || drawData.typeCache == (ushort) 302 || (drawData.typeCache == (ushort) 303 || drawData.typeCache == (ushort) 306))
       {
         int index = 9;
@@ -1730,7 +1730,7 @@ namespace Terraria.GameContent.Drawing
           index = 11;
         if (drawData.typeCache == (ushort) 306)
           index = 12;
-        Main.spriteBatch.Draw(TextureAssets.Flames[index].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.Flames[index].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       }
       else if (Main.tileFlame[(int) drawData.typeCache])
       {
@@ -1785,7 +1785,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 8:
@@ -1793,7 +1793,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 12:
@@ -1801,7 +1801,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 14:
@@ -1809,7 +1809,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 16:
@@ -1817,19 +1817,19 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 27:
               case 28:
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 break;
               default:
                 for (int index2 = 0; index2 < 7; ++index2)
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.35f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
             }
@@ -1842,7 +1842,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.05f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 6:
@@ -1850,7 +1850,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 9:
@@ -1858,7 +1858,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 11:
@@ -1866,7 +1866,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 13:
@@ -1874,19 +1874,19 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 28:
               case 29:
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 break;
               default:
                 for (int index2 = 0; index2 < 7; ++index2)
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.35f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
             }
@@ -1899,7 +1899,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 9:
@@ -1907,7 +1907,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.05f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 11:
@@ -1915,7 +1915,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 15:
@@ -1923,7 +1923,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 17:
@@ -1932,7 +1932,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 18:
@@ -1940,19 +1940,19 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 34:
               case 35:
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 break;
               default:
                 for (int index2 = 0; index2 < 7; ++index2)
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.35f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
             }
@@ -1965,7 +1965,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 2:
@@ -1974,7 +1974,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.075f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 3:
@@ -1982,7 +1982,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.2f;
                   float num2 = (float) Utils.RandomInt(ref seed, -20, 1) * 0.35f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 5:
@@ -1990,7 +1990,7 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.3f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 9:
@@ -1998,32 +1998,32 @@ namespace Terraria.GameContent.Drawing
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.15f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 12:
                 float num3 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.01f;
                 float num4 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.01f;
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num3, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num4) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(Utils.RandomInt(ref seed, 90, 111), Utils.RandomInt(ref seed, 90, 111), Utils.RandomInt(ref seed, 90, 111), 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num3, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num4) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(Utils.RandomInt(ref seed, 90, 111), Utils.RandomInt(ref seed, 90, 111), Utils.RandomInt(ref seed, 90, 111), 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 break;
               case 13:
                 for (int index2 = 0; index2 < 8; ++index2)
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.1f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
               case 28:
               case 29:
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 break;
               default:
                 for (int index2 = 0; index2 < 7; ++index2)
                 {
                   float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                   float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.35f;
-                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                  Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX + drawData.addFrX, (int) drawData.tileFrameY + drawData.addFrY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
                 }
                 break;
             }
@@ -2035,7 +2035,7 @@ namespace Terraria.GameContent.Drawing
               float num2 = (float) Utils.RandomInt(ref seed, -10, 10) * 0.15f;
               float num5 = 0.0f;
               float num6 = 0.0f;
-              Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num5, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num6) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+              Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num5, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num6) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
             }
             break;
           case 13:
@@ -2046,7 +2046,7 @@ namespace Terraria.GameContent.Drawing
               {
                 float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                 float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.35f;
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(100, 100, 100, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
               }
               break;
             }
@@ -2056,7 +2056,7 @@ namespace Terraria.GameContent.Drawing
               {
                 float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                 float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.1f;
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(50, 50, 50, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
               }
               break;
             }
@@ -2066,13 +2066,13 @@ namespace Terraria.GameContent.Drawing
               {
                 float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
                 float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.15f;
-                Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(25, 25, 25, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+                Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(25, 25, 25, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
               }
               break;
             }
             if (num7 == 34 || num7 == 35)
             {
-              Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+              Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(75, 75, 75, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
               break;
             }
             break;
@@ -2084,16 +2084,16 @@ namespace Terraria.GameContent.Drawing
                 color = new Color((float) Main.DiscoR / (float) byte.MaxValue, (float) Main.DiscoG / (float) byte.MaxValue, (float) Main.DiscoB / (float) byte.MaxValue, 0.0f);
               float num1 = (float) Utils.RandomInt(ref seed, -10, 11) * 0.15f;
               float num2 = (float) Utils.RandomInt(ref seed, -10, 1) * 0.35f;
-              Main.spriteBatch.Draw(TextureAssets.Flames[index1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), color, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+              Main.spriteBatch.Draw(TextureAssets.Flames[index1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0) + num1, (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop) + num2) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), color, 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
             }
             break;
         }
       }
       if (drawData.typeCache == (ushort) 144)
-        Main.spriteBatch.Draw(TextureAssets.Timer.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.Timer.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color(200, 200, 200, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
       if (drawData.typeCache != (ushort) 237)
         return;
-      Main.spriteBatch.Draw(TextureAssets.SunAltar.get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color((int) Main.mouseTextColor / 2, (int) Main.mouseTextColor / 2, (int) Main.mouseTextColor / 2, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
+      Main.spriteBatch.Draw(TextureAssets.SunAltar.Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle((int) drawData.tileFrameX, (int) drawData.tileFrameY, drawData.tileWidth, drawData.tileHeight)), new Color((int) Main.mouseTextColor / 2, (int) Main.mouseTextColor / 2, (int) Main.mouseTextColor / 2, 0), 0.0f, TileDrawing._zero, 1f, drawData.tileSpriteEffect, 0.0f);
     }
 
     private int GetPalmTreeVariant(int x, int y)
@@ -2346,29 +2346,29 @@ namespace Terraria.GameContent.Drawing
       if (((int) drawData.tileFrameY & 8192) == 8192)
         num4 += 8;
       Color color1 = Lighting.GetColor(tileX + 1, tileY - 3);
-      Main.spriteBatch.Draw(TextureAssets.XmasTree[0].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(0, 0, 64, 128)), color1, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
+      Main.spriteBatch.Draw(TextureAssets.XmasTree[0].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(0, 0, 64, 128)), color1, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
       if (num1 > 0)
       {
         int num5 = num1 - 1;
         Color color2 = color1;
         if (num5 != 3)
           color2 = new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
-        Main.spriteBatch.Draw(TextureAssets.XmasTree[3].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num5, 0, 64, 128)), color2, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.XmasTree[3].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num5, 0, 64, 128)), color2, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
       }
       if (num2 > 0)
       {
         int num5 = num2 - 1;
-        Main.spriteBatch.Draw(TextureAssets.XmasTree[1].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num5, 0, 64, 128)), color1, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.XmasTree[1].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num5, 0, 64, 128)), color1, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
       }
       if (num3 > 0)
       {
         int num5 = num3 - 1;
-        Main.spriteBatch.Draw(TextureAssets.XmasTree[2].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num5, 0, 64, 128)), color1, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.XmasTree[2].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num5, 0, 64, 128)), color1, 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
       }
       if (num4 <= 0)
         return;
       int num6 = num4 - 1;
-      Main.spriteBatch.Draw(TextureAssets.XmasTree[4].get_Value(), new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num6, 130 * Main.tileFrame[171], 64, 128)), new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue), 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
+      Main.spriteBatch.Draw(TextureAssets.XmasTree[4].Value, new Vector2((float) (tileX * 16 - (int) screenPosition.X) - (float) (((double) drawData.tileWidth - 16.0) / 2.0), (float) (tileY * 16 - (int) screenPosition.Y + drawData.tileTop)) + screenOffset, new Rectangle?(new Rectangle(66 * num6, 130 * Main.tileFrame[171], 64, 128)), new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue), 0.0f, TileDrawing._zero, 1f, SpriteEffects.None, 0.0f);
     }
 
     private void DrawTile_MinecartTrack(
@@ -2901,7 +2901,7 @@ label_25:
       int averageTileLighting = ((int) tileLight.R + (int) tileLight.G + (int) tileLight.B) / 3;
       if (averageTileLighting <= 10)
         return;
-      highlightTexture = TextureAssets.HighlightMask[(int) typeCache].get_Value();
+      highlightTexture = TextureAssets.HighlightMask[(int) typeCache].Value;
       highlightColor = Colors.GetSelectionGlowColor(actuallySelected, averageTileLighting);
     }
 
@@ -2915,24 +2915,24 @@ label_25:
       int num = (int) tileCache.slope();
       if (!TileID.Sets.BlocksWaterDrawingBehindSelf[(int) tileCache.type] || num == 0)
       {
-        Main.spriteBatch.Draw(TextureAssets.Liquid[liquidType].get_Value(), position, new Rectangle?(liquidSize), aColor, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        Main.spriteBatch.Draw(TextureAssets.Liquid[liquidType].Value, position, new Rectangle?(liquidSize), aColor, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
       }
       else
       {
         liquidSize.X += 18 * (num - 1);
         if (tileCache.slope() == (byte) 1)
-          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].get_Value(), position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].Value, position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
         else if (tileCache.slope() == (byte) 2)
-          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].get_Value(), position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].Value, position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
         else if (tileCache.slope() == (byte) 3)
         {
-          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].get_Value(), position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].Value, position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
         }
         else
         {
           if (tileCache.slope() != (byte) 4)
             return;
-          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].get_Value(), position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+          Main.spriteBatch.Draw(TextureAssets.LiquidSlope[liquidType].Value, position, new Rectangle?(liquidSize), aColor, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
         }
       }
     }
@@ -4103,7 +4103,7 @@ label_25:
         case 10:
           if ((int) tileFrameY / 54 != 32)
             break;
-          glowTexture = TextureAssets.GlowMask[57].get_Value();
+          glowTexture = TextureAssets.GlowMask[57].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 54, tileWidth, tileHeight);
           glowColor = this._martianGlow;
           break;
@@ -4111,13 +4111,13 @@ label_25:
           int num38 = (int) tileFrameY / 54;
           if (num38 == 32)
           {
-            glowTexture = TextureAssets.GlowMask[58].get_Value();
+            glowTexture = TextureAssets.GlowMask[58].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 54, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num38 != 33)
             break;
-          glowTexture = TextureAssets.GlowMask[119].get_Value();
+          glowTexture = TextureAssets.GlowMask[119].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 54, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4125,13 +4125,13 @@ label_25:
           int num39 = (int) tileFrameX / 54;
           if (num39 == 31)
           {
-            glowTexture = TextureAssets.GlowMask[67].get_Value();
+            glowTexture = TextureAssets.GlowMask[67].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num39 != 32)
             break;
-          glowTexture = TextureAssets.GlowMask[124].get_Value();
+          glowTexture = TextureAssets.GlowMask[124].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4139,13 +4139,13 @@ label_25:
           int num40 = (int) tileFrameY / 40;
           if (num40 == 32)
           {
-            glowTexture = TextureAssets.GlowMask[54].get_Value();
+            glowTexture = TextureAssets.GlowMask[54].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 40, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num40 != 33)
             break;
-          glowTexture = TextureAssets.GlowMask[116].get_Value();
+          glowTexture = TextureAssets.GlowMask[116].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 40, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4153,13 +4153,13 @@ label_25:
           int num41 = (int) tileFrameX / 36;
           if (num41 == 27)
           {
-            glowTexture = TextureAssets.GlowMask[69].get_Value();
+            glowTexture = TextureAssets.GlowMask[69].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num41 != 28)
             break;
-          glowTexture = TextureAssets.GlowMask[125].get_Value();
+          glowTexture = TextureAssets.GlowMask[125].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4167,13 +4167,13 @@ label_25:
           int num42 = (int) tileFrameY / 18;
           if (num42 == 26)
           {
-            glowTexture = TextureAssets.GlowMask[65].get_Value();
+            glowTexture = TextureAssets.GlowMask[65].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 18, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num42 != 27)
             break;
-          glowTexture = TextureAssets.GlowMask[112].get_Value();
+          glowTexture = TextureAssets.GlowMask[112].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 18, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4182,34 +4182,34 @@ label_25:
           int num43 = (int) tileFrameX / 36;
           if (num43 == 48)
           {
-            glowTexture = TextureAssets.GlowMask[56].get_Value();
+            glowTexture = TextureAssets.GlowMask[56].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num43 != 49)
             break;
-          glowTexture = TextureAssets.GlowMask[117].get_Value();
+          glowTexture = TextureAssets.GlowMask[117].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
         case 33:
           if ((int) tileFrameX / 18 != 0 || (int) tileFrameY / 22 != 26)
             break;
-          glowTexture = TextureAssets.GlowMask[61].get_Value();
+          glowTexture = TextureAssets.GlowMask[61].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 22, tileWidth, tileHeight);
           glowColor = this._martianGlow;
           break;
         case 34:
           if ((int) tileFrameX / 54 != 0 || (int) tileFrameY / 54 != 33)
             break;
-          glowTexture = TextureAssets.GlowMask[55].get_Value();
+          glowTexture = TextureAssets.GlowMask[55].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 54, tileWidth, tileHeight);
           glowColor = this._martianGlow;
           break;
         case 42:
           if ((int) tileFrameY / 36 != 33)
             break;
-          glowTexture = TextureAssets.GlowMask[63].get_Value();
+          glowTexture = TextureAssets.GlowMask[63].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 36, tileWidth, tileHeight);
           glowColor = this._martianGlow;
           break;
@@ -4217,13 +4217,13 @@ label_25:
           int num44 = (int) tileFrameY / 36;
           if (num44 == 27)
           {
-            glowTexture = TextureAssets.GlowMask[53].get_Value();
+            glowTexture = TextureAssets.GlowMask[53].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 36, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num44 != 28)
             break;
-          glowTexture = TextureAssets.GlowMask[114].get_Value();
+          glowTexture = TextureAssets.GlowMask[114].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 36, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4234,13 +4234,13 @@ label_25:
           addFrY += 36 * num46;
           if (num45 == 26)
           {
-            glowTexture = TextureAssets.GlowMask[64].get_Value();
+            glowTexture = TextureAssets.GlowMask[64].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num45 != 27)
             break;
-          glowTexture = TextureAssets.GlowMask[121].get_Value();
+          glowTexture = TextureAssets.GlowMask[121].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4251,13 +4251,13 @@ label_25:
           addFrY += 36 * num48;
           if (num47 == 24)
           {
-            glowTexture = TextureAssets.GlowMask[59].get_Value();
+            glowTexture = TextureAssets.GlowMask[59].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num47 != 25)
             break;
-          glowTexture = TextureAssets.GlowMask[120].get_Value();
+          glowTexture = TextureAssets.GlowMask[120].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4268,13 +4268,13 @@ label_25:
           addFrY += 36 * num50;
           if (num49 == 29)
           {
-            glowTexture = TextureAssets.GlowMask[66].get_Value();
+            glowTexture = TextureAssets.GlowMask[66].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num49 != 30)
             break;
-          glowTexture = TextureAssets.GlowMask[123].get_Value();
+          glowTexture = TextureAssets.GlowMask[123].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4282,13 +4282,13 @@ label_25:
           int num51 = (int) tileFrameY / 36;
           if (num51 == 27)
           {
-            glowTexture = TextureAssets.GlowMask[52].get_Value();
+            glowTexture = TextureAssets.GlowMask[52].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 36, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num51 != 28)
             break;
-          glowTexture = TextureAssets.GlowMask[113].get_Value();
+          glowTexture = TextureAssets.GlowMask[113].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 36, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4300,14 +4300,14 @@ label_25:
           tileTop += 2;
           if (num52 != 27)
             break;
-          glowTexture = TextureAssets.GlowMask[62].get_Value();
+          glowTexture = TextureAssets.GlowMask[62].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 54, tileWidth, tileHeight);
           glowColor = this._martianGlow;
           break;
         case 100:
           if ((int) tileFrameX / 36 != 0 || (int) tileFrameY / 36 != 27)
             break;
-          glowTexture = TextureAssets.GlowMask[68].get_Value();
+          glowTexture = TextureAssets.GlowMask[68].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 36, tileWidth, tileHeight);
           glowColor = this._martianGlow;
           break;
@@ -4318,13 +4318,13 @@ label_25:
           addFrY += 72 * num55;
           if (num54 == 28)
           {
-            glowTexture = TextureAssets.GlowMask[60].get_Value();
+            glowTexture = TextureAssets.GlowMask[60].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num54 != 29)
             break;
-          glowTexture = TextureAssets.GlowMask[115].get_Value();
+          glowTexture = TextureAssets.GlowMask[115].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 54, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4333,13 +4333,13 @@ label_25:
           tileTop = 2;
           if (num56 == 24)
           {
-            glowTexture = TextureAssets.GlowMask[51].get_Value();
+            glowTexture = TextureAssets.GlowMask[51].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num56 != 25)
             break;
-          glowTexture = TextureAssets.GlowMask[118].get_Value();
+          glowTexture = TextureAssets.GlowMask[118].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
@@ -4347,38 +4347,38 @@ label_25:
           int num57 = (int) tileFrameY / 38;
           if (num57 == 28)
           {
-            glowTexture = TextureAssets.GlowMask[88].get_Value();
+            glowTexture = TextureAssets.GlowMask[88].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 38, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num57 != 29)
             break;
-          glowTexture = TextureAssets.GlowMask[122].get_Value();
+          glowTexture = TextureAssets.GlowMask[122].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY % 38, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
         case 184:
           if (tileCache.frameX == (short) 110)
           {
-            glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].get_Value();
+            glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._lavaMossGlow;
           }
           if (tileCache.frameX == (short) 132)
           {
-            glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].get_Value();
+            glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._kryptonMossGlow;
           }
           if (tileCache.frameX == (short) 154)
           {
-            glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].get_Value();
+            glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._xenonMossGlow;
           }
           if (tileCache.frameX != (short) 176)
             break;
-          glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].get_Value();
+          glowTexture = TextureAssets.GlowMask[(int) sbyte.MaxValue].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._argonMossGlow;
           break;
@@ -4387,47 +4387,47 @@ label_25:
           int num58 = (int) tileFrameX / 36;
           if (num58 == 48)
           {
-            glowTexture = TextureAssets.GlowMask[56].get_Value();
+            glowTexture = TextureAssets.GlowMask[56].Value;
             glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
             glowColor = this._martianGlow;
           }
           if (num58 != 49)
             break;
-          glowTexture = TextureAssets.GlowMask[117].get_Value();
+          glowTexture = TextureAssets.GlowMask[117].Value;
           glowSourceRect = new Rectangle((int) tileFrameX % 36, (int) tileFrameY, tileWidth, tileHeight);
           glowColor = this._meteorGlow;
           break;
         case 463:
-          glowTexture = TextureAssets.GlowMask[243].get_Value();
+          glowTexture = TextureAssets.GlowMask[243].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY + addFrY, tileWidth, tileHeight);
           glowColor = new Color((int) sbyte.MaxValue, (int) sbyte.MaxValue, (int) sbyte.MaxValue, 0);
           break;
         case 564:
           if (tileCache.frameX < (short) 36)
           {
-            glowTexture = TextureAssets.GlowMask[267].get_Value();
+            glowTexture = TextureAssets.GlowMask[267].Value;
             glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY + addFrY, tileWidth, tileHeight);
             glowColor = new Color(200, 200, 200, 0) * ((float) Main.mouseTextColor / (float) byte.MaxValue);
           }
           addFrY = 0;
           break;
         case 568:
-          glowTexture = TextureAssets.GlowMask[268].get_Value();
+          glowTexture = TextureAssets.GlowMask[268].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY + addFrY, tileWidth, tileHeight);
           glowColor = Color.White;
           break;
         case 569:
-          glowTexture = TextureAssets.GlowMask[269].get_Value();
+          glowTexture = TextureAssets.GlowMask[269].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY + addFrY, tileWidth, tileHeight);
           glowColor = Color.White;
           break;
         case 570:
-          glowTexture = TextureAssets.GlowMask[270].get_Value();
+          glowTexture = TextureAssets.GlowMask[270].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY + addFrY, tileWidth, tileHeight);
           glowColor = Color.White;
           break;
         case 580:
-          glowTexture = TextureAssets.GlowMask[289].get_Value();
+          glowTexture = TextureAssets.GlowMask[289].Value;
           glowSourceRect = new Rectangle((int) tileFrameX, (int) tileFrameY + addFrY, tileWidth, tileHeight);
           glowColor = new Color(225, 110, 110, 0);
           break;
@@ -5333,7 +5333,7 @@ label_25:
         short frameX1 = tile.frameX;
         short frameY1 = tile.frameY;
         if (type1 == (ushort) 237)
-          Main.spriteBatch.Draw(TextureAssets.SunOrb.get_Value(), new Vector2((float) (index2 * 16 - (int) screenPosition.X) + 8f, (float) (index3 * 16 - (int) screenPosition.Y - 36)) + offSet, new Rectangle?(new Rectangle(0, 0, TextureAssets.SunOrb.Width(), TextureAssets.SunOrb.Height())), new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, 0), Main.sunCircle, new Vector2((float) (TextureAssets.SunOrb.Width() / 2), (float) (TextureAssets.SunOrb.Height() / 2)), 1f, SpriteEffects.None, 0.0f);
+          Main.spriteBatch.Draw(TextureAssets.SunOrb.Value, new Vector2((float) (index2 * 16 - (int) screenPosition.X) + 8f, (float) (index3 * 16 - (int) screenPosition.Y - 36)) + offSet, new Rectangle?(new Rectangle(0, 0, TextureAssets.SunOrb.Width(), TextureAssets.SunOrb.Height())), new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, 0), Main.sunCircle, new Vector2((float) (TextureAssets.SunOrb.Width() / 2), (float) (TextureAssets.SunOrb.Height() / 2)), 1f, SpriteEffects.None, 0.0f);
         if (type1 == (ushort) 334 && frameX1 >= (short) 5000)
         {
           int num1 = (int) frameY1 / 18;
@@ -5348,7 +5348,7 @@ label_25:
           obj.netDefaults(type2);
           obj.Prefix(pre);
           Main.instance.LoadItem(obj.type);
-          Texture2D texture2D = TextureAssets.Item[obj.type].get_Value();
+          Texture2D texture2D = TextureAssets.Item[obj.type].Value;
           Rectangle rectangle = Main.itemAnimations[obj.type] == null ? texture2D.Frame(1, 1, 0, 0, 0, 0) : Main.itemAnimations[obj.type].GetFrame(texture2D, -1);
           int width = rectangle.Width;
           int height = rectangle.Height;
@@ -5377,7 +5377,7 @@ label_25:
           if (!obj.IsAir)
           {
             Main.instance.LoadItem(obj.type);
-            Texture2D texture2D = TextureAssets.Item[obj.type].get_Value();
+            Texture2D texture2D = TextureAssets.Item[obj.type].Value;
             Rectangle rectangle = !ItemID.Sets.IsFood[obj.type] ? texture2D.Frame(1, 1, 0, 0, 0, 0) : texture2D.Frame(1, 3, 0, 2, 0, 0);
             int width = rectangle.Width;
             int height = rectangle.Height;
@@ -5400,7 +5400,7 @@ label_25:
         {
           Item obj = (TileEntity.ByPosition[new Point16(index2, index3)] as TEWeaponsRack).item;
           Main.instance.LoadItem(obj.type);
-          Texture2D texture2D = TextureAssets.Item[obj.type].get_Value();
+          Texture2D texture2D = TextureAssets.Item[obj.type].Value;
           Rectangle rectangle = Main.itemAnimations[obj.type] == null ? texture2D.Frame(1, 1, 0, 0, 0, 0) : Main.itemAnimations[obj.type].GetFrame(texture2D, -1);
           int width = rectangle.Width;
           int height = rectangle.Height;
@@ -5423,7 +5423,7 @@ label_25:
         }
         if (type1 == (ushort) 412)
         {
-          Texture2D texture2D = TextureAssets.GlowMask[202].get_Value();
+          Texture2D texture2D = TextureAssets.GlowMask[202].Value;
           int frameY2 = Main.tileFrame[(int) type1] / 60;
           int frameY3 = (frameY2 + 1) % 4;
           float num = (float) (Main.tileFrame[(int) type1] % 60) / 60f;
@@ -5433,7 +5433,7 @@ label_25:
         }
         if (type1 == (ushort) 620)
         {
-          Texture2D texture = TextureAssets.Extra[202].get_Value();
+          Texture2D texture = TextureAssets.Extra[202].Value;
           double num1 = (double) (Main.tileFrame[(int) type1] % 60) / 60.0;
           int num2 = 2;
           Main.critterCage = true;
@@ -5684,7 +5684,7 @@ label_25:
       int treeTextureStyle,
       byte tileColor)
     {
-      return this._paintSystem.TryGetTreeTopAndRequestIfNotReady(treeTextureIndex, treeTextureStyle, (int) tileColor) ?? TextureAssets.TreeTop[treeTextureIndex].get_Value();
+      return this._paintSystem.TryGetTreeTopAndRequestIfNotReady(treeTextureIndex, treeTextureStyle, (int) tileColor) ?? TextureAssets.TreeTop[treeTextureIndex].Value;
     }
 
     private Texture2D GetTreeBranchTexture(
@@ -5692,7 +5692,7 @@ label_25:
       int treeTextureStyle,
       byte tileColor)
     {
-      return this._paintSystem.TryGetTreeBranchAndRequestIfNotReady(treeTextureIndex, treeTextureStyle, (int) tileColor) ?? TextureAssets.TreeBranch[treeTextureIndex].get_Value();
+      return this._paintSystem.TryGetTreeBranchAndRequestIfNotReady(treeTextureIndex, treeTextureStyle, (int) tileColor) ?? TextureAssets.TreeBranch[treeTextureIndex].Value;
     }
 
     private void DrawGrass()
@@ -5844,7 +5844,7 @@ label_25:
         Tile tile = Main.tile[p.X, p.Y];
         if (tile != null && tile.active())
         {
-          Texture2D texture2D = TextureAssets.Extra[198].get_Value();
+          Texture2D texture2D = TextureAssets.Extra[198].Value;
           int frameY = (int) tile.frameX / 54;
           int num2 = (uint) tile.frameY / 72U > 0U ? 1 : 0;
           int horizontalFrames = 1;
@@ -5878,7 +5878,7 @@ label_25:
         Tile tile = Main.tile[p.X, p.Y];
         if (tile != null && tile.active())
         {
-          Texture2D texture2D = TextureAssets.Extra[181].get_Value();
+          Texture2D texture2D = TextureAssets.Extra[181].Value;
           int tileStyle = (int) tile.frameX / 54;
           int num2 = 3;
           int horizontalFrames = num2 + 9;
@@ -6141,7 +6141,7 @@ label_25:
       switch (type1)
       {
         case 27:
-          texture = TextureAssets.Flames[14].get_Value();
+          texture = TextureAssets.Flames[14].Value;
           color1 = Color.White;
           break;
         case 519:
@@ -6558,7 +6558,7 @@ label_25:
         case 592:
           num3 = 0.5f;
           num4 = -2f;
-          texture = TextureAssets.GlowMask[294].get_Value();
+          texture = TextureAssets.GlowMask[294].Value;
           color = new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, 0);
           break;
       }

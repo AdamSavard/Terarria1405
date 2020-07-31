@@ -60,7 +60,7 @@ namespace Terraria.GameContent.UI.Chat
 
     public void Offset(int linesOffset)
     {
-      this.showCount = (int) ((double) (Main.screenHeight / 3) / (double) FontAssets.MouseText.get_Value().MeasureString("1").Y) - 1;
+      this.showCount = (int) ((double) (Main.screenHeight / 3) / (double) FontAssets.MouseText.Value.MeasureString("1").Y) - 1;
       switch (linesOffset)
       {
         case -1:
@@ -148,7 +148,7 @@ namespace Terraria.GameContent.UI.Chat
     {
       if (c == new Color())
         c = Color.White;
-      List<List<TextSnippet>> textSnippetListList = WidthLimit == -1 ? Utils.WordwrapStringSmart(text, c, FontAssets.MouseText.get_Value(), this.TextMaxLengthForScreen, 10) : Utils.WordwrapStringSmart(text, c, FontAssets.MouseText.get_Value(), WidthLimit, 10);
+      List<List<TextSnippet>> textSnippetListList = WidthLimit == -1 ? Utils.WordwrapStringSmart(text, c, FontAssets.MouseText.Value, this.TextMaxLengthForScreen, 10) : Utils.WordwrapStringSmart(text, c, FontAssets.MouseText.Value, WidthLimit, 10);
       for (int index = 0; index < textSnippetListList.Count; ++index)
         this.NewText(textSnippetListList[index]);
     }
@@ -180,7 +180,7 @@ namespace Terraria.GameContent.UI.Chat
         if (drawingPlayerChat || this.chatLine[index3].showTime > 0 && this.chatLine[index3].parsedText.Length != 0)
         {
           int hoveredSnippet = -1;
-          ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.MouseText.get_Value(), this.chatLine[index3].parsedText, new Vector2(88f, (float) (Main.screenHeight - 30 - 28 - num3 * 21)), 0.0f, Vector2.Zero, Vector2.One, out hoveredSnippet, -1f, 2f);
+          ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.MouseText.Value, this.chatLine[index3].parsedText, new Vector2(88f, (float) (Main.screenHeight - 30 - 28 - num3 * 21)), 0.0f, Vector2.Zero, Vector2.One, out hoveredSnippet, -1f, 2f);
           if (hoveredSnippet >= 0 && this.chatLine[index3].parsedText[hoveredSnippet].CheckForHover)
           {
             index1 = index3;

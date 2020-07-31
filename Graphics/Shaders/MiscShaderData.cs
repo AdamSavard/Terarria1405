@@ -50,19 +50,19 @@ namespace Terraria.Graphics.Shaders
         this.Shader.Parameters["uSourceRect"].SetValue(new Vector4(0.0f, 0.0f, 4f, 4f));
       if (this._uImage0 != null)
       {
-        Main.graphics.GraphicsDevice.Textures[0] = (Texture) this._uImage0.get_Value();
+        Main.graphics.GraphicsDevice.Textures[0] = (Texture) this._uImage0.Value;
         Main.graphics.GraphicsDevice.SamplerStates[0] = SamplerState.LinearWrap;
         this.Shader.Parameters["uImageSize0"].SetValue(new Vector2((float) this._uImage0.Width(), (float) this._uImage0.Height()));
       }
       if (this._uImage1 != null)
       {
-        Main.graphics.GraphicsDevice.Textures[1] = (Texture) this._uImage1.get_Value();
+        Main.graphics.GraphicsDevice.Textures[1] = (Texture) this._uImage1.Value;
         Main.graphics.GraphicsDevice.SamplerStates[1] = SamplerState.LinearWrap;
         this.Shader.Parameters["uImageSize1"].SetValue(new Vector2((float) this._uImage1.Width(), (float) this._uImage1.Height()));
       }
       if (this._uImage2 != null)
       {
-        Main.graphics.GraphicsDevice.Textures[2] = (Texture) this._uImage2.get_Value();
+        Main.graphics.GraphicsDevice.Textures[2] = (Texture) this._uImage2.Value;
         Main.graphics.GraphicsDevice.SamplerStates[2] = SamplerState.LinearWrap;
         this.Shader.Parameters["uImageSize2"].SetValue(new Vector2((float) this._uImage2.Width(), (float) this._uImage2.Height()));
       }

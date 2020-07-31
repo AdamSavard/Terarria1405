@@ -49,9 +49,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public MeteoriteShader()
-    {
-      base.\u002Ector();
+    public MeteoriteShader() : base()
+{
     }
   }
 }

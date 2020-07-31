@@ -21,9 +21,8 @@ namespace Terraria.GameContent.RGB
       Color metalColor,
       Color glassColor,
       Color beamColor,
-      Color backgroundColor)
-    {
-      this.\u002Ector();
+      Color backgroundColor) : base()
+{
       this._metalColor = metalColor.ToVector4();
       this._glassColor = glassColor.ToVector4();
       this._beamColor = beamColor.ToVector4();
@@ -57,7 +56,7 @@ namespace Terraria.GameContent.RGB
       EffectDetailLevel quality,
       float time)
     {
-      if (device.Type != null && device.Type != 6)
+      if (device.Type != null && (int)device.Type != 6)
       {
         this.ProcessLowDetail(device, fragment, quality, time);
       }

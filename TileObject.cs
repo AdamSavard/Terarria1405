@@ -654,7 +654,7 @@ namespace Terraria
     public static void DrawPreview(SpriteBatch sb, TileObjectPreviewData op, Vector2 position)
     {
       Point16 coordinates = op.Coordinates;
-      Texture2D texture = TextureAssets.Tile[(int) op.Type].get_Value();
+      Texture2D texture = TextureAssets.Tile[(int) op.Type].Value;
       TileObjectData tileData = TileObjectData.GetTileData((int) op.Type, (int) op.Style, op.Alternate);
       int placementStyle = tileData.CalculatePlacementStyle((int) op.Style, op.Alternate, op.Random);
       int num1 = 0;

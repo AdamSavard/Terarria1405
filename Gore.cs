@@ -37,7 +37,7 @@ namespace Terraria
     {
       get
       {
-        return TextureAssets.Gore[this.type].get_IsLoaded() ? this.scale * (float) this.Frame.GetSourceRectangle(TextureAssets.Gore[this.type].get_Value()).Width : 1f;
+        return TextureAssets.Gore[this.type].IsLoaded ? this.scale * (float) this.Frame.GetSourceRectangle(TextureAssets.Gore[this.type].Value).Width : 1f;
       }
     }
 
@@ -45,7 +45,7 @@ namespace Terraria
     {
       get
       {
-        return TextureAssets.Gore[this.type].get_IsLoaded() ? this.scale * (float) this.Frame.GetSourceRectangle(TextureAssets.Gore[this.type].get_Value()).Height : 1f;
+        return TextureAssets.Gore[this.type].IsLoaded ? this.scale * (float) this.Frame.GetSourceRectangle(TextureAssets.Gore[this.type].Value).Height : 1f;
       }
     }
 
@@ -53,9 +53,9 @@ namespace Terraria
     {
       get
       {
-        if (!TextureAssets.Gore[this.type].get_IsLoaded())
+        if (!TextureAssets.Gore[this.type].IsLoaded)
           return new Rectangle(0, 0, 1, 1);
-        Rectangle sourceRectangle = this.Frame.GetSourceRectangle(TextureAssets.Gore[this.type].get_Value());
+        Rectangle sourceRectangle = this.Frame.GetSourceRectangle(TextureAssets.Gore[this.type].Value);
         return new Rectangle((int) this.position.X, (int) this.position.Y, (int) ((double) sourceRectangle.Width * (double) this.scale), (int) ((double) sourceRectangle.Height * (double) this.scale));
       }
     }
@@ -616,7 +616,7 @@ namespace Terraria
             this.velocity.Y = (float) (((double) this.velocity.Y * 50.0 - 0.349999994039536 + (double) num1 + (double) Main.rand.Next(-10, 11) * 0.200000002980232) / 51.0);
             this.rotation = this.velocity.X * 0.6f;
             float num2 = -1f;
-            if (TextureAssets.Gore[this.type].get_IsLoaded())
+            if (TextureAssets.Gore[this.type].IsLoaded)
             {
               Rectangle rectangle1 = new Rectangle((int) this.position.X, (int) this.position.Y, (int) ((double) TextureAssets.Gore[this.type].Width() * (double) this.scale), (int) ((double) TextureAssets.Gore[this.type].Height() * (double) this.scale));
               for (int index = 0; index < (int) byte.MaxValue; ++index)
@@ -645,7 +645,7 @@ namespace Terraria
             else
             {
               this.alpha = (int) byte.MaxValue;
-              if (TextureAssets.Gore[this.type].get_IsLoaded() && (double) num2 != -1.0)
+              if (TextureAssets.Gore[this.type].IsLoaded && (double) num2 != -1.0)
               {
                 float num3 = (float) ((double) TextureAssets.Gore[this.type].Width() * (double) this.scale * 0.800000011920929);
                 float x = this.position.X;
@@ -670,7 +670,7 @@ namespace Terraria
             this.velocity.X = (float) (((double) this.velocity.X * 50.0 + (double) Main.WindForVisuals * 2.0 + (double) Main.rand.Next(-10, 11) * 0.100000001490116) / 51.0);
             this.velocity.Y = (float) (((double) this.velocity.Y * 50.0 - 0.25 + (double) Main.rand.Next(-10, 11) * 0.200000002980232) / 51.0);
             this.rotation = this.velocity.X * 0.3f;
-            if (TextureAssets.Gore[this.type].get_IsLoaded())
+            if (TextureAssets.Gore[this.type].IsLoaded)
             {
               Rectangle rectangle1 = new Rectangle((int) this.position.X, (int) this.position.Y, (int) ((double) TextureAssets.Gore[this.type].Width() * (double) this.scale), (int) ((double) TextureAssets.Gore[this.type].Height() * (double) this.scale));
               for (int index = 0; index < (int) byte.MaxValue; ++index)
@@ -697,7 +697,7 @@ namespace Terraria
             else
             {
               this.alpha = (int) byte.MaxValue;
-              if (TextureAssets.Gore[this.type].get_IsLoaded())
+              if (TextureAssets.Gore[this.type].IsLoaded)
               {
                 float num1 = (float) ((double) TextureAssets.Gore[this.type].Width() * (double) this.scale * 0.800000011920929);
                 float x = this.position.X;
@@ -765,7 +765,7 @@ namespace Terraria
             else if (this.sticky)
             {
               int num1 = 32;
-              if (TextureAssets.Gore[this.type].get_IsLoaded())
+              if (TextureAssets.Gore[this.type].IsLoaded)
               {
                 num1 = TextureAssets.Gore[this.type].Width();
                 if (TextureAssets.Gore[this.type].Height() < num1)
@@ -796,7 +796,7 @@ namespace Terraria
           if (this.type >= 907 && this.type <= 909)
           {
             int num1 = 32;
-            if (TextureAssets.Gore[this.type].get_IsLoaded())
+            if (TextureAssets.Gore[this.type].IsLoaded)
             {
               num1 = TextureAssets.Gore[this.type].Width();
               if (TextureAssets.Gore[this.type].Height() < num1)
@@ -832,7 +832,7 @@ namespace Terraria
             g *= 0.6f;
             r *= 0.3f;
           }
-          if (TextureAssets.Gore[this.type].get_IsLoaded())
+          if (TextureAssets.Gore[this.type].IsLoaded)
           {
             Lighting.AddLight((int) (((double) this.position.X + (double) TextureAssets.Gore[this.type].Width() * (double) this.scale / 2.0) / 16.0), (int) (((double) this.position.Y + (double) TextureAssets.Gore[this.type].Height() * (double) this.scale / 2.0) / 16.0), r, g, b);
             break;
@@ -958,7 +958,7 @@ namespace Terraria
       {
         Vector2 Velocity = new Vector2(this.velocity.X, 0.6f);
         int num1 = 32;
-        if (TextureAssets.Gore[this.type].get_IsLoaded())
+        if (TextureAssets.Gore[this.type].IsLoaded)
         {
           num1 = TextureAssets.Gore[this.type].Width();
           if (TextureAssets.Gore[this.type].Height() < num1)
@@ -980,7 +980,7 @@ namespace Terraria
         this.velocity.Y += (float) Math.PI / 60f;
         Vector2 Velocity = new Vector2(Vector2.UnitY.RotatedBy((double) this.velocity.Y, new Vector2()).X * 2f, Math.Abs(Vector2.UnitY.RotatedBy((double) this.velocity.Y, new Vector2()).Y) * 3f) * 2f;
         int num = 32;
-        if (TextureAssets.Gore[this.type].get_IsLoaded())
+        if (TextureAssets.Gore[this.type].IsLoaded)
         {
           num = TextureAssets.Gore[this.type].Width();
           if (TextureAssets.Gore[this.type].Height() < num)
@@ -1091,7 +1091,7 @@ namespace Terraria
         Main.gore[index1].Frame = new SpriteFrame((byte) 1, (byte) 3);
         Main.gore[index1].timeLeft = 10 + Main.rand.Next(6);
         Main.gore[index1].sticky = false;
-        if (TextureAssets.Gore[Type].get_IsLoaded())
+        if (TextureAssets.Gore[Type].IsLoaded)
         {
           Main.gore[index1].position.X = Position.X - (float) (TextureAssets.Gore[Type].Width() / 2) * Scale;
           Main.gore[index1].position.Y = Position.Y - (float) ((double) TextureAssets.Gore[Type].Height() * (double) Scale / 2.0);
@@ -1110,7 +1110,7 @@ namespace Terraria
       }
       if (num1 == 1)
         Main.gore[index1].velocity = new Vector2((float) (((double) Main.rand.NextFloat() - 0.5) * 3.0), Main.rand.NextFloat() * 6.283185f);
-      if (Type >= 411 && Type <= 430 && TextureAssets.Gore[Type].get_IsLoaded())
+      if (Type >= 411 && Type <= 430 && TextureAssets.Gore[Type].IsLoaded)
       {
         Main.gore[index1].position.X = Position.X - (float) (TextureAssets.Gore[Type].Width() / 2) * Scale;
         Main.gore[index1].position.Y = Position.Y - (float) TextureAssets.Gore[Type].Height() * Scale;
@@ -1134,7 +1134,7 @@ namespace Terraria
       if (num1 == 2)
       {
         Main.gore[index1].sticky = false;
-        if (TextureAssets.Gore[Type].get_IsLoaded())
+        if (TextureAssets.Gore[Type].IsLoaded)
         {
           Main.gore[index1].alpha = 150;
           Main.gore[index1].velocity = Velocity;

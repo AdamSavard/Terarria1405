@@ -52,14 +52,14 @@ namespace Terraria.GameContent.UI
       Main.instance.LoadItem(346);
       Main.instance.LoadItem(87);
       if (num4 > 0L)
-        sb.Draw(TextureAssets.Item[4076].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 96f, shopy + 50f), TextureAssets.Item[4076].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+        sb.Draw(TextureAssets.Item[4076].Value, Utils.CenteredRectangle(new Vector2(shopx + 96f, shopy + 50f), TextureAssets.Item[4076].Value.Size() * 0.65f), new Rectangle?(), Color.White);
       if (num3 > 0L)
-        sb.Draw(TextureAssets.Item[3813].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 80f, shopy + 50f), TextureAssets.Item[3813].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+        sb.Draw(TextureAssets.Item[3813].Value, Utils.CenteredRectangle(new Vector2(shopx + 80f, shopy + 50f), TextureAssets.Item[3813].Value.Size() * 0.65f), new Rectangle?(), Color.White);
       if (num2 > 0L)
-        sb.Draw(TextureAssets.Item[346].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 80f, shopy + 50f), TextureAssets.Item[346].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
+        sb.Draw(TextureAssets.Item[346].Value, Utils.CenteredRectangle(new Vector2(shopx + 80f, shopy + 50f), TextureAssets.Item[346].Value.Size() * 0.65f), new Rectangle?(), Color.White);
       if (num1 > 0L)
-        sb.Draw(TextureAssets.Item[87].get_Value(), Utils.CenteredRectangle(new Vector2(shopx + 70f, shopy + 60f), TextureAssets.Item[87].get_Value().Size() * 0.65f), new Rectangle?(), Color.White);
-      Utils.DrawBorderStringFourWay(sb, FontAssets.MouseText.get_Value(), Lang.inter[66].Value, shopx, shopy + 40f, Color.White * ((float) Main.mouseTextColor / (float) byte.MaxValue), Color.Black, Vector2.Zero, 1f);
+        sb.Draw(TextureAssets.Item[87].Value, Utils.CenteredRectangle(new Vector2(shopx + 70f, shopy + 60f), TextureAssets.Item[87].Value.Size() * 0.65f), new Rectangle?(), Color.White);
+      Utils.DrawBorderStringFourWay(sb, FontAssets.MouseText.Value, Lang.inter[66].Value, shopx, shopy + 40f, Color.White * ((float) Main.mouseTextColor / (float) byte.MaxValue), Color.Black, Vector2.Zero, 1f);
       currency.DrawSavingsMoney(sb, Lang.inter[66].Value, shopx, shopy, totalCoins, horizontal);
     }
 

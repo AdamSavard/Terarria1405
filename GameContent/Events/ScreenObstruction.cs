@@ -39,11 +39,11 @@ namespace Terraria.GameContent.Events
       Rectangle destinationRectangle2 = Rectangle.Union(new Rectangle(Main.screenWidth - 1, 0, 1, 1), new Rectangle(rect.Right, rect.Bottom - 1, 1, 1));
       Rectangle destinationRectangle3 = Rectangle.Union(new Rectangle(Main.screenWidth - 1, Main.screenHeight - 1, 1, 1), new Rectangle(rect.Left, rect.Bottom, 1, 1));
       Rectangle destinationRectangle4 = Rectangle.Union(new Rectangle(0, Main.screenHeight - 1, 1, 1), new Rectangle(rect.Left - 1, rect.Top, 1, 1));
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle1, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle2, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle3, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
-      spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle4, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
-      spriteBatch.Draw(TextureAssets.Extra[49].get_Value(), rect, color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, destinationRectangle1, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, destinationRectangle2, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, destinationRectangle3, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.MagicPixel.Value, destinationRectangle4, new Rectangle?(new Rectangle(0, 0, 1, 1)), color);
+      spriteBatch.Draw(TextureAssets.Extra[49].Value, rect, color);
     }
   }
 }

@@ -42,12 +42,12 @@ namespace Terraria.GameContent.UI.Elements
       Utils.DrawSettingsPanel(spriteBatch, position, num2, color);
       position.X += 8f;
       position.Y += 2f + num1;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), this._TextDisplayFunction(), position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, this._TextDisplayFunction(), position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
       position.X -= 17f;
       Rectangle rectangle = new Rectangle(this._IsOnFunction() ? (this._toggleTexture.Width() - 2) / 2 + 2 : 0, 0, (this._toggleTexture.Width() - 2) / 2, this._toggleTexture.Height());
       Vector2 vector2_2 = new Vector2((float) rectangle.Width, 0.0f);
       position = new Vector2((float) ((double) dimensions.X + (double) dimensions.Width - (double) vector2_2.X - 10.0), dimensions.Y + 2f + num1);
-      spriteBatch.Draw(this._toggleTexture.get_Value(), position, new Rectangle?(rectangle), Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._toggleTexture.Value, position, new Rectangle?(rectangle), Color.White, 0.0f, Vector2.Zero, Vector2.One, SpriteEffects.None, 0.0f);
     }
   }
 }

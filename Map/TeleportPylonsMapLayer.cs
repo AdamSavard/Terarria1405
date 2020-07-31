@@ -22,7 +22,7 @@ namespace Terraria.Map
       List<TeleportPylonInfo> pylons = Main.PylonSystem.Pylons;
       float scaleIfNotSelected = 1f;
       float scaleIfSelected = scaleIfNotSelected * 2f;
-      Texture2D texture = TextureAssets.Extra[182].get_Value();
+      Texture2D texture = TextureAssets.Extra[182].Value;
       int num = TeleportPylonsSystem.IsPlayerNearAPylon(Main.LocalPlayer) ? 1 : 0;
       Color color = Color.White;
       if (num == 0)

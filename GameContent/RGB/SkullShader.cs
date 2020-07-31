@@ -17,9 +17,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _bloodLight;
     private readonly Vector4 _backgroundColor;
 
-    public SkullShader(Color skullColor, Color bloodDark, Color bloodLight)
-    {
-      this.\u002Ector();
+    public SkullShader(Color skullColor, Color bloodDark, Color bloodLight) : base()
+{
       this._skullColor = skullColor.ToVector4();
       this._bloodDark = bloodDark.ToVector4();
       this._bloodLight = bloodLight.ToVector4();

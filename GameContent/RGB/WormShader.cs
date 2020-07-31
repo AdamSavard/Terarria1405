@@ -16,14 +16,12 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _eyeColor;
     private readonly Vector4 _innerEyeColor;
 
-    public WormShader()
-    {
-      base.\u002Ector();
+    public WormShader() : base()
+{
     }
 
-    public WormShader(Color skinColor, Color eyeColor, Color innerEyeColor)
-    {
-      base.\u002Ector();
+    public WormShader(Color skinColor, Color eyeColor, Color innerEyeColor) : base()
+{
       this._skinColor = skinColor.ToVector4();
       this._eyeColor = eyeColor.ToVector4();
       this._innerEyeColor = innerEyeColor.ToVector4();

@@ -120,7 +120,7 @@ namespace Terraria.UI
 
     private void DrawText(SpriteBatch spriteBatch, string text, Vector2 pos, Color color)
     {
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), text, pos, color, 0.0f, Vector2.Zero, 0.7f, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, text, pos, color, 0.0f, Vector2.Zero, 0.7f, SpriteEffects.None, 0.0f);
     }
 
     private struct CounterForMessage

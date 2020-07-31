@@ -72,7 +72,7 @@ namespace Terraria.GameContent.UI.Elements
     private bool DrawValueBarDynamicWidth(SpriteBatch spriteBatch, out float sliderValueThatWasSet)
     {
       sliderValueThatWasSet = 0.0f;
-      Texture2D texture1 = TextureAssets.ColorBar.get_Value();
+      Texture2D texture1 = TextureAssets.ColorBar.Value;
       Rectangle rectangle1 = this.GetDimensions().ToRectangle();
       Rectangle rectangle2 = new Rectangle(5, 4, 4, 4);
       Utils.DrawSplicedPanel(spriteBatch, texture1, rectangle1.X, rectangle1.Y, rectangle1.Width, rectangle1.Height, rectangle2.X, rectangle2.Width, rectangle2.Y, rectangle2.Height, Color.White);
@@ -81,7 +81,7 @@ namespace Terraria.GameContent.UI.Elements
       destinationRectangle1.Width -= rectangle2.Right;
       destinationRectangle1.Y += rectangle2.Top;
       destinationRectangle1.Height -= rectangle2.Bottom;
-      Texture2D texture2 = TextureAssets.MagicPixel.get_Value();
+      Texture2D texture2 = TextureAssets.MagicPixel.Value;
       Rectangle rectangle3 = new Rectangle(0, 0, 1, 1);
       spriteBatch.Draw(texture2, destinationRectangle1, new Rectangle?(rectangle3), this.EmptyColor);
       Rectangle destinationRectangle2 = destinationRectangle1;

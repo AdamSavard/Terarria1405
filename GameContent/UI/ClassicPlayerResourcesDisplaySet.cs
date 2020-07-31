@@ -45,11 +45,11 @@ namespace Terraria.GameContent.UI
       if (num3 >= 10)
         num3 = 10;
       string str = Lang.inter[0].Value + " " + (object) localPlayer.statLifeMax2 + "/" + (object) localPlayer.statLifeMax2;
-      Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(str);
+      Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(str);
       if (!localPlayer.ghost)
       {
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), Lang.inter[0].Value, new Vector2((float) (500 + 13 * num3) - vector2.X * 0.5f + (float) this.UI_ScreenAnchorX, 6f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
-        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2, new Vector2((float) (500 + 13 * num3) + vector2.X * 0.5f + (float) this.UI_ScreenAnchorX, 6f), color, 0.0f, new Vector2(FontAssets.MouseText.get_Value().MeasureString(localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2).X, 0.0f), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, Lang.inter[0].Value, new Vector2((float) (500 + 13 * num3) - vector2.X * 0.5f + (float) this.UI_ScreenAnchorX, 6f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+        DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2, new Vector2((float) (500 + 13 * num3) + vector2.X * 0.5f + (float) this.UI_ScreenAnchorX, 6f), color, 0.0f, new Vector2(FontAssets.MouseText.Value.MeasureString(localPlayer.statLife.ToString() + "/" + (object) localPlayer.statLifeMax2).X, 0.0f), 1f, SpriteEffects.None, 0.0f);
       }
       for (int index = 1; index < (int) ((double) localPlayer.statLifeMax2 / (double) this.UIDisplay_LifePerHeart) + 1; ++index)
       {
@@ -89,10 +89,10 @@ namespace Terraria.GameContent.UI
           if (num2 > 0)
           {
             --num2;
-            spriteBatch.Draw(TextureAssets.Heart2.get_Value(), new Vector2((float) (500 + 26 * (index - 1) + num6 + this.UI_ScreenAnchorX + TextureAssets.Heart.Width() / 2), (float) (32.0 + ((double) TextureAssets.Heart.Height() - (double) TextureAssets.Heart.Height() * (double) scale) / 2.0) + (float) num7 + (float) (TextureAssets.Heart.Height() / 2)), new Rectangle?(new Rectangle(0, 0, TextureAssets.Heart.Width(), TextureAssets.Heart.Height())), new Color(num4, num4, num4, a), 0.0f, new Vector2((float) (TextureAssets.Heart.Width() / 2), (float) (TextureAssets.Heart.Height() / 2)), scale, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(TextureAssets.Heart2.Value, new Vector2((float) (500 + 26 * (index - 1) + num6 + this.UI_ScreenAnchorX + TextureAssets.Heart.Width() / 2), (float) (32.0 + ((double) TextureAssets.Heart.Height() - (double) TextureAssets.Heart.Height() * (double) scale) / 2.0) + (float) num7 + (float) (TextureAssets.Heart.Height() / 2)), new Rectangle?(new Rectangle(0, 0, TextureAssets.Heart.Width(), TextureAssets.Heart.Height())), new Color(num4, num4, num4, a), 0.0f, new Vector2((float) (TextureAssets.Heart.Width() / 2), (float) (TextureAssets.Heart.Height() / 2)), scale, SpriteEffects.None, 0.0f);
           }
           else
-            spriteBatch.Draw(TextureAssets.Heart.get_Value(), new Vector2((float) (500 + 26 * (index - 1) + num6 + this.UI_ScreenAnchorX + TextureAssets.Heart.Width() / 2), (float) (32.0 + ((double) TextureAssets.Heart.Height() - (double) TextureAssets.Heart.Height() * (double) scale) / 2.0) + (float) num7 + (float) (TextureAssets.Heart.Height() / 2)), new Rectangle?(new Rectangle(0, 0, TextureAssets.Heart.Width(), TextureAssets.Heart.Height())), new Color(num4, num4, num4, a), 0.0f, new Vector2((float) (TextureAssets.Heart.Width() / 2), (float) (TextureAssets.Heart.Height() / 2)), scale, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(TextureAssets.Heart.Value, new Vector2((float) (500 + 26 * (index - 1) + num6 + this.UI_ScreenAnchorX + TextureAssets.Heart.Width() / 2), (float) (32.0 + ((double) TextureAssets.Heart.Height() - (double) TextureAssets.Heart.Height() * (double) scale) / 2.0) + (float) num7 + (float) (TextureAssets.Heart.Height() / 2)), new Rectangle?(new Rectangle(0, 0, TextureAssets.Heart.Width(), TextureAssets.Heart.Height())), new Color(num4, num4, num4, a), 0.0f, new Vector2((float) (TextureAssets.Heart.Width() / 2), (float) (TextureAssets.Heart.Height() / 2)), scale, SpriteEffects.None, 0.0f);
         }
       }
     }
@@ -106,11 +106,11 @@ namespace Terraria.GameContent.UI
       if (localPlayer.ghost || localPlayer.statManaMax2 <= 0)
         return;
       int num1 = localPlayer.statManaMax2 / 20;
-      Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(Lang.inter[2].Value);
+      Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(Lang.inter[2].Value);
       int num2 = 50;
       if ((double) vector2.X >= 45.0)
         num2 = (int) vector2.X + 5;
-      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.get_Value(), Lang.inter[2].Value, new Vector2((float) (800 - num2 + this.UI_ScreenAnchorX), 6f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+      DynamicSpriteFontExtensionMethods.DrawString(spriteBatch, FontAssets.MouseText.Value, Lang.inter[2].Value, new Vector2((float) (800 - num2 + this.UI_ScreenAnchorX), 6f), color, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
       for (int index = 1; index < localPlayer.statManaMax2 / this.UIDisplay_ManaPerStar + 1; ++index)
       {
         bool flag = false;
@@ -137,7 +137,7 @@ namespace Terraria.GameContent.UI
         if (flag)
           scale += Main.cursorScale - 1f;
         int a = (int) ((double) num3 * 0.9);
-        spriteBatch.Draw(TextureAssets.Mana.get_Value(), new Vector2((float) (775 + this.UI_ScreenAnchorX), (float) (30 + TextureAssets.Mana.Height() / 2) + (float) (((double) TextureAssets.Mana.Height() - (double) TextureAssets.Mana.Height() * (double) scale) / 2.0) + (float) (28 * (index - 1))), new Rectangle?(new Rectangle(0, 0, TextureAssets.Mana.Width(), TextureAssets.Mana.Height())), new Color(num3, num3, num3, a), 0.0f, new Vector2((float) (TextureAssets.Mana.Width() / 2), (float) (TextureAssets.Mana.Height() / 2)), scale, SpriteEffects.None, 0.0f);
+        spriteBatch.Draw(TextureAssets.Mana.Value, new Vector2((float) (775 + this.UI_ScreenAnchorX), (float) (30 + TextureAssets.Mana.Height() / 2) + (float) (((double) TextureAssets.Mana.Height() - (double) TextureAssets.Mana.Height() * (double) scale) / 2.0) + (float) (28 * (index - 1))), new Rectangle?(new Rectangle(0, 0, TextureAssets.Mana.Width(), TextureAssets.Mana.Height())), new Color(num3, num3, num3, a), 0.0f, new Vector2((float) (TextureAssets.Mana.Width() / 2), (float) (TextureAssets.Mana.Height() / 2)), scale, SpriteEffects.None, 0.0f);
       }
     }
 

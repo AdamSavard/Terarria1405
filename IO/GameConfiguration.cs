@@ -19,7 +19,7 @@ namespace Terraria.IO
 
     public T Get<T>(string entry)
     {
-      return this._root.get_Item(entry).ToObject<T>();
+      return this._root.Item(entry).ToObject<T>;
     }
   }
 }

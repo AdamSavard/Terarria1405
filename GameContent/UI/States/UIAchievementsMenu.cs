@@ -133,13 +133,13 @@ namespace Terraria.GameContent.UI.States
               textValue = Language.GetTextValue("Achievements.NoCategory");
               break;
           }
-          float x = FontAssets.MouseText.get_Value().MeasureString(textValue).X;
+          float x = FontAssets.MouseText.Value.MeasureString(textValue).X;
           Vector2 vector2 = new Vector2((float) Main.mouseX, (float) Main.mouseY) + new Vector2(16f);
           if ((double) vector2.Y > (double) (Main.screenHeight - 30))
             vector2.Y = (float) (Main.screenHeight - 30);
           if ((double) vector2.X > (double) Main.screenWidth - (double) x)
             vector2.X = (float) (Main.screenWidth - 460);
-          Utils.DrawBorderStringFourWay(spriteBatch, FontAssets.MouseText.get_Value(), textValue, vector2.X, vector2.Y, new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor), Color.Black, Vector2.Zero, 1f);
+          Utils.DrawBorderStringFourWay(spriteBatch, FontAssets.MouseText.Value, textValue, vector2.X, vector2.Y, new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor), Color.Black, Vector2.Zero, 1f);
           break;
         }
       }

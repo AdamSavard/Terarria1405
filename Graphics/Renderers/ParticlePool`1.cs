@@ -38,6 +38,6 @@ namespace Terraria.Graphics.Renderers
       return obj;
     }
 
-    public delegate T ParticleInstantiator() where T : IPooledParticle;
+        public delegate T ParticleInstantiator();// where T : IPooledParticle; // looks like we can't do constraints here, probs fine
   }
 }

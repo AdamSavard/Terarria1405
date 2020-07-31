@@ -249,43 +249,43 @@ namespace Terraria.Graphics.Capture
       int num = 9;
       for (int index = 0; index < num; ++index)
       {
-        Texture2D texture2D = TextureAssets.InventoryBack.get_Value();
+        Texture2D texture2D = TextureAssets.InventoryBack.Value;
         float scale = 0.8f;
         Vector2 position = new Vector2((float) (24 + 46 * index), 24f);
         Color color = Main.inventoryBack * 0.8f;
         if (this.SelectedMode == 0 && index == 2)
-          texture2D = TextureAssets.InventoryBack14.get_Value();
+          texture2D = TextureAssets.InventoryBack14.Value;
         else if (this.SelectedMode == 1 && index == 3)
-          texture2D = TextureAssets.InventoryBack14.get_Value();
+          texture2D = TextureAssets.InventoryBack14.Value;
         else if (this.SelectedMode == 2 && index == 6)
-          texture2D = TextureAssets.InventoryBack14.get_Value();
+          texture2D = TextureAssets.InventoryBack14.Value;
         else if (index >= 2 && index <= 3)
-          texture2D = TextureAssets.InventoryBack2.get_Value();
+          texture2D = TextureAssets.InventoryBack2.Value;
         sb.Draw(texture2D, position, new Rectangle?(), color, 0.0f, new Vector2(), scale, SpriteEffects.None, 0.0f);
         switch (index)
         {
           case 0:
-            texture2D = TextureAssets.Camera[7].get_Value();
+            texture2D = TextureAssets.Camera[7].Value;
             break;
           case 1:
-            texture2D = TextureAssets.Camera[0].get_Value();
+            texture2D = TextureAssets.Camera[0].Value;
             break;
           case 2:
           case 3:
           case 4:
-            texture2D = TextureAssets.Camera[index].get_Value();
+            texture2D = TextureAssets.Camera[index].Value;
             break;
           case 5:
-            texture2D = Main.mapFullscreen ? TextureAssets.MapIcon[0].get_Value() : TextureAssets.MapIcon[4].get_Value();
+            texture2D = Main.mapFullscreen ? TextureAssets.MapIcon[0].Value : TextureAssets.MapIcon[4].Value;
             break;
           case 6:
-            texture2D = TextureAssets.Camera[1].get_Value();
+            texture2D = TextureAssets.Camera[1].Value;
             break;
           case 7:
-            texture2D = TextureAssets.Camera[6].get_Value();
+            texture2D = TextureAssets.Camera[6].Value;
             break;
           case 8:
-            texture2D = TextureAssets.Camera[5].get_Value();
+            texture2D = TextureAssets.Camera[5].Value;
             break;
         }
         sb.Draw(texture2D, position + new Vector2(26f) * scale, new Rectangle?(), Color.White, 0.0f, texture2D.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
@@ -303,7 +303,7 @@ namespace Terraria.Graphics.Capture
         else if (!CaptureInterface.EdgeAPinned || !CaptureInterface.EdgeBPinned)
           flag = true;
         if (flag)
-          sb.Draw(TextureAssets.Cd.get_Value(), position + new Vector2(26f) * scale, new Rectangle?(), Color.White * 0.65f, 0.0f, TextureAssets.Cd.get_Value().Size() / 2f, 1f, SpriteEffects.None, 0.0f);
+          sb.Draw(TextureAssets.Cd.Value, position + new Vector2(26f) * scale, new Rectangle?(), Color.White * 0.65f, 0.0f, TextureAssets.Cd.Value.Size() / 2f, 1f, SpriteEffects.None, 0.0f);
       }
       string cursorText = "";
       switch (this.HoveredMode)
@@ -571,7 +571,7 @@ namespace Terraria.Graphics.Capture
     {
       if ((double) CaptureInterface.CameraFrame == 0.0)
         return;
-      sb.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), new Rectangle?(new Rectangle(0, 0, 1, 1)), Color.Black * (CaptureInterface.CameraFrame / 5f));
+      sb.Draw(TextureAssets.MagicPixel.Value, new Rectangle(0, 0, Main.screenWidth, Main.screenHeight), new Rectangle?(new Rectangle(0, 0, 1, 1)), Color.Black * (CaptureInterface.CameraFrame / 5f));
       if ((double) CaptureInterface.CameraFrame != 5.0)
         return;
       float num1 = (float) ((double) CaptureInterface.CameraWaiting - 60.0 + 5.0);
@@ -583,12 +583,12 @@ namespace Terraria.Graphics.Capture
         num3 = 100f;
       string text1 = num3.ToString("##") + " ";
       string text2 = "/ 100%";
-      Vector2 vector2_1 = FontAssets.DeathText.get_Value().MeasureString(text1);
-      Vector2 vector2_2 = FontAssets.DeathText.get_Value().MeasureString(text2);
+      Vector2 vector2_1 = FontAssets.DeathText.Value.MeasureString(text1);
+      Vector2 vector2_2 = FontAssets.DeathText.Value.MeasureString(text2);
       Vector2 vector2_3 = new Vector2(-vector2_1.X, (float) (-(double) vector2_1.Y / 2.0));
       Vector2 vector2_4 = new Vector2(0.0f, (float) (-(double) vector2_2.Y / 2.0));
-      ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.DeathText.get_Value(), text1, new Vector2((float) Main.screenWidth, (float) Main.screenHeight) / 2f + vector2_3, Color.White * num2, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
-      ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.DeathText.get_Value(), text2, new Vector2((float) Main.screenWidth, (float) Main.screenHeight) / 2f + vector2_4, Color.White * num2, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.DeathText.Value, text1, new Vector2((float) Main.screenWidth, (float) Main.screenHeight) / 2f + vector2_3, Color.White * num2, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.DeathText.Value, text2, new Vector2((float) Main.screenWidth, (float) Main.screenHeight) / 2f + vector2_4, Color.White * num2, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
     }
 
     public static void StartCamera(CaptureSettings settings)
@@ -714,11 +714,11 @@ namespace Terraria.Graphics.Capture
           if (result.Width == 0 || result.Height == 0)
             return;
           result.Offset(-rectangle2.X, -rectangle2.Y);
-          sb.Draw(TextureAssets.MagicPixel.get_Value(), result, CaptureInterface.Settings.MarkedAreaColor);
+          sb.Draw(TextureAssets.MagicPixel.Value, result, CaptureInterface.Settings.MarkedAreaColor);
           for (int index = 0; index < 2; ++index)
           {
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(result.X, result.Y + (index == 1 ? result.Height : -2), result.Width, 2), Color.White);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(result.X + (index == 1 ? result.Width : -2), result.Y, 2, result.Height), Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, new Rectangle(result.X, result.Y + (index == 1 ? result.Height : -2), result.Width, 2), Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, new Rectangle(result.X + (index == 1 ? result.Width : -2), result.Y, 2, result.Height), Color.White);
           }
         }
         else
@@ -734,11 +734,11 @@ namespace Terraria.Graphics.Capture
           if (result3.Width == 0 || result3.Height == 0)
             return;
           result3.Offset(-rectangle2.X, -rectangle2.Y);
-          sb.Draw(TextureAssets.MagicPixel.get_Value(), result3, CaptureInterface.Settings.MarkedAreaColor);
+          sb.Draw(TextureAssets.MagicPixel.Value, result3, CaptureInterface.Settings.MarkedAreaColor);
           for (int index = 0; index < 2; ++index)
           {
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(result3.X, result3.Y + (index == 1 ? result3.Height : -2), result3.Width, 2), Color.White);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), new Rectangle(result3.X + (index == 1 ? result3.Width : -2), result3.Y, 2, result3.Height), Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, new Rectangle(result3.X, result3.Y + (index == 1 ? result3.Height : -2), result3.Width, 2), Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, new Rectangle(result3.X + (index == 1 ? result3.Width : -2), result3.Y, 2, result3.Height), Color.White);
           }
         }
       }
@@ -1124,7 +1124,7 @@ label_46:
             return;
           result1.Offset(-rectangle2.X, -rectangle2.Y);
         }
-        sb.Draw(TextureAssets.MagicPixel.get_Value(), result1, CaptureInterface.Settings.MarkedAreaColor);
+        sb.Draw(TextureAssets.MagicPixel.Value, result1, CaptureInterface.Settings.MarkedAreaColor);
         Rectangle r = Rectangle.Empty;
         for (int index = 0; index < 2; ++index)
         {
@@ -1147,21 +1147,21 @@ label_46:
         switch (mode)
         {
           case 0:
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), r, Color.Silver);
+            sb.Draw(TextureAssets.MagicPixel.Value, r, Color.Silver);
             break;
           case 1:
             Rectangle destinationRectangle1 = new Rectangle(r.X - 2, r.Y, r.Width + 4, r.Height);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle1, Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, destinationRectangle1, Color.White);
             destinationRectangle1 = new Rectangle(r.X, r.Y - 2, r.Width, r.Height + 4);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle1, Color.White);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), r, Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, destinationRectangle1, Color.White);
+            sb.Draw(TextureAssets.MagicPixel.Value, r, Color.White);
             break;
           case 2:
             Rectangle destinationRectangle2 = new Rectangle(r.X - 2, r.Y, r.Width + 4, r.Height);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle2, Color.Gold);
+            sb.Draw(TextureAssets.MagicPixel.Value, destinationRectangle2, Color.Gold);
             destinationRectangle2 = new Rectangle(r.X, r.Y - 2, r.Width, r.Height + 4);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), destinationRectangle2, Color.Gold);
-            sb.Draw(TextureAssets.MagicPixel.get_Value(), r, Color.Gold);
+            sb.Draw(TextureAssets.MagicPixel.Value, destinationRectangle2, Color.Gold);
+            sb.Draw(TextureAssets.MagicPixel.Value, r, Color.Gold);
             break;
         }
       }
@@ -1262,16 +1262,16 @@ label_46:
               }
               if (CaptureInterface.Settings.BiomeChoiceIndex == num2)
                 num3 += 2;
-              Texture2D texture = TextureAssets.Extra[130].get_Value();
+              Texture2D texture = TextureAssets.Extra[130].Value;
               int x = num1 * 18;
               Color white = Color.White;
               float num4 = 1f;
               if (num3 < 2)
                 num4 *= 0.5f;
               if (num3 % 2 == 1)
-                spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), r.TopLeft(), new Rectangle?(new Rectangle(0, 0, 1, 1)), Color.Gold, 0.0f, Vector2.Zero, new Vector2(20f), SpriteEffects.None, 0.0f);
+                spritebatch.Draw(TextureAssets.MagicPixel.Value, r.TopLeft(), new Rectangle?(new Rectangle(0, 0, 1, 1)), Color.Gold, 0.0f, Vector2.Zero, new Vector2(20f), SpriteEffects.None, 0.0f);
               else
-                spritebatch.Draw(TextureAssets.MagicPixel.get_Value(), r.TopLeft(), new Rectangle?(new Rectangle(0, 0, 1, 1)), Color.White * num4, 0.0f, Vector2.Zero, new Vector2(20f), SpriteEffects.None, 0.0f);
+                spritebatch.Draw(TextureAssets.MagicPixel.Value, r.TopLeft(), new Rectangle?(new Rectangle(0, 0, 1, 1)), Color.White * num4, 0.0f, Vector2.Zero, new Vector2(20f), SpriteEffects.None, 0.0f);
               spritebatch.Draw(texture, r.TopLeft() + new Vector2(2f), new Rectangle?(new Rectangle(x, 0, 16, 16)), Color.White * num4);
             }
           }
@@ -1356,8 +1356,8 @@ label_46:
           Color baseColor = Color.White;
           if (button == this.hoveredButton)
             baseColor = Color.Gold;
-          ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.ItemStack.get_Value(), key, rect.TopLeft() + new Vector2(20f, (float) (20 + 20 * button)), baseColor, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
-          ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.ItemStack.get_Value(), text, rect.TopRight() + new Vector2(-20f, (float) (20 + 20 * button)), baseColor, 0.0f, FontAssets.ItemStack.get_Value().MeasureString(text) * Vector2.UnitX, Vector2.One, -1f, 2f);
+          ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.ItemStack.Value, key, rect.TopLeft() + new Vector2(20f, (float) (20 + 20 * button)), baseColor, 0.0f, Vector2.Zero, Vector2.One, -1f, 2f);
+          ChatManager.DrawColorCodedStringWithShadow(sb, FontAssets.ItemStack.Value, text, rect.TopRight() + new Vector2(-20f, (float) (20 + 20 * button)), baseColor, 0.0f, FontAssets.ItemStack.Value.MeasureString(text) * Vector2.UnitX, Vector2.One, -1f, 2f);
         }
         this.DrawWaterChoices(sb, (rect.TopLeft() + new Vector2((float) (rect.Width / 2 - 84), 90f)).ToPoint(), Main.MouseScreen.ToPoint());
       }

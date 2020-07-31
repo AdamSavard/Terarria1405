@@ -98,7 +98,7 @@ namespace Terraria.GameContent.UI.Elements
 
     public virtual void SetText(T text, float textScale, bool large)
     {
-      Vector2 vector2 = new Vector2((large ? FontAssets.DeathText.get_Value() : FontAssets.MouseText.get_Value()).MeasureString(text.ToString()).X, large ? 32f : 16f) * textScale;
+      Vector2 vector2 = new Vector2((large ? FontAssets.DeathText.Value : FontAssets.MouseText.Value).MeasureString(text.ToString()).X, large ? 32f : 16f) * textScale;
       this._text = text;
       this._textScale = textScale;
       this._textSize = vector2;

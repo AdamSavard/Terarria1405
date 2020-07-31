@@ -42,9 +42,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public DungeonShader()
+    public DungeonShader() : base()
     {
-      base.\u002Ector();
     }
   }
 }

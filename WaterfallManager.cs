@@ -310,12 +310,12 @@ namespace Terraria
                   Color color3 = color1 * num21;
                   if (index2 == 22)
                   {
-                    spriteBatch.Draw(this.waterfallTexture[22].get_Value(), position, new Rectangle?(rectangle2), color2, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[22].Value, position, new Rectangle?(rectangle2), color2, 0.0f, origin, 1f, SpriteEffects.None, 0.0f);
                   }
                   else
                   {
-                    spriteBatch.Draw(this.waterfallTexture[12].get_Value(), position, new Rectangle?(rectangle1), color3, rotation, origin, 1f, SpriteEffects.None, 0.0f);
-                    spriteBatch.Draw(this.waterfallTexture[11].get_Value(), position, new Rectangle?(rectangle2), color2, rotation, origin, 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[12].Value, position, new Rectangle?(rectangle1), color3, rotation, origin, 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[11].Value, position, new Rectangle?(rectangle2), color2, rotation, origin, 1f, SpriteEffects.None, 0.0f);
                   }
                   if (!flag)
                   {
@@ -645,67 +645,67 @@ namespace Terraria
                 num14 = num15;
                 color1 = Color.White;
                 if (num14 == 1)
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16 + 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16 + 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
                 else
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16 + 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16 + 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
               }
               if (num16 != 0 && num26 == 0 && num27 == 1)
               {
                 if (num14 == 1)
                 {
                   if (index3 != index2)
-                    spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11 + 8)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21 - 8)), color4, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11 + 8)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21 - 8)), color4, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
                   else
-                    spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11 + 8)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21 - 8)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11 + 8)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21 - 8)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.FlipHorizontally, 0.0f);
                 }
                 else
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11 + 8)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21 - 8)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11 + 8)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21 - 8)), color1, 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
               }
               if (num11 == 8 && num13 == 1 && num16 == 0)
               {
                 if (num15 == -1)
                 {
                   if (index3 != index2)
-                    spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                   else
-                    spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                 }
                 else if (index3 != index2)
-                  spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                 else
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 8)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
               }
               if (num22 != 0 && num12 == 0)
               {
                 if (num25 == 1)
                 {
                   if (index3 != index2)
-                    spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                   else
-                    spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                 }
                 else if (index3 != index2)
-                  spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                 else
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
               }
               if (num27 == 1 && num22 == 0 && num16 == 0)
               {
                 if (num14 == -1)
                 {
                   if (num13 == 0)
-                    spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                   else if (index3 != index2)
-                    spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                   else
-                    spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                    spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                 }
                 else if (num13 == 0)
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 0, 16, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                 else if (index3 != index2)
-                  spriteBatch.Draw(this.waterfallTexture[index3].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index3].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color4, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                 else
-                  spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                  spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 - 16), (float) (y * 16)) - Main.screenPosition, new Rectangle?(new Rectangle(x2, 24, 32, 16 - num21)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
               }
               else
               {
@@ -724,7 +724,7 @@ namespace Terraria
                           num11 = 8;
                           if (num12 == 0 && index5 > 5)
                             num36 = 4;
-                          spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 + num34), (float) (y * 16 + num11 + num36)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2 + num35, 0, 2, 16 - num11)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                          spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 + num34), (float) (y * 16 + num11 + num36)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2 + num35, 0, 2, 16 - num11)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                         }
                         break;
                       }
@@ -733,7 +733,7 @@ namespace Terraria
                         height = 8;
                       else if (TileID.Sets.BlocksWaterDrawingBehindSelf[(int) Main.tile[x1, y + 1].type])
                         height = 8;
-                      spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2, 0, 16, height)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                      spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2, 0, 16, height)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                       break;
                     }
                     break;
@@ -741,7 +741,7 @@ namespace Terraria
                     if (num27 == 0)
                     {
                       if (Main.tile[x1, y].liquid <= (byte) 0 || Main.tile[x1, y].halfBrick())
-                        spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2, 0, 16, 16)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
+                        spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2, 0, 16, 16)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.None, 0.0f);
                       index4 = 1000;
                       break;
                     }
@@ -759,7 +759,7 @@ namespace Terraria
                           num11 = 8;
                           if (num12 == 0 && index5 < 2)
                             num36 = 4;
-                          spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16 + num34), (float) (y * 16 + num11 + num36)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2 + num35, 0, 2, 16 - num11)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                          spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16 + num34), (float) (y * 16 + num11 + num36)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2 + num35, 0, 2, 16 - num11)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                         }
                         break;
                       }
@@ -768,7 +768,7 @@ namespace Terraria
                         height = 8;
                       else if (TileID.Sets.BlocksWaterDrawingBehindSelf[(int) Main.tile[x1, y + 1].type])
                         height = 8;
-                      spriteBatch.Draw(this.waterfallTexture[index2].get_Value(), new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2, 0, 16, height)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
+                      spriteBatch.Draw(this.waterfallTexture[index2].Value, new Vector2((float) (x1 * 16), (float) (y * 16 + num11)) - Main.screenPosition, new Rectangle?(new Rectangle(16 + x2, 0, 16, height)), color1, 0.0f, new Vector2(), 1f, SpriteEffects.FlipHorizontally, 0.0f);
                       break;
                     }
                     break;

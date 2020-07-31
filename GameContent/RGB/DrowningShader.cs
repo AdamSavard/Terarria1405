@@ -52,9 +52,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public DrowningShader()
+    public DrowningShader() : base()
     {
-      base.\u002Ector();
     }
   }
 }

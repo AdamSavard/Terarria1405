@@ -38,9 +38,9 @@ namespace Terraria.GameContent.UI.Elements
       position.X += 8f;
       position.Y += 2f + num1;
       string text = this._GetTextFunction();
-      Vector2 stringSize = ChatManager.GetStringSize(FontAssets.ItemStack.get_Value(), text, baseScale, -1f);
+      Vector2 stringSize = ChatManager.GetStringSize(FontAssets.ItemStack.Value, text, baseScale, -1f);
       position.X = (float) ((double) dimensions.X + (double) dimensions.Width / 2.0 - (double) stringSize.X / 2.0);
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), text, position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, text, position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
     }
   }
 }

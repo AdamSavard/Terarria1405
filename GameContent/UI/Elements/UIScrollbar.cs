@@ -100,8 +100,8 @@ namespace Terraria.GameContent.UI.Elements
       this._isHoveringOverHandle = handleRectangle.Contains(new Point((int) mousePosition.X, (int) mousePosition.Y));
       if (num == 0 && this._isHoveringOverHandle && Main.hasFocus)
         SoundEngine.PlaySound(12, -1, -1, 1, 1f, 0.0f);
-      this.DrawBar(spriteBatch, this._texture.get_Value(), dimensions.ToRectangle(), Color.White);
-      this.DrawBar(spriteBatch, this._innerTexture.get_Value(), handleRectangle, Color.White * (this._isDragging || this._isHoveringOverHandle ? 1f : 0.85f));
+      this.DrawBar(spriteBatch, this._texture.Value, dimensions.ToRectangle(), Color.White);
+      this.DrawBar(spriteBatch, this._innerTexture.Value, handleRectangle, Color.White * (this._isDragging || this._isHoveringOverHandle ? 1f : 0.85f));
     }
 
     public override void MouseDown(UIMouseEvent evt)

@@ -171,7 +171,7 @@ namespace Terraria.GameContent.UI.Chat
           int frameX = this._glyphIndex;
           if (this._glyphIndex == 25)
             frameX = (double) Main.GlobalTimeWrappedHourly % 0.600000023841858 < 0.300000011920929 ? 17 : 18;
-          Texture2D texture2D = TextureAssets.TextGlyph[0].get_Value();
+          Texture2D texture2D = TextureAssets.TextGlyph[0].Value;
           spriteBatch.Draw(texture2D, position, new Rectangle?(texture2D.Frame(25, 1, frameX, frameX / 25, 0, 0)), color, 0.0f, Vector2.Zero, GlyphTagHandler.GlyphsScale, SpriteEffects.None, 0.0f);
         }
         size = new Vector2(26f) * GlyphTagHandler.GlyphsScale;

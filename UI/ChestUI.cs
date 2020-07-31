@@ -118,10 +118,10 @@ namespace Terraria.UI
       Color baseColor = Color.White * (float) (1.0 - ((double) byte.MaxValue - (double) Main.mouseTextColor) / (double) byte.MaxValue * 0.5);
       baseColor.A = byte.MaxValue;
       int lineAmount;
-      Utils.WordwrapString(text, FontAssets.MouseText.get_Value(), 200, 1, out lineAmount);
+      Utils.WordwrapString(text, FontAssets.MouseText.Value, 200, 1, out lineAmount);
       int num = lineAmount + 1;
       for (int index = 0; index < num; ++index)
-        ChatManager.DrawColorCodedStringWithShadow(spritebatch, FontAssets.MouseText.get_Value(), text, new Vector2(504f, (float) (Main.instance.invBottom + index * 26)), baseColor, 0.0f, Vector2.Zero, Vector2.One, -1f, 1.5f);
+        ChatManager.DrawColorCodedStringWithShadow(spritebatch, FontAssets.MouseText.Value, text, new Vector2(504f, (float) (Main.instance.invBottom + index * 26)), baseColor, 0.0f, Vector2.Zero, Vector2.One, -1f, 1.5f);
     }
 
     private static void DrawButtons(SpriteBatch spritebatch)
@@ -174,7 +174,7 @@ namespace Terraria.UI
             text = !player.IsVoidVaultEnabled ? Language.GetTextValue("UI.ToggleBank4VacuumIsOff") : Language.GetTextValue("UI.ToggleBank4VacuumIsOn");
             break;
         }
-        Vector2 vector2_1 = FontAssets.MouseText.get_Value().MeasureString(text);
+        Vector2 vector2_1 = FontAssets.MouseText.Value.MeasureString(text);
         Color color = new Color((int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor, (int) Main.mouseTextColor) * num2;
         Color baseColor = Color.White * 0.97f * (float) (1.0 - ((double) byte.MaxValue - (double) Main.mouseTextColor) / (double) byte.MaxValue * 0.5);
         baseColor.A = byte.MaxValue;
@@ -184,7 +184,7 @@ namespace Terraria.UI
           flag = Utils.FloatIntersect((float) Main.mouseX, (float) Main.mouseY, 0.0f, 0.0f, (float) ((double) X - (double) vector2_1.X / 2.0 - 10.0), (float) (Y - 12), vector2_1.X + 16f, 24f);
         if (flag)
           baseColor = Main.OurFavoriteColor;
-        ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.MouseText.get_Value(), text, new Vector2((float) X, (float) Y), baseColor, 0.0f, vector2_1 / 2f, new Vector2(num2), -1f, 1.5f);
+        ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.MouseText.Value, text, new Vector2((float) X, (float) Y), baseColor, 0.0f, vector2_1 / 2f, new Vector2(num2), -1f, 1.5f);
         Vector2 vector2_2 = vector2_1 * num2;
         switch (ID)
         {

@@ -55,7 +55,7 @@ namespace Terraria.Graphics.Shaders
       }
       if (this._uImage != null)
       {
-        Main.graphics.GraphicsDevice.Textures[1] = (Texture) this._uImage.get_Value();
+        Main.graphics.GraphicsDevice.Textures[1] = (Texture) this._uImage.Value;
         this.Shader.Parameters["uImageSize1"].SetValue(new Vector2((float) this._uImage.Width(), (float) this._uImage.Height()));
       }
       if (entity != null)

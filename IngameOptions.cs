@@ -470,7 +470,7 @@ namespace Terraria
         anchor2.X -= (float) num1;
         string txt1 = Language.GetTextValue("GameUI.GameZoom", (object) Math.Round((double) Main.GameZoomTarget * 100.0), (object) Math.Round((double) Main.GameViewMatrix.Zoom.X * 100.0));
         if (flag3)
-          txt1 = FontAssets.ItemStack.get_Value().CreateWrappedText(txt1, num3, Language.ActiveCulture.CultureInfo);
+          txt1 = FontAssets.ItemStack.Value.CreateWrappedText(txt1, num3, Language.ActiveCulture.CultureInfo);
         if (IngameOptions.DrawRightSide(sb, txt1, i15, anchor2, offset2, IngameOptions.rightScale[i15] * 0.85f, (float) (((double) IngameOptions.rightScale[i15] - (double) num5) / ((double) num6 - (double) num5)), new Color()))
         {
           if (IngameOptions.rightLock == -1)
@@ -500,7 +500,7 @@ namespace Terraria
           Main.temporaryGUIScaleSlider = Main.UIScaleWanted;
         string txt2 = Language.GetTextValue("GameUI.UIScale", (object) Math.Round((double) Main.temporaryGUIScaleSlider * 100.0), (object) Math.Round((double) Main.UIScale * 100.0));
         if (flag3)
-          txt2 = FontAssets.ItemStack.get_Value().CreateWrappedText(txt2, num3, Language.ActiveCulture.CultureInfo);
+          txt2 = FontAssets.ItemStack.Value.CreateWrappedText(txt2, num3, Language.ActiveCulture.CultureInfo);
         if (IngameOptions.DrawRightSide(sb, txt2, i16, anchor2, offset2, IngameOptions.rightScale[i16] * 0.75f, (float) (((double) IngameOptions.rightScale[i16] - (double) num5) / ((double) num6 - (double) num5)), new Color()))
         {
           if (IngameOptions.rightLock == -1)
@@ -672,7 +672,7 @@ namespace Terraria
         anchor2.X -= (float) num1;
         string txt = Language.GetTextValue("GameUI.MapScale", (object) Math.Round((double) Main.MapScale * 100.0));
         if (flag3)
-          txt = FontAssets.ItemStack.get_Value().CreateWrappedText(txt, num3, Language.ActiveCulture.CultureInfo);
+          txt = FontAssets.ItemStack.Value.CreateWrappedText(txt, num3, Language.ActiveCulture.CultureInfo);
         if (IngameOptions.DrawRightSide(sb, txt, i16, anchor2, offset2, IngameOptions.rightScale[i16] * 0.85f, (float) (((double) IngameOptions.rightScale[i16] - (double) num5) / ((double) num6 - (double) num5)), new Color()))
         {
           if (IngameOptions.rightLock == -1)
@@ -1267,7 +1267,7 @@ namespace Terraria
     public static bool DrawValue(SpriteBatch sb, string txt, int i, float scale, Color over = default (Color))
     {
       Color color = Color.Gray;
-      Vector2 vector2 = FontAssets.MouseText.get_Value().MeasureString(txt) * scale;
+      Vector2 vector2 = FontAssets.MouseText.Value.MeasureString(txt) * scale;
       int num = new Rectangle((int) IngameOptions.valuePosition.X, (int) IngameOptions.valuePosition.Y - (int) vector2.Y / 2, (int) vector2.X, (int) vector2.Y).Contains(new Point(Main.mouseX, Main.mouseY)) ? 1 : 0;
       if (num != 0)
         color = Color.White;
@@ -1287,7 +1287,7 @@ namespace Terraria
     {
       if (colorMethod == null)
         colorMethod = new Utils.ColorLerpMethod(Utils.ColorLerp_BlackToWhite);
-      Texture2D texture = TextureAssets.ColorBar.get_Value();
+      Texture2D texture = TextureAssets.ColorBar.Value;
       Vector2 vector2 = new Vector2((float) texture.Width, (float) texture.Height) * scale;
       IngameOptions.valuePosition.X -= (float) (int) vector2.X;
       Rectangle destinationRectangle1 = new Rectangle((int) IngameOptions.valuePosition.X, (int) IngameOptions.valuePosition.Y - (int) vector2.Y / 2, (int) vector2.X, (int) vector2.Y);
@@ -1299,15 +1299,15 @@ namespace Terraria
       for (float num3 = 0.0f; (double) num3 < (double) num1; ++num3)
       {
         float percent = num3 / (float) num1;
-        sb.Draw(TextureAssets.ColorBlip.get_Value(), new Vector2(num2 + num3 * scale, y), new Rectangle?(), colorMethod(percent), 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
+        sb.Draw(TextureAssets.ColorBlip.Value, new Vector2(num2 + num3 * scale, y), new Rectangle?(), colorMethod(percent), 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
       }
       destinationRectangle1.Inflate((int) (-5.0 * (double) scale), 0);
       bool flag = destinationRectangle1.Contains(new Point(Main.mouseX, Main.mouseY));
       if (lockState == 2)
         flag = false;
       if (flag || lockState == 1)
-        sb.Draw(TextureAssets.ColorHighlight.get_Value(), destinationRectangle2, Main.OurFavoriteColor);
-      sb.Draw(TextureAssets.ColorSlider.get_Value(), new Vector2(num2 + 167f * scale * perc, y + 4f * scale), new Rectangle?(), Color.White, 0.0f, new Vector2(0.5f * (float) TextureAssets.ColorSlider.Width(), 0.5f * (float) TextureAssets.ColorSlider.Height()), scale, SpriteEffects.None, 0.0f);
+        sb.Draw(TextureAssets.ColorHighlight.Value, destinationRectangle2, Main.OurFavoriteColor);
+      sb.Draw(TextureAssets.ColorSlider.Value, new Vector2(num2 + 167f * scale * perc, y + 4f * scale), new Rectangle?(), Color.White, 0.0f, new Vector2(0.5f * (float) TextureAssets.ColorSlider.Width(), 0.5f * (float) TextureAssets.ColorSlider.Height()), scale, SpriteEffects.None, 0.0f);
       if (Main.mouseX >= destinationRectangle1.X && Main.mouseX <= destinationRectangle1.X + destinationRectangle1.Width)
       {
         IngameOptions.inBar = flag;

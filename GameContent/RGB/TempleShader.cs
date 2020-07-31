@@ -39,9 +39,8 @@ namespace Terraria.GameContent.RGB
       }
     }
 
-    public TempleShader()
-    {
-      base.\u002Ector();
+    public TempleShader() : base()
+{
     }
   }
 }

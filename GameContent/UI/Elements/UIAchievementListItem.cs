@@ -83,10 +83,10 @@ namespace Terraria.GameContent.UI.Elements
       float num2 = (float) ((double) innerDimensions.Width - (double) dimensions.Width + 1.0) - (float) (num1 * 2);
       Vector2 baseScale1 = new Vector2(0.85f);
       Vector2 baseScale2 = new Vector2(0.92f);
-      string wrappedText = FontAssets.ItemStack.get_Value().CreateWrappedText(this._achievement.Description.Value, (float) (((double) num2 - 20.0) * (1.0 / (double) baseScale2.X)), Language.ActiveCulture.CultureInfo);
-      Vector2 stringSize1 = ChatManager.GetStringSize(FontAssets.ItemStack.get_Value(), wrappedText, baseScale2, num2);
+      string wrappedText = FontAssets.ItemStack.Value.CreateWrappedText(this._achievement.Description.Value, (float) (((double) num2 - 20.0) * (1.0 / (double) baseScale2.X)), Language.ActiveCulture.CultureInfo);
+      Vector2 stringSize1 = ChatManager.GetStringSize(FontAssets.ItemStack.Value, wrappedText, baseScale2, num2);
       if (!this._large)
-        stringSize1 = ChatManager.GetStringSize(FontAssets.ItemStack.get_Value(), this._achievement.Description.Value, baseScale2, num2);
+        stringSize1 = ChatManager.GetStringSize(FontAssets.ItemStack.Value, this._achievement.Description.Value, baseScale2, num2);
       float num3 = (float) (38.0 + (this._large ? 20.0 : 0.0));
       if ((double) stringSize1.Y > (double) num3)
         baseScale2.Y *= num3 / stringSize1.Y;
@@ -98,22 +98,22 @@ namespace Terraria.GameContent.UI.Elements
       AchievementCategory category = this._achievement.Category;
       position1.Y += 2f;
       position1.X += 4f;
-      spriteBatch.Draw(this._categoryTexture.get_Value(), position1, new Rectangle?(this._categoryTexture.Frame(4, 2, (int) category, 0, 0, 0)), this.IsMouseHovering ? Color.White : Color.Silver, 0.0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._categoryTexture.Value, position1, new Rectangle?(this._categoryTexture.Frame(4, 2, (int) category, 0, 0, 0)), this.IsMouseHovering ? Color.White : Color.Silver, 0.0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0.0f);
       position1.X += 4f;
       position1.X += 17f;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), this._achievement.FriendlyName.Value, position1, baseColor1, 0.0f, Vector2.Zero, baseScale1, num2, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, this._achievement.FriendlyName.Value, position1, baseColor1, 0.0f, Vector2.Zero, baseScale1, num2, 2f);
       position1.X -= 17f;
       Vector2 position2 = vector2_2 + Vector2.UnitY * 27f + vector2_1;
       this.DrawPanelBottom(spriteBatch, position2, num2, color1);
       position2.X += 8f;
       position2.Y += 4f;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), wrappedText, position2, baseColor2, 0.0f, Vector2.Zero, baseScale2, -1f, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, wrappedText, position2, baseColor2, 0.0f, Vector2.Zero, baseScale2, -1f, 2f);
       if (!flag)
         return;
       Vector2 position3 = position1 + Vector2.UnitX * num2 + Vector2.UnitY;
       string text = ((int) trackerValues.Item1).ToString() + "/" + (object) (int) trackerValues.Item2;
       Vector2 baseScale3 = new Vector2(0.75f);
-      Vector2 stringSize2 = ChatManager.GetStringSize(FontAssets.ItemStack.get_Value(), text, baseScale3, -1f);
+      Vector2 stringSize2 = ChatManager.GetStringSize(FontAssets.ItemStack.Value, text, baseScale3, -1f);
       float progress = (float) (trackerValues.Item1 / trackerValues.Item2);
       float Width = 80f;
       Color color2 = new Color(100, (int) byte.MaxValue, 100);
@@ -124,7 +124,7 @@ namespace Terraria.GameContent.UI.Elements
         BackColor = Color.Lerp(BackColor, Color.Black, 0.25f);
       this.DrawProgressBar(spriteBatch, progress, position3 - Vector2.UnitX * Width * 0.7f, Width, BackColor, color2, color2.MultiplyRGBA(new Color(new Vector4(1f, 1f, 1f, 0.5f))));
       position3.X -= Width * 1.4f + stringSize2.X;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), text, position3, baseColor1, 0.0f, new Vector2(0.0f, 0.0f), baseScale3, 90f, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, text, position3, baseColor1, 0.0f, new Vector2(0.0f, 0.0f), baseScale3, 90f, 2f);
     }
 
     private void UpdateIconFrame()
@@ -137,9 +137,9 @@ namespace Terraria.GameContent.UI.Elements
 
     private void DrawPanelTop(SpriteBatch spriteBatch, Vector2 position, float width, Color color)
     {
-      spriteBatch.Draw(this._innerPanelTopTexture.get_Value(), position, new Rectangle?(new Rectangle(0, 0, 2, this._innerPanelTopTexture.Height())), color);
-      spriteBatch.Draw(this._innerPanelTopTexture.get_Value(), new Vector2(position.X + 2f, position.Y), new Rectangle?(new Rectangle(2, 0, 2, this._innerPanelTopTexture.Height())), color, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 4.0) / 2.0), 1f), SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._innerPanelTopTexture.get_Value(), new Vector2((float) ((double) position.X + (double) width - 2.0), position.Y), new Rectangle?(new Rectangle(4, 0, 2, this._innerPanelTopTexture.Height())), color);
+      spriteBatch.Draw(this._innerPanelTopTexture.Value, position, new Rectangle?(new Rectangle(0, 0, 2, this._innerPanelTopTexture.Height())), color);
+      spriteBatch.Draw(this._innerPanelTopTexture.Value, new Vector2(position.X + 2f, position.Y), new Rectangle?(new Rectangle(2, 0, 2, this._innerPanelTopTexture.Height())), color, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 4.0) / 2.0), 1f), SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._innerPanelTopTexture.Value, new Vector2((float) ((double) position.X + (double) width - 2.0), position.Y), new Rectangle?(new Rectangle(4, 0, 2, this._innerPanelTopTexture.Height())), color);
     }
 
     private void DrawPanelBottom(
@@ -148,9 +148,9 @@ namespace Terraria.GameContent.UI.Elements
       float width,
       Color color)
     {
-      spriteBatch.Draw(this._innerPanelBottomTexture.get_Value(), position, new Rectangle?(new Rectangle(0, 0, 6, this._innerPanelBottomTexture.Height())), color);
-      spriteBatch.Draw(this._innerPanelBottomTexture.get_Value(), new Vector2(position.X + 6f, position.Y), new Rectangle?(new Rectangle(6, 0, 7, this._innerPanelBottomTexture.Height())), color, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 12.0) / 7.0), 1f), SpriteEffects.None, 0.0f);
-      spriteBatch.Draw(this._innerPanelBottomTexture.get_Value(), new Vector2((float) ((double) position.X + (double) width - 6.0), position.Y), new Rectangle?(new Rectangle(13, 0, 6, this._innerPanelBottomTexture.Height())), color);
+      spriteBatch.Draw(this._innerPanelBottomTexture.Value, position, new Rectangle?(new Rectangle(0, 0, 6, this._innerPanelBottomTexture.Height())), color);
+      spriteBatch.Draw(this._innerPanelBottomTexture.Value, new Vector2(position.X + 6f, position.Y), new Rectangle?(new Rectangle(6, 0, 7, this._innerPanelBottomTexture.Height())), color, 0.0f, Vector2.Zero, new Vector2((float) (((double) width - 12.0) / 7.0), 1f), SpriteEffects.None, 0.0f);
+      spriteBatch.Draw(this._innerPanelBottomTexture.Value, new Vector2((float) ((double) position.X + (double) width - 6.0), position.Y), new Rectangle?(new Rectangle(13, 0, 6, this._innerPanelBottomTexture.Height())), color);
     }
 
     public override void MouseOver(UIMouseEvent evt)
@@ -203,9 +203,9 @@ namespace Terraria.GameContent.UI.Elements
         FillingColor = new Color((int) byte.MaxValue, 241, 51);
       if (BackColor == Color.Transparent)
         FillingColor = new Color((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
-      Texture2D texture1 = TextureAssets.ColorBar.get_Value();
-      TextureAssets.ColorBlip.get_Value();
-      Texture2D texture2 = TextureAssets.MagicPixel.get_Value();
+      Texture2D texture1 = TextureAssets.ColorBar.Value;
+      TextureAssets.ColorBlip.Value;
+      Texture2D texture2 = TextureAssets.MagicPixel.Value;
       float num1 = MathHelper.Clamp(progress, 0.0f, 1f);
       float num2 = Width * 1f;
       float y = 8f;

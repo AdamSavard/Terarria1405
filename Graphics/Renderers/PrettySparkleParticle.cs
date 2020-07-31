@@ -38,7 +38,7 @@ namespace Terraria.Graphics.Renderers
     {
       Color color1 = Color.White * this.Opacity * 0.9f;
       color1.A /= (byte) 2;
-      Texture2D texture2D = TextureAssets.Extra[98].get_Value();
+      Texture2D texture2D = TextureAssets.Extra[98].Value;
       Color color2 = this.ColorTint * this.Opacity * 0.5f;
       color2.A = (byte) 0;
       Vector2 origin = texture2D.Size() / 2f;

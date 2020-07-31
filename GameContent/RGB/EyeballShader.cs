@@ -31,9 +31,8 @@ namespace Terraria.GameContent.RGB
     private readonly bool _isSpawning;
     private EyeballShader.EyelidState _eyelidState;
 
-    public EyeballShader(bool isSpawning)
+    public EyeballShader(bool isSpawning) : base()
     {
-      this.\u002Ector();
       this._isSpawning = isSpawning;
     }
 

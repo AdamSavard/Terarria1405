@@ -28,9 +28,8 @@ namespace Terraria.GameContent.RGB
         fragment.SetColor(index, vector4);
     }
 
-    public LowLifeShader()
-    {
-      base.\u002Ector();
+    public LowLifeShader() : base()
+{
     }
   }
 }

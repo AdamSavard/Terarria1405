@@ -16,9 +16,8 @@ namespace Terraria.GameContent.RGB
   {
     private Dictionary<Keys, int> _keyCodeMap;
 
-    private VirtualKeyboard(Fragment fragment, Keys[] keyMap)
-    {
-      this.\u002Ector((RgbDeviceVendor) 4, fragment, new DeviceColorProfile());
+    private VirtualKeyboard(Fragment fragment, Keys[] keyMap) : base((RgbDeviceVendor) 4, fragment, new DeviceColorProfile())
+{
       for (int index = 0; index < keyMap.Length; ++index)
       {
         if (keyMap[index] != Keys.None)
@@ -436,11 +435,11 @@ namespace Terraria.GameContent.RGB
       });
     }
 
-    public virtual void Present()
+    public override void Present()
     {
     }
 
-    public virtual void Render(IEnumerable<RgbKey> keys)
+    public override void Render(IEnumerable<RgbKey> keys)
     {
       using (IEnumerator<RgbKey> enumerator = keys.GetEnumerator())
       {
@@ -449,7 +448,7 @@ namespace Terraria.GameContent.RGB
           RgbKey current = enumerator.Current;
           int num;
           if (this._keyCodeMap.TryGetValue((Keys) current.Key, out num))
-            ((RgbDevice) this).SetLedColor(num, current.get_CurrentColor().ToVector4());
+            ((RgbDevice) this).SetLedColor(num, current.CurrentColor.ToVector4());
         }
       }
     }

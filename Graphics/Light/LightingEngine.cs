@@ -210,30 +210,31 @@ namespace Terraria.Graphics.Light
     {
       // ISSUE: object of a compiler-generated type is created
       // ISSUE: variable of a compiler-generated type
-      LightingEngine.\u003C\u003Ec__DisplayClass24_0 cDisplayClass240 = new LightingEngine.\u003C\u003Ec__DisplayClass24_0();
+      //LightingEngine cDisplayClass240 = new LightingEngine();
       // ISSUE: reference to a compiler-generated field
-      cDisplayClass240.\u003C\u003E4__this = this;
+      //cDisplayClass240.\u003C\u003E4__this = this;
       if (!Main.mapEnabled || this._activeProcessedArea.Width <= 0 || this._activeProcessedArea.Height <= 0)
         return;
       // ISSUE: reference to a compiler-generated field
-      cDisplayClass240.area = new Rectangle(this._activeProcessedArea.X + 28, this._activeProcessedArea.Y + 28, this._activeProcessedArea.Width - 56, this._activeProcessedArea.Height - 56);
+      Rectangle cDisplayClass240area = new Rectangle(this._activeProcessedArea.X + 28, this._activeProcessedArea.Y + 28, this._activeProcessedArea.Width - 56, this._activeProcessedArea.Height - 56);
       Rectangle rectangle = new Rectangle(0, 0, Main.maxTilesX, Main.maxTilesY);
       rectangle.Inflate(-Main.Map.BlackEdgeWidth, -Main.Map.BlackEdgeWidth);
       // ISSUE: reference to a compiler-generated field
       // ISSUE: reference to a compiler-generated field
-      cDisplayClass240.area = Rectangle.Intersect(cDisplayClass240.area, rectangle);
+      cDisplayClass240area = Rectangle.Intersect(cDisplayClass240area, rectangle);
       // ISSUE: reference to a compiler-generated field
-      Main.mapMinX = cDisplayClass240.area.Left;
+      Main.mapMinX = cDisplayClass240area.Left;
       // ISSUE: reference to a compiler-generated field
-      Main.mapMinY = cDisplayClass240.area.Top;
+      Main.mapMinY = cDisplayClass240area.Top;
       // ISSUE: reference to a compiler-generated field
-      Main.mapMaxX = cDisplayClass240.area.Right;
+      Main.mapMaxX = cDisplayClass240area.Right;
       // ISSUE: reference to a compiler-generated field
-      Main.mapMaxY = cDisplayClass240.area.Bottom;
+      Main.mapMaxY = cDisplayClass240area.Bottom;
       // ISSUE: reference to a compiler-generated field
       // ISSUE: reference to a compiler-generated field
       // ISSUE: method pointer
-      FastParallel.For(cDisplayClass240.area.Left, cDisplayClass240.area.Right, new ParallelForAction((object) cDisplayClass240, __methodptr(\u003CExportToMiniMap\u003Eb__0)), (object) null);
+      // TODO what even is this line supposed to be, maybe a function from another class got called here
+      //FastParallel.For(cDisplayClass240area.Left, cDisplayClass240area.Right, new ParallelForAction(ExportToMiniMap));
       Main.updateMap = true;
     }
 

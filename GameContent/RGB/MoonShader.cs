@@ -28,9 +28,8 @@ namespace Terraria.GameContent.RGB
     {
     }
 
-    public MoonShader(Color skyColor, Color moonRingColor, Color moonCoreColor, Color cloudColor)
-    {
-      this.\u002Ector();
+    public MoonShader(Color skyColor, Color moonRingColor, Color moonCoreColor, Color cloudColor) : base()
+{
       this._skyColor = skyColor.ToVector4();
       this._moonRingColor = moonRingColor.ToVector4();
       this._moonCoreColor = moonCoreColor.ToVector4();

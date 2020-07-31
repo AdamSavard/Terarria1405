@@ -16,16 +16,14 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _skyColor;
     private Vector4 _lightColor;
 
-    public CorruptSurfaceShader(Color color)
-    {
-      this.\u002Ector();
+    public CorruptSurfaceShader(Color color) : base()
+{
       this._baseColor = color.ToVector4();
       this._skyColor = Vector4.Lerp(this._baseColor, Color.DeepSkyBlue.ToVector4(), 0.5f);
     }
 
-    public CorruptSurfaceShader(Color vineColor, Color skyColor)
-    {
-      this.\u002Ector();
+    public CorruptSurfaceShader(Color vineColor, Color skyColor) : base()
+{
       this._baseColor = vineColor.ToVector4();
       this._skyColor = skyColor.ToVector4();
     }

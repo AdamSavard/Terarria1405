@@ -15,9 +15,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _slimeColor;
     private readonly Vector4 _debrisColor;
 
-    public QueenSlimeShader(Color slimeColor, Color debrisColor)
-    {
-      this.\u002Ector();
+    public QueenSlimeShader(Color slimeColor, Color debrisColor) : base()
+{
       this._slimeColor = slimeColor.ToVector4();
       this._debrisColor = debrisColor.ToVector4();
     }

@@ -276,7 +276,7 @@ namespace Terraria.WorldBuilding
 
       public override bool Apply(Point origin, int x, int y, params object[] args)
       {
-        this._spriteBatch.Draw(TextureAssets.MagicPixel.get_Value(), new Microsoft.Xna.Framework.Rectangle((x << 4) - (int) Main.screenPosition.X, (y << 4) - (int) Main.screenPosition.Y, 16, 16), this._color);
+        this._spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Microsoft.Xna.Framework.Rectangle((x << 4) - (int) Main.screenPosition.X, (y << 4) - (int) Main.screenPosition.Y, 16, 16), this._color);
         return this.UnitApply(origin, x, y, args);
       }
     }

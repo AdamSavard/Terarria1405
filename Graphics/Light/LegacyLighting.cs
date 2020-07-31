@@ -838,23 +838,23 @@ namespace Terraria.Graphics.Light
         {
           case 0:
             // ISSUE: method pointer
-            parallelForAction = new ParallelForAction((object) this, __methodptr(doColors_Mode0_Swipe));
+            parallelForAction = new ParallelForAction(doColors_Mode0_Swipe);
             break;
           case 1:
             // ISSUE: method pointer
-            parallelForAction = new ParallelForAction((object) this, __methodptr(doColors_Mode1_Swipe));
+            parallelForAction = new ParallelForAction(doColors_Mode1_Swipe);
             break;
           case 2:
             // ISSUE: method pointer
-            parallelForAction = new ParallelForAction((object) this, __methodptr(doColors_Mode2_Swipe));
+            parallelForAction = new ParallelForAction(doColors_Mode2_Swipe);
             break;
           case 3:
             // ISSUE: method pointer
-            parallelForAction = new ParallelForAction((object) this, __methodptr(doColors_Mode3_Swipe));
+            parallelForAction = new ParallelForAction(doColors_Mode3_Swipe);
             break;
           default:
             // ISSUE: method pointer
-            parallelForAction = new ParallelForAction((object) this, __methodptr(doColors_Mode0_Swipe));
+            parallelForAction = new ParallelForAction(doColors_Mode0_Swipe);
             break;
         }
         FastParallel.For(num3, num4, parallelForAction, (object) this._swipe);

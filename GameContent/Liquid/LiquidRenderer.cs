@@ -489,7 +489,7 @@ namespace Terraria.GameContent.Liquid
               vertices.TopLeftColor *= num;
               vertices.TopRightColor *= num;
               Main.DrawTileInWater(drawOffset, x, y);
-              Main.tileBatch.Draw(this._liquidTextures[index].get_Value(), new Vector2((float) (x << 4), (float) (y << 4)) + drawOffset + liquidOffset, new Rectangle?(sourceRectangle), vertices, Vector2.Zero, 1f, SpriteEffects.None);
+              Main.tileBatch.Draw(this._liquidTextures[index].Value, new Vector2((float) (x << 4), (float) (y << 4)) + drawOffset + liquidOffset, new Rectangle?(sourceRectangle), vertices, Vector2.Zero, 1f, SpriteEffects.None);
             }
             ++liquidDrawCachePtr2;
           }

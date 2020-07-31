@@ -50,8 +50,9 @@ namespace Terraria.Social.WeGame
         RailID railId1 = new RailID();
         ((RailComparableID) railId1).id_ = ((RailComparableID) this.GetLocalPeer()).id_;
         RailID railId2 = railId1;
-        ref uint local = ref size;
-        return irailNetwork.IsDataReady(railId2, ref local);
+        // I think the local variable is redundant
+        //ref uint local = ref size;
+        return irailNetwork.IsDataReady(railId2, out size);
       }
     }
 
@@ -62,14 +63,14 @@ namespace Terraria.Social.WeGame
 
     public void SetLocalPeer(RailID rail_id)
     {
-      if (RailComparableID.op_Equality((RailComparableID) this._local_id, (RailComparableID) null))
+      if ((RailComparableID) this._local_id == (RailComparableID) null)
         this._local_id = new RailID();
       ((RailComparableID) this._local_id).id_ = ((RailComparableID) rail_id).id_;
     }
 
     private bool IsValid()
     {
-      return RailComparableID.op_Inequality((RailComparableID) this._local_id, (RailComparableID) null) && ((RailComparableID) this._local_id).IsValid();
+      return this._local_id == null && this._local_id.IsValid();
     }
 
     public void ReadTick()

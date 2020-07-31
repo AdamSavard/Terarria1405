@@ -97,7 +97,7 @@ namespace Terraria.GameContent.UI.Elements
     {
       CalculatedStyle innerDimensions = this.GetInnerDimensions();
       spriteBatch.Draw(this.ResourcePack.Icon, new Rectangle((int) innerDimensions.X + 4, (int) innerDimensions.Y + 4 + 10, 64, 64), Color.White);
-      spriteBatch.Draw(this._iconBorderTexture.get_Value(), new Rectangle((int) innerDimensions.X, (int) innerDimensions.Y + 10, 72, 72), Color.White);
+      spriteBatch.Draw(this._iconBorderTexture.Value, new Rectangle((int) innerDimensions.X, (int) innerDimensions.Y + 10, 72, 72), Color.White);
     }
 
     public override int CompareTo(object obj)

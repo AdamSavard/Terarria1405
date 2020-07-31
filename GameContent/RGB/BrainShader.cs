@@ -15,9 +15,8 @@ namespace Terraria.GameContent.RGB
     private readonly Vector4 _brainColor;
     private readonly Vector4 _veinColor;
 
-    public BrainShader(Color brainColor, Color veinColor)
-    {
-      this.\u002Ector();
+    public BrainShader(Color brainColor, Color veinColor) : base()
+{
       this._brainColor = brainColor.ToVector4();
       this._veinColor = veinColor.ToVector4();
     }

@@ -51,8 +51,9 @@ namespace Terraria.Social.Steam
       CoreSocialModule.OnTick += new Action(this._reader.ReadTick);
       CoreSocialModule.OnTick += new Action(this._writer.SendAll);
       NetSocialModule netSocialModule = this;
-      // ISSUE: virtual method pointer
-      this._lobbyChatMessage = Callback<LobbyChatMsg_t>.Create(new Callback<LobbyChatMsg_t>.DispatchDelegate((object) netSocialModule, __vmethodptr(netSocialModule, OnLobbyChatMessage)));
+    // ISSUE: virtual method pointer
+    // (object) netSocialModule, __vmethodptr(netSocialModule, OnLobbyChatMessage))
+    this._lobbyChatMessage = Callback<LobbyChatMsg_t>.Create(new Callback<LobbyChatMsg_t>.DispatchDelegate(OnLobbyChatMessage));
     }
 
     public override void Shutdown()
@@ -88,9 +89,8 @@ namespace Terraria.Social.Steam
             return;
           while ((long) message.Length - memoryStream.Position >= 8L)
           {
-            CSteamID userId;
-            ((CSteamID) ref userId).\u002Ector(binaryReader.ReadUInt64());
-            if (CSteamID.op_Inequality(userId, SteamUser.GetSteamID()))
+            CSteamID userId = new CSteamID(binaryReader.ReadUInt64());
+            if (userId != SteamUser.GetSteamID())
               this._lobby.SetPlayedWith(userId);
           }
         }
@@ -100,7 +100,7 @@ namespace Terraria.Social.Steam
     protected P2PSessionState_t GetSessionState(CSteamID userId)
     {
       P2PSessionState_t p2PsessionStateT;
-      SteamNetworking.GetP2PSessionState(userId, ref p2PsessionStateT);
+      SteamNetworking.GetP2PSessionState(userId, out p2PsessionStateT);
       return p2PsessionStateT;
     }
 

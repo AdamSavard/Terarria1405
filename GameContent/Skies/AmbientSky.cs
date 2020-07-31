@@ -59,7 +59,7 @@ namespace Terraria.GameContent.Skies
           if (!((AmbientSky.SkyEntity) local).IsActive)
           {
             this._entities.Remove((SlotId) current.Id);
-            if (Main.netMode != 2 && this._entities.get_Count() == 0 && SkyManager.Instance["Ambience"].IsActive())
+            if (Main.netMode != 2 && this._entities.Count == 0 && SkyManager.Instance["Ambience"].IsActive())
               SkyManager.Instance.Deactivate("Ambience");
           }
         }
@@ -178,7 +178,7 @@ namespace Terraria.GameContent.Skies
       {
         get
         {
-          return this.Frame.GetSourceRectangle(this.Texture.get_Value());
+          return this.Frame.GetSourceRectangle(this.Texture.Value);
         }
       }
 
@@ -220,7 +220,7 @@ namespace Terraria.GameContent.Skies
         Color color = this.GetColor(Main.ColorOfTheSkies) * Main.atmo;
         Vector2 origin = this.SourceRectangle.Size() / 2f;
         float scale = depthScale / this.Depth;
-        spriteBatch.Draw(this.Texture.get_Value(), drawPositionByDepth - Main.Camera.UnscaledPosition, new Rectangle?(this.SourceRectangle), color, this.Rotation, origin, scale, this.Effects, 0.0f);
+        spriteBatch.Draw(this.Texture.Value, drawPositionByDepth - Main.Camera.UnscaledPosition, new Rectangle?(this.SourceRectangle), color, this.Rotation, origin, scale, this.Effects, 0.0f);
       }
 
       internal Vector2 GetDrawPositionByDepth()

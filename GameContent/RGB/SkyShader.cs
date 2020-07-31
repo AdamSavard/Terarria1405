@@ -19,9 +19,8 @@ namespace Terraria.GameContent.RGB
     private float _backgroundTransition;
     private float _starVisibility;
 
-    public SkyShader(Color skyColor, Color spaceColor)
-    {
-      this.\u002Ector();
+    public SkyShader(Color skyColor, Color spaceColor) : base()
+{
       this._baseSkyColor = skyColor.ToVector4();
       this._baseSpaceColor = spaceColor.ToVector4();
     }

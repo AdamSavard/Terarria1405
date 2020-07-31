@@ -53,11 +53,11 @@ namespace Terraria.GameContent.Skies
     {
       this._balloons[i].Depth = (float) ((double) i / (double) this._balloons.Length * 1.75 + 1.60000002384186);
       this._balloons[i].Speed = (float) (-1.5 - 2.5 * this._random.NextDouble());
-      this._balloons[i].Texture = this._textures[this._random.Next(2)].get_Value();
+      this._balloons[i].Texture = this._textures[this._random.Next(2)].Value;
       this._balloons[i].Variant = this._random.Next(3);
       if (this._random.Next(30) != 0)
         return;
-      this._balloons[i].Texture = this._textures[2].get_Value();
+      this._balloons[i].Texture = this._textures[2].Value;
     }
 
     private bool IsNearParty()
@@ -87,7 +87,7 @@ namespace Terraria.GameContent.Skies
               this.ResetBalloon(i);
               this._balloons[i].Position = new Vector2((float) (this._random.Next(0, Main.maxTilesX) * 16), (float) (Main.worldSurface * 16.0 + 1600.0));
               if (this._random.Next(30) == 0)
-                this._balloons[i].Texture = this._textures[2].get_Value();
+                this._balloons[i].Texture = this._textures[2].Value;
             }
             else
             {

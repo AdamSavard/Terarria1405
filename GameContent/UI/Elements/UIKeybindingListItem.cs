@@ -54,7 +54,7 @@ namespace Terraria.GameContent.UI.Elements
       Utils.DrawSettingsPanel(spriteBatch, position, num2, color);
       position.X += 8f;
       position.Y += 2f + num1;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), this.GetFriendlyName(), position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, this.GetFriendlyName(), position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
       position.X -= 17f;
       string text = this.GenInput(PlayerInput.CurrentProfile.InputModes[this._inputmode].KeyStatus[this._keybind]);
       if (string.IsNullOrEmpty(text))
@@ -63,12 +63,12 @@ namespace Terraria.GameContent.UI.Elements
         if (!flag)
           baseColor = new Color(80, 80, 80);
       }
-      Vector2 stringSize = ChatManager.GetStringSize(FontAssets.ItemStack.get_Value(), text, baseScale, -1f);
+      Vector2 stringSize = ChatManager.GetStringSize(FontAssets.ItemStack.Value, text, baseScale, -1f);
       position = new Vector2((float) ((double) dimensions.X + (double) dimensions.Width - (double) stringSize.X - 10.0), dimensions.Y + 2f + num1);
       if (this._inputmode == InputMode.XBoxGamepad || this._inputmode == InputMode.XBoxGamepadUI)
         position += new Vector2(0.0f, -3f);
       GlyphTagHandler.GlyphsScale = 0.85f;
-      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.get_Value(), text, position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
+      ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, text, position, baseColor, 0.0f, Vector2.Zero, baseScale, num2, 2f);
       GlyphTagHandler.GlyphsScale = 1f;
     }
 
