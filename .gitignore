@@ -1,3 +1,4 @@
 .vs/
 *.dll
 bin/
+obj/
