@@ -20,3 +20,7 @@ I am excluding the dll files and Content folder from this Git repo. In order to 
 * Hardcore difficulty isn't quite satisfying because having your character deleted on death just makes you spin up a new one. This process can be sped up by just having the player respawn with all their held items destroyed and their maximum life and mana reset back down.
 * Items that can only be obtained through chests that are generated with the world should also be available through monster drops. Ideally, a world can't (easily) run dry as a result of item destruction.
 * Decrease respawn times for a better dying experience. Dying while a boss is spawned should not cause the respawn timer to be longer. If anything, it should despawn the boss. That way all bosses have to be defeated without dying.
+
+Notes
+========
+**Nov 2025** - Oh God a project I abandoned years ago due to AWS headhunting me, on my deadname account no less, blew up, and I don't know when I can get back to my goals with this, and won't enjoy doing it on this account. Haha. - Alice
