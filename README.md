@@ -42,4 +42,5 @@ I am excluding the /exe files and Content folder from this Git repo. In order to
 Notes
 ========
 **Nov 2025** - Oh God a project I abandoned years ago due to AWS headhunting me, on my deadname account no less, blew up, and I don't know when I can get back to my goals with this, and won't enjoy doing it on this account. Haha. - Alice
-**Dec 2025** - I got it running on my new Windows 11 PC that did not even have Visual Studio installed on it. Let's rewrite the README a bit because it was a pain.
+
+**Dec 2025** - I got it running on my new Windows 11 PC that did not even have Visual Studio installed on it. Let's rewrite the README a bit because it was a pain. - Alice
