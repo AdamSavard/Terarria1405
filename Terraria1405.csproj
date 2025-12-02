@@ -7,8 +7,8 @@
     <ProjectGuid>{871F9262-6045-4A9A-81A3-EA9477232E32}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AssemblyName>Terraria</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <!--<TargetFrameworkProfile>Client</TargetFrameworkProfile>-->
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Terraria</RootNamespace>
     <PublishUrl>publish\</PublishUrl>
@@ -49,6 +49,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Terraria">
+      <HintPath>Terraria.exe</HintPath>
+      <Aliases>Texe</Aliases>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\Microsoft.Xna.Framework.dll</HintPath>
@@ -72,19 +76,19 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Terraria.Libraries.DotNetZip.Ionic.Zip.CF">
-      <HintPath>.\Terraria.Libraries.DotNetZip.Ionic.Zip.CF.dll</HintPath>
+      <HintPath>.\Libraries\DotNetZip\Ionic\Zip\CF.dll</HintPath>
     </Reference>
     <Reference Include="Terraria.Libraries.JSON.NET.Newtonsoft.Json">
-      <HintPath>.\Terraria.Libraries.JSON.NET.Newtonsoft.Json.dll</HintPath>
+      <HintPath>.\Libraries\JSON\NET\Newtonsoft\Json.dll</HintPath>
     </Reference>
     <Reference Include="Terraria.Libraries.RailSDK.Windows.RailSDK.Net">
-      <HintPath>.\Terraria.Libraries.RailSDK.Windows.RailSDK.Net.dll</HintPath>
+      <HintPath>.\Libraries\RailSDK\Windows\RailSDK\Net.dll</HintPath>
     </Reference>
     <Reference Include="Terraria.Libraries.ReLogic.ReLogic">
-      <HintPath>.\Terraria.Libraries.ReLogic.ReLogic.dll</HintPath>
+      <HintPath>.\Libraries\ReLogic\ReLogic.dll</HintPath>
     </Reference>
     <Reference Include="Terraria.Libraries.Steamworks.NET.Windows.Steamworks.NET">
-      <HintPath>.\Terraria.Libraries.Steamworks.NET.Windows.Steamworks.NET.dll</HintPath>
+      <HintPath>.\Libraries\Steamworks\NET\Windows\Steamworks\NET.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>

@@ -2,3 +2,7 @@
 *.dll
 bin/
 obj/
+buildout.txt
+Terraria.exe
+Content/
+.vscode/
